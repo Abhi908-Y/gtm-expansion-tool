@@ -1,0 +1,11 @@
+{
+  "edition": "2025 edition",
+  "url": "https://en.wikipedia.org/wiki/EF_English_Proficiency_Index",
+  "note": "Scores read from the 2025 country table. Singapore and the UK are not ranked. A 2026 edition exists on ef.com/epi; update this file when you load it.",
+  "low_confidence": ["SAU", "THA"],
+  "scores": {
+    "NLD": 624, "AUT": 616, "DEU": 615, "SWE": 609, "BEL": 608, "FIN": 603,
+    "MYS": 581, "PHL": 569, "ESP": 540, "FRA": 539, "ISR": 524, "ITA": 513,
+    "VNM": 500, "TUR": 488, "ARE": 487, "IDN": 471, "QAT": 469, "SAU": 404, "THA": 402
+  }
+}

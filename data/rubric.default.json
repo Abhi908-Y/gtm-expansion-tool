@@ -1,0 +1,14 @@
+{
+  "note": "DEFAULT bands set by the tool, not recovered from the original Vobiz sheet (the brief gives weights but no cut-offs). Edit freely. A value below the first cut-off scores 1; at or above the last scores 5. For time difference, smaller is better.",
+  "weights": { "demand": 30, "ai": 20, "competition": 15, "ease": 20, "partner": 15 },
+  "bands": {
+    "gdp_bn": [250, 500, 1000, 2500],
+    "ai_people_pct": [15, 25, 35, 50],
+    "ai_firms_pct": [15, 22, 30, 36],
+    "english": [450, 500, 550, 600],
+    "ict_pct": [4, 5, 6, 7.5],
+    "time_diff_h": [1.5, 3, 5, 7]
+  },
+  "priority": [70, 55, 40],
+  "native_english": ["SGP", "GBR", "USA", "AUS", "NZL", "IRL", "CAN"]
+}

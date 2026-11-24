@@ -1,0 +1,49 @@
+{
+  "id": "vobiz",
+  "company": "Vobiz.ai",
+  "website": "vobiz.ai",
+  "baseTz": "Asia/Kolkata",
+  "context": "AI-native telephony for voice AI agents: SIP trunks, voice APIs, numbers in 130+ countries, WhatsApp. About 70% of revenue from voice AI builders, 30% enterprises; customers mostly Indian. Small team (about 17 people).",
+  "regions": [
+    { "name": "Southeast Asia", "ai": "microsoft", "partner": "desk", "countries": ["SGP", "PHL", "IDN", "MYS", "VNM", "THA", "MMR"] },
+    { "name": "Middle East", "ai": "microsoft", "partner": "desk", "countries": ["ARE", "SAU", "TUR", "ISR", "QAT", "IRN", "YEM"] },
+    { "name": "Europe", "ai": "eurostat", "partner": "eurostat", "countries": ["DEU", "GBR", "NLD", "FRA", "ITA", "SWE", "ESP", "BEL", "AUT", "FIN", "RUS", "BLR"] }
+  ],
+  "tz": {
+    "SGP": "Asia/Singapore", "PHL": "Asia/Manila", "IDN": "Asia/Jakarta", "MYS": "Asia/Kuala_Lumpur", "VNM": "Asia/Ho_Chi_Minh", "THA": "Asia/Bangkok", "MMR": "Asia/Yangon",
+    "ARE": "Asia/Dubai", "SAU": "Asia/Riyadh", "TUR": "Europe/Istanbul", "ISR": "Asia/Jerusalem", "QAT": "Asia/Qatar", "IRN": "Asia/Tehran", "YEM": "Asia/Aden",
+    "DEU": "Europe/Berlin", "GBR": "Europe/London", "NLD": "Europe/Amsterdam", "FRA": "Europe/Paris", "ITA": "Europe/Rome", "SWE": "Europe/Stockholm", "ESP": "Europe/Madrid",
+    "BEL": "Europe/Brussels", "AUT": "Europe/Vienna", "FIN": "Europe/Helsinki", "RUS": "Europe/Moscow", "BLR": "Europe/Minsk"
+  },
+  "readiness": {
+    "_source": "Inferred from the section 8 verdicts in the build brief (Beachhead = ready; Fix coverage first = limited coverage). Replace with the real coverage-page check.",
+    "SGP": "Ready now", "PHL": "Ready now", "IDN": "Ready via partner", "MYS": "Ready now",
+    "VNM": "Outbound only", "THA": "Outbound only",
+    "ARE": "Ready now", "SAU": "Outbound only", "TUR": "Ready now", "ISR": "Ready now", "QAT": "Outbound only",
+    "DEU": "Outbound only", "GBR": "Ready now", "NLD": "Ready now", "FRA": "Needs local paperwork", "ITA": "Needs local paperwork",
+    "SWE": "Ready now", "ESP": "Ready now"
+  },
+  "competitors": [
+    { "name": "Twilio", "domain": "twilio.com" }, { "name": "Telnyx", "domain": "telnyx.com" }, { "name": "Infobip", "domain": "infobip.com" },
+    { "name": "Sinch", "domain": "sinch.com" }, { "name": "Vonage", "domain": "vonage.com" }, { "name": "Plivo", "domain": "plivo.com" },
+    { "name": "8x8", "domain": "8x8.com" }, { "name": "Bandwidth", "domain": "bandwidth.com" }, { "name": "Tata Communications", "domain": "tatacommunications.com" },
+    { "name": "DIDWW", "domain": "didww.com" }, { "name": "DIDlogic", "domain": "didlogic.com" }, { "name": "AVOXI", "domain": "avoxi.com" },
+    { "name": "Retell AI", "domain": "retellai.com" }, { "name": "Vapi", "domain": "vapi.ai" }, { "name": "ElevenLabs", "domain": "elevenlabs.io" },
+    { "name": "Unifonic", "domain": "unifonic.com" }, { "name": "CEQUENS", "domain": "cequens.com" }, { "name": "Route Mobile", "domain": "routemobile.com" },
+    { "name": "Gamma", "domain": "gamma.co.uk" }, { "name": "Bird", "domain": "bird.com" }, { "name": "CM.com", "domain": "cm.com" },
+    { "name": "sipgate", "domain": "sipgate.de" }, { "name": "Parloa", "domain": "parloa.com" },
+    { "name": "Toku", "domain": "toku.co" }, { "name": "Exotel", "domain": "exotel.com" }, { "name": "EngageLab", "domain": "engagelab.com" }
+  ],
+  "competitors_note": "Names are from section 8 of the brief. Domains were added by the tool and are checked when each site is read; a wrong one shows up as a failed fetch. Javna (Middle East) is in the brief without a domain: add it by hand.",
+  "humanGates": {
+    "YEM": { "fail": true, "reason": "Payments cannot be collected (original Vobiz analysis; detail not recorded in the brief)" },
+    "RUS": { "fail": true, "reason": "Sanctions exposure (original Vobiz analysis; OFAC treats Russia as targeted, not comprehensive)" },
+    "BLR": { "fail": true, "reason": "Sanctions exposure (original Vobiz analysis; OFAC treats Belarus as list-based)" }
+  },
+  "golden": {
+    "_source": "Section 8 of the build brief",
+    "SGP": 81.0, "PHL": 73.3, "IDN": 71.0, "MYS": 67.3, "VNM": 63.0, "THA": 60.7,
+    "ARE": 77.0, "SAU": 70.0, "TUR": 68.0, "ISR": 65.0, "QAT": 67.3,
+    "DEU": 76.0, "GBR": 72.0, "NLD": 72.0, "FRA": 66.3, "ITA": 56.3, "SWE": 66.0, "ESP": 61.7, "BEL": 61.7, "AUT": 59.0, "FIN": 55.7
+  }
+}

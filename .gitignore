@@ -1,0 +1,10 @@
+node_modules
+.cache
+.env
+.env.local
+out
+.next
+data/projects
+data/plans
+tsconfig.tsbuildinfo
+next-env.d.ts
