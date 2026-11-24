@@ -1,5 +1,7 @@
 # GTM Expansion Tool
 
+**Live:** https://gtm-expansion-tool.vercel.app
+
 Plan which countries a company should enter first. Give it a company, its website and the regions you are considering. It screens every country, scores each one from public data, maps the competitors, and shows the source behind every figure so you can challenge it.
 
 ## What works today
