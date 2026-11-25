@@ -6,7 +6,9 @@ import { runProfile } from './research/runProfile';
 import { READINESS } from './screen/screen';
 import { scrapeSite } from './scrape/site';
 import { randomBytes } from 'node:crypto';
-import { buildIcp, researchStep, STEPS, suggestedAccounts, type Step } from './outreach/pipeline';
+import { baseFor, buildIcp, researchStep, STEPS, suggestedAccounts, type Step } from './outreach/pipeline';
+import { runPlaybook } from './strategy/playbook';
+import { DEFAULTS, funnel, regionFacts, validateAssumptions } from './strategy/strategy';
 import { competeView, compute, countryNames, loadProject, runScreen, saveProject, type Project } from './store';
 
 const needGemini = () => {
@@ -15,13 +17,20 @@ const needGemini = () => {
 };
 
 export function view(p: Project) {
+  const computed = compute(p);
+  const compete = competeView(p);
   return {
     project: { ...p, indicators: undefined },
-    computed: compute(p),
-    compete: competeView(p),
+    computed,
+    compete,
     suggested: (p.competitors ?? []).filter((c) => c.status === 'suggested'),
     outreach: p.outreach ?? { accounts: [] },
     suggestedAccounts: suggestedAccounts(p),
+    strategy: {
+      assumptions: p.strategy?.assumptions ?? DEFAULTS,
+      playbooks: p.strategy?.playbooks ?? {},
+      facts: regionFacts(computed.regions, compete.perCountry, p.baseTz, (c) => p.countries[c]?.tz),
+    },
     gemini: !geminiConfigured(),
   };
 }
@@ -134,6 +143,22 @@ export async function act(ws: string, id: string, action: string, b: any) {
       if (!acc) throw new Bad('Unknown account');
       if (!STEPS.includes(b.step)) throw new Bad('Unknown step');
       await researchStep(p, acc, b.step as Step);
+      break;
+    }
+
+    case 'strategy': {
+      const s = (p.strategy ??= { assumptions: DEFAULTS, playbooks: {} });
+      if (b.op === 'assumptions') {
+        const a = validateAssumptions(b.assumptions);
+        if (!a) throw new Bad('Leads must be a whole number from 1 to 50,000 and each rate between 0.1% and 100%.');
+        s.assumptions = a;
+      } else if (b.op === 'playbook') {
+        needGemini();
+        const v = view(p).strategy.facts.find((x) => x.name === b.region);
+        if (!v) throw new Bad('Unknown region');
+        if (!p.ranAt) throw new Bad('Screen the countries first: the playbook follows the entry order.');
+        s.playbooks[v.name] = { ...(await runPlaybook(baseFor(p), v, p.outreach?.icp, funnel(s.assumptions))), builtAt: new Date().toISOString() };
+      } else throw new Bad('Unknown strategy action');
       break;
     }
 

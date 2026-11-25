@@ -9,8 +9,9 @@ const STEPS: [string, string, boolean][] = [
   ['Company profile', 'Reads the company’s own pages and the news. Every fact carries a quote you can check.', true],
   ['Country screening', 'Removes sanctioned and blocked countries, then scores the rest on five criteria from public data.', true],
   ['Competitor map', 'Sorts rivals into platforms, telcos, AI platforms and wholesalers, with proof of where each operates.', true],
-  ['Target accounts and contacts', 'Companies showing a buying signal, and the people who own the decision.', false],
-  ['Outreach and a 90-day plan', 'Drafts to review, region playbooks and funnel targets.', false],
+  ['Target accounts and outreach', 'An ideal-customer profile, researched accounts, named people, and drafts you review. Nothing is sent.', true],
+  ['Strategy and a 90-day plan', 'Region order, target markets, a playbook per region and a week-by-week plan to first customers.', true],
+  ['Verified contacts and Gmail drafts', 'Apollo contact data and drafts saved straight to Gmail.', false],
 ];
 
 export default async function Home() {

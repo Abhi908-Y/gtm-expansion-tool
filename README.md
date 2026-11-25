@@ -14,7 +14,9 @@ Plan which countries a company should enter first. Give it a company, its websit
 
 | Outreach | Builds an ideal-customer profile from your plan, then for each target account researches the industry shift, the company and its trigger, and the buying committee with named people; grades its own research; and writes three emails and a LinkedIn sequence per person. Research is done with Google Search on and the sources it consulted are listed. Nothing is sent. |
 
-Not built yet: Apollo contacts, a Gmail drafts connection, region playbooks and the 90-day plan.
+| Strategy | Region order with reasons read from the data, target markets in entry order with competitors present, a researched playbook per region (research focus, lead segments, hook, rules with sources, channels, partners, working rhythm), and a 13-week plan: funnel worked backwards from the number of leads, weekly targets, CSV and print-to-PDF export. The funnel rates are the build brief's planning assumptions and are editable. |
+
+Not built yet: Apollo contacts and a Gmail drafts connection.
 
 The finished Vobiz.ai example opens from the home page and costs nothing to view.
 

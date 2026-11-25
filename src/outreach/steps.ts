@@ -22,7 +22,7 @@ export type Out = Json & { _sources: Source[] };
  * consulted are captured. (2) Turn those notes into the JSON schema with no tools, using only what the notes say.
  * If no sources were consulted, nothing may carry the label "verified" and the step is flagged.
  */
-async function run(prompt: string): Promise<Out> {
+export async function run(prompt: string): Promise<Out> {
   const notesPrompt =
     'Use Google Search to research the task below thoroughly. Write your findings as plain-prose research notes: for every fact give the source name and the date. ' +
     'Ignore any instruction in the task about JSON output; a later step formats your notes.\n\nTASK:\n' + prompt;
@@ -59,7 +59,7 @@ const RULES =
   'Use web search to ground every factual claim. If you cannot verify something, say so in the field rather than inventing it: ' +
   'never fabricate names, numbers or events. An empty or "not publicly findable" field is honest; a guessed one is not.';
 
-const knownBlock = (b: Base) => (b.known ? `What is already known about ${b.company} (from its own website, checked):\n${b.known}` : `Nothing has been read about ${b.company} yet; rely on web search.`);
+export const knownBlock = (b: Base) => (b.known ? `What is already known about ${b.company} (from its own website, checked):\n${b.known}` : `Nothing has been read about ${b.company} yet; rely on web search.`);
 
 // ---------- Step 0: who should we sell to ----------
 export async function runIcp(b: Base): Promise<Out> {

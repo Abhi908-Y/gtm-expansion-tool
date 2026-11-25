@@ -18,6 +18,7 @@ export default function Overview({ st, go }: TabProps) {
     { done: !!p.ranAt, label: 'Screen and score the countries', hint: `${all.length} countries in ${regions.length} region${regions.length === 1 ? '' : 's'}`, tab: 'countries' as const },
     { done: comps.length > 0 && analysed === comps.length, label: 'Map the competitors', hint: comps.length ? `${analysed} of ${comps.length} analysed` : 'Add a few, or find them with search', tab: 'competitors' as const },
     { done: st.outreach.accounts.some((a) => a.outreach), label: 'Research accounts and draft outreach', hint: st.outreach.accounts.length ? `${st.outreach.accounts.filter((a) => a.outreach).length} of ${st.outreach.accounts.length} accounts have drafts` : 'Build the ICP, then add accounts', tab: 'outreach' as const },
+    { done: Object.keys(st.strategy.playbooks).length > 0, label: 'Plan the strategy and the first 90 days', hint: Object.keys(st.strategy.playbooks).length ? `${Object.keys(st.strategy.playbooks).length} regional playbooks` : 'Playbooks, funnel and weekly targets', tab: 'strategy' as const },
   ];
 
   return (

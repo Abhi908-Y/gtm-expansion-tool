@@ -9,6 +9,8 @@ import { getPlan, putPlan } from './db';
 import { Bad } from './errors';
 import type { ProfileDoc } from './research/runProfile';
 import type { Outreach } from './outreach/pipeline';
+import type { Json } from './outreach/checks';
+import type { Assumptions } from './strategy/strategy';
 import { compareGolden, scoreRegion, type CountryCfg, type CountryData, type Lists, type RegionCfg, type Rubric } from './screen/screen';
 
 export type Project = {
@@ -29,6 +31,7 @@ export type Project = {
   competitors?: Competitor[];
   profile?: ProfileDoc;
   outreach?: Outreach;
+  strategy?: { assumptions: Assumptions; playbooks: Record<string, Json & { builtAt: string }> };
 };
 
 const rid = () => randomBytes(3).toString('hex');

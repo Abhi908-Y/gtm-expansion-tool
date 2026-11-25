@@ -173,3 +173,16 @@ tbody tr:last-child td { border-bottom: 0 }
 .busy::before { content: ''; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--accent-soft); border-top-color: var(--accent); animation: spin .8s linear infinite }
 @keyframes spin { to { transform: rotate(360deg) } }
 footer.site { max-width: 1320px; margin: 0 auto; padding: 18px max(16px, 2.5vw) 28px; color: var(--faint); font-size: 12px; border-top: 1px solid var(--line) }
+
+/* print: the strategy page is meant to be saved as a PDF */
+.print-only { display: none }
+@media print {
+  .topbar, .side, footer.site, .no-print, .btn, .tabs, .filters { display: none !important }
+  .print-only { display: block; margin-bottom: 8px }
+  body { background: #fff; color: #000 }
+  .shell { display: block; padding: 0 }
+  .card, .kpi, .region { box-shadow: none; border-color: #bbb; break-inside: avoid }
+  .scroll { overflow: visible; margin: 0; padding: 0 }
+  table { min-width: 0 !important; font-size: 11px }
+  :root { --panel: #fff; --panel-2: #fff; --bg: #fff; --ink: #000; --muted: #333; --faint: #555; --line: #ccc }
+}

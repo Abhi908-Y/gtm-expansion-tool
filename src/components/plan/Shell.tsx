@@ -7,10 +7,11 @@ import CompetitorsView from './CompetitorsView';
 import CountriesView from './CountriesView';
 import Overview from './Overview';
 import OutreachView from './OutreachView';
+import StrategyView from './StrategyView';
 
-const TABS: Tab[] = ['overview', 'company', 'countries', 'competitors', 'outreach'];
-const LABEL: Record<Tab, string> = { overview: 'Overview', company: 'Company', countries: 'Countries', competitors: 'Competitors', outreach: 'Outreach' };
-const SOON = ['Strategy and 90 days'];
+const TABS: Tab[] = ['overview', 'company', 'countries', 'competitors', 'outreach', 'strategy'];
+const LABEL: Record<Tab, string> = { overview: 'Overview', company: 'Company', countries: 'Countries', competitors: 'Competitors', outreach: 'Outreach', strategy: 'Strategy' };
+const SOON = ['Apollo contacts', 'Gmail drafts'];
 
 export default function Shell({ id }: { id: string }) {
   const [st, setSt] = useState<State | null>(null);
@@ -65,6 +66,7 @@ export default function Shell({ id }: { id: string }) {
     countries: p.ranAt ? 'done' : 'ready',
     competitors: comps.length && comps.every((r) => r.analysed) ? 'done' : 'ready',
     outreach: st.outreach.accounts.some((a) => a.outreach) ? 'done' : 'ready',
+    strategy: Object.keys(st.strategy.playbooks).length ? 'done' : 'ready',
   };
   const props = { st, post, run, busy, ro, go };
 
@@ -98,6 +100,7 @@ export default function Shell({ id }: { id: string }) {
         {tab === 'countries' && <CountriesView {...props} />}
         {tab === 'competitors' && <CompetitorsView {...props} />}
         {tab === 'outreach' && <OutreachView {...props} />}
+        {tab === 'strategy' && <StrategyView {...props} />}
       </main>
     </div>
   );
