@@ -88,3 +88,12 @@ describe('spearman', () => {
     expect(spearman([1, 2, 3, 4], [40, 30, 20, 10])).toBeCloseTo(-1);
   });
 });
+
+describe('broad sanctions gate', () => {
+  const withBroad: Lists = { ...lists, broad_sanctions: { countries: ['RUS'], as_of: 'x', url: 'u' } };
+  it('rules out heavily sanctioned countries by default, and lets the user reinstate one with a reason', () => {
+    expect(evaluateGates('RUS', withBroad, {}).out).toBe(true);
+    expect(evaluateGates('RUS', withBroad, { humanGate: { fail: false, reason: 'licensed route' } }).out).toBe(false);
+    expect(evaluateGates('GBR', withBroad, {}).out).toBe(false);
+  });
+});

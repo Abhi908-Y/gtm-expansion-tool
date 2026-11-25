@@ -209,3 +209,12 @@ footer.site { max-width: 1320px; margin: 0 auto; padding: 18px max(16px, 2.5vw) 
 .composer { border-top: 1px solid var(--line); padding: 12px 16px; display: flex; flex-direction: column; gap: 8px }
 .composer textarea { resize: none }
 @media print { .mic, .composer { display: none !important } }
+
+/* floating Ask AI */
+.ask-fab { position: fixed; right: 16px; top: 50%; transform: translateY(-50%); z-index: 30; display: flex; flex-direction: column; align-items: center; gap: 2px; width: 58px; padding: 10px 0 7px; border-radius: 16px; border: 0; background: var(--accent); color: var(--accent-ink); cursor: pointer; font: 600 10px/1 var(--body); box-shadow: 0 6px 20px rgba(0, 0, 0, .28) }
+.ask-fab:hover { filter: brightness(1.08) }
+.ask-fab[hidden] { display: none }
+.ask-drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100vw); z-index: 40; background: var(--panel); border-left: 1px solid var(--line); box-shadow: -10px 0 30px rgba(0, 0, 0, .25); display: flex; flex-direction: column }
+.ask-drawer header { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line) }
+.ask-drawer .msgs { flex: 1; max-height: none; min-height: 0 }
+.ask-drawer .composer { padding-bottom: max(12px, env(safe-area-inset-bottom, 0px)) }

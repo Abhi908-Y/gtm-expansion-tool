@@ -53,3 +53,40 @@ export async function listPlans(ws: string): Promise<{ id: string; company: stri
     return [];
   }
 }
+
+// ---------- per-workspace secrets (already encrypted by the caller) ----------
+let readySecrets: Promise<unknown> | null = null;
+const ensureSecrets = () => (readySecrets ??= sql!`CREATE TABLE IF NOT EXISTS secrets (workspace text NOT NULL, name text NOT NULL, value text NOT NULL, PRIMARY KEY (workspace, name))`);
+const secretFile = (ws: string, name: string) => `${dir(ws)}/.secret-${safe(name)}`;
+
+export async function getSecret(ws: string, name: string): Promise<string | null> {
+  if (sql) {
+    await ensureSecrets();
+    const r = (await sql`SELECT value FROM secrets WHERE workspace = ${ws} AND name = ${name}`) as { value: string }[];
+    return r[0]?.value ?? null;
+  }
+  try {
+    return await readFile(secretFile(ws, name), 'utf8');
+  } catch {
+    return null;
+  }
+}
+
+export async function putSecret(ws: string, name: string, value: string) {
+  if (sql) {
+    await ensureSecrets();
+    await sql`INSERT INTO secrets (workspace, name, value) VALUES (${ws}, ${name}, ${value}) ON CONFLICT (workspace, name) DO UPDATE SET value = EXCLUDED.value`;
+    return;
+  }
+  await mkdir(dir(ws), { recursive: true });
+  await writeFile(secretFile(ws, name), value);
+}
+
+export async function deleteSecret(ws: string, name: string) {
+  if (sql) {
+    await ensureSecrets();
+    await sql`DELETE FROM secrets WHERE workspace = ${ws} AND name = ${name}`;
+    return;
+  }
+  await writeFile(secretFile(ws, name), '').catch(() => {});
+}

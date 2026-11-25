@@ -1,8 +1,8 @@
-import type { view } from '@/actions';
+import type { viewFor } from '@/actions';
 
-export type State = ReturnType<typeof view>;
+export type State = Awaited<ReturnType<typeof viewFor>>;
 export type Run = (label: string, fn: () => Promise<unknown>) => Promise<void>;
-export type Tab = 'overview' | 'company' | 'countries' | 'competitors' | 'outreach' | 'strategy' | 'ask';
+export type Tab = 'overview' | 'company' | 'countries' | 'competitors' | 'outreach' | 'strategy';
 export type Auto = { phases: import('./plan/autopilot').Phase[]; running: boolean; start: () => void; stop: () => void };
 export type TabProps = { auto: Auto; st: State; post: (action: string, body?: object) => Promise<any>; run: Run; busy: string; ro: boolean; go: (t: Tab) => void };
 

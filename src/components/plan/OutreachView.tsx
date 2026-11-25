@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { Account } from '@/outreach/pipeline';
 import type { TabProps } from '../shared';
 import { Dictate } from '../Mic';
+import OutreachDesk from './OutreachDesk';
 import { Empty, Pill } from './ui';
 
 type J = Record<string, any>;
@@ -40,7 +41,8 @@ function StatusPill({ s }: { s?: string }) {
   return s ? <Pill tone={s === 'verified' ? 'good' : s === 'assertion' ? 'warn' : ''}>{s}</Pill> : null;
 }
 
-export default function OutreachView({ st, post, run, busy, ro }: TabProps) {
+export default function OutreachView(props: TabProps) {
+  const { st, post, run, busy, ro } = props;
   const o = st.outreach as { icp?: J; accounts: Account[] };
   const icp = o.icp;
   const [sel, setSel] = useState<string | null>(null);
@@ -68,6 +70,7 @@ export default function OutreachView({ st, post, run, busy, ro }: TabProps) {
         </div>
       </div>
       {!st.gemini && <div className="note warn">The AI steps are switched off on this site right now.</div>}
+      <OutreachDesk {...props} />
       {prog && <div className="busy">{prog}</div>}
 
       {/* 1. ICP */}

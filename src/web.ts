@@ -39,3 +39,9 @@ export async function body(req: Request): Promise<any> {
     throw new Bad('Invalid request');
   }
 }
+
+/** The public address the visitor used, which Google must redirect back to. */
+export function originOf(req: Request) {
+  const h = req.headers;
+  return `${h.get('x-forwarded-proto') ?? 'http'}://${h.get('x-forwarded-host') ?? h.get('host')}`;
+}

@@ -150,19 +150,22 @@ Schema:
 const TEAM_PATHS = ['/', '/about', '/about-us', '/team', '/our-team', '/leadership', '/contact', '/contact-us', '/company'];
 
 /** Personal-looking emails published on the company's own pages. Goes through the robots-respecting, address-guarded fetcher. */
-export async function scrapeEmails(domain: string): Promise<{ email: string; url: string }[]> {
+export async function scrapePublished(domain: string): Promise<{ emails: { email: string; url: string }[]; phones: { phone: string; url: string }[] }> {
   const d = cleanDomain(domain);
-  if (!d) return [];
-  const found = new Map<string, string>();
+  if (!d) return { emails: [], phones: [] };
+  const emails = new Map<string, string>();
+  const phones = new Map<string, string>();
   for (const path of TEAM_PATHS) {
     const r = await fetchPage(`https://${d}${path}`, { reader: false });
-    if (r.ok) for (const e of r.page.emails) if (!found.has(e)) found.set(e, r.page.url);
+    if (!r.ok) continue;
+    for (const e of r.page.emails) if (!emails.has(e)) emails.set(e, r.page.url);
+    for (const ph of r.page.phones) if (!phones.has(ph)) phones.set(ph, r.page.url);
   }
-  return [...found].map(([email, url]) => ({ email, url }));
+  return { emails: [...emails].map(([email, url]) => ({ email, url })), phones: [...phones].slice(0, 5).map(([phone, url]) => ({ phone, url })) };
 }
 
 export async function runPeople(b: Base, target: string, company: Json): Promise<Out> {
-  const scraped = await scrapeEmails(String(company.website ?? ''));
+  const { emails: scraped, phones } = await scrapePublished(String(company.website ?? ''));
   const out = await run(`${RULES}
 
 Company: ${b.company}: ${b.whatIDo}
@@ -174,7 +177,7 @@ Emails published on ${target}'s own website (read just now, the strongest possib
 STEP 3: job titles only, no named people yet. Work out which titles at ${target} would care about what ${b.company} sells, and what each is judged on at work.
 Include at least one role that would BLOCK this purchase: a buying group with no blocker means you have not understood it.
 
-STEP 4: then find real named individuals in those roles, and the public evidence that would let someone start a relevant conversation with them.
+STEP 4: then find real named individuals in those roles (aim for 4 to 5 people covering different personas), and the public evidence that would let someone start a relevant conversation with them.
 Public professional sources only: company site, LinkedIn, press, podcasts, conference talks, filings. A job title alone is not evidence: you need something they actually said or did.
 If you find nobody with real public evidence for a persona, leave that persona's people empty rather than inventing one.
 For each named person also try to find:
@@ -188,7 +191,7 @@ Schema:
     "what_they_said_or_did": "something concrete, not just their title", "status": "verified|assertion", "evidence_link": "URL", "evidence_date": "date of that source",
     "linkedin_url": "exact linkedin.com/in/... URL if search found it, else null", "linkedin_search_hint": "a search string to find their profile", "email": "a published email or null", "email_source": "where it was published, or null"}]
 }`);
-  return { ...sanitizePeople(out, scraped), _sources: out._sources, scraped_emails: scraped } as Out;
+  return { ...sanitizePeople(out, scraped), _sources: out._sources, scraped_emails: scraped, scraped_phones: phones } as Out;
 }
 
 // ---------- Verify: an independent grader ----------

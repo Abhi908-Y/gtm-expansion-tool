@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { call, type Run, type State, type Tab } from '../shared';
-import AskView from './AskView';
+import AskPanel from './AskPanel';
 import { runAutopilot, type Phase } from './autopilot';
 import CompanyView from './CompanyView';
 import CompetitorsView from './CompetitorsView';
@@ -11,8 +11,8 @@ import Overview from './Overview';
 import OutreachView from './OutreachView';
 import StrategyView from './StrategyView';
 
-const TABS: Tab[] = ['overview', 'company', 'countries', 'competitors', 'outreach', 'strategy', 'ask'];
-const LABEL: Record<Tab, string> = { overview: 'Overview', company: 'Company', countries: 'Countries', competitors: 'Competitors', outreach: 'Outreach', strategy: 'Strategy', ask: 'Ask AI' };
+const TABS: Tab[] = ['overview', 'company', 'countries', 'competitors', 'outreach', 'strategy'];
+const LABEL: Record<Tab, string> = { overview: 'Overview', company: 'Company', countries: 'Countries', competitors: 'Competitors', outreach: 'Outreach', strategy: 'Strategy' };
 const SOON = ['Apollo contacts', 'Gmail drafts'];
 
 export default function Shell({ id }: { id: string }) {
@@ -96,7 +96,6 @@ export default function Shell({ id }: { id: string }) {
     competitors: comps.length && comps.every((r) => r.analysed) ? 'done' : 'ready',
     outreach: st.outreach.accounts.some((a) => a.outreach) ? 'done' : 'ready',
     strategy: Object.keys(st.strategy.playbooks).length ? 'done' : 'ready',
-    ask: '',
   };
   const shownBusy = running ? 'Researching in the background' : busy;
   const auto = { phases, running, start, stop: () => (stop.current = true) };
@@ -133,8 +132,8 @@ export default function Shell({ id }: { id: string }) {
         {tab === 'competitors' && <CompetitorsView {...props} />}
         {tab === 'outreach' && <OutreachView {...props} />}
         {tab === 'strategy' && <StrategyView {...props} />}
-        {tab === 'ask' && <AskView {...props} />}
       </main>
+      <AskPanel st={st} post={post} run={run} busy={shownBusy} screen={LABEL[tab]} planId={id} />
     </div>
   );
 }

@@ -3,6 +3,8 @@ import { analyse, cleanDomain } from './compete/compete';
 import { Bad } from './errors';
 import { geminiChat, geminiConfigured, geminiJson, geminiSearchJson } from './research/gemini';
 import { chatContext, chatSystem } from './chat/context';
+import { accessFor, buildRaw, createDraft, disconnect, gmailStatus, sendMessage, validEmail } from './google';
+import { contactsOf } from './outreach/export';
 import { runProfile } from './research/runProfile';
 import { READINESS } from './screen/screen';
 import { scrapeSite } from './scrape/site';
@@ -27,6 +29,11 @@ const needGemini = () => {
   const why = geminiConfigured();
   if (why) throw new Bad(`${why}. The site owner needs to add it.`, 503);
 };
+
+/** The plan as the page needs it, plus whether this browser's Gmail is connected. */
+export async function viewFor(ws: string, p: Project) {
+  return { ...view(p), gmail: await gmailStatus(ws) };
+}
 
 export function view(p: Project) {
   const computed = compute(p);
@@ -65,6 +72,12 @@ export async function act(ws: string, id: string, action: string, b: any) {
       break;
 
     case 'country': {
+      if (Array.isArray(b.isos)) {
+        if (!READINESS.includes(b.readiness)) throw new Bad('Unknown readiness');
+        const valid = new Set(p.regions.flatMap((r) => r.countries));
+        for (const iso of b.isos) if (valid.has(iso)) (p.countries[iso] ??= {}).readiness = b.readiness;
+        break;
+      }
       const iso3 = String(b.iso3 ?? '');
       if (!p.regions.some((r) => r.countries.includes(iso3))) throw new Bad('Unknown country');
       const c = (p.countries[iso3] ??= {});
@@ -207,12 +220,62 @@ export async function act(ws: string, id: string, action: string, b: any) {
       needGemini();
       const message = String(b.message ?? '').trim().slice(0, 4000);
       if (!message) throw new Bad('Type a question first');
-      const hist = (p.chat ??= []);
-      const r = await geminiChat(chatSystem(chatContext(p), !!b.web), hist.slice(-12), message, !!b.web);
-      const at = new Date().toISOString();
-      hist.push({ role: 'user', text: message, at }, { role: 'model', text: r.text, at, sources: b.web ? r.sources.slice(0, 6) : undefined });
-      p.chat = hist.slice(-40);
-      break;
+      // The conversation lives in the browser. The server never writes the plan here, so a chat message can never overwrite research that is saving at the same moment.
+      const hist = (Array.isArray(b.history) ? b.history : [])
+        .filter((m: any) => (m?.role === 'user' || m?.role === 'model') && typeof m.text === 'string')
+        .slice(-12)
+        .map((m: any) => ({ role: m.role as 'user' | 'model', text: m.text.slice(0, 4000) }));
+      const r = await geminiChat(chatSystem(chatContext(p), !!b.web, String(b.screen ?? '').slice(0, 30)), hist, message, !!b.web);
+      return { ok: true, failed, reply: r.text, sources: b.web ? r.sources.slice(0, 6) : [] };
+    }
+
+    case 'gmail': {
+      if (b.op === 'disconnect') {
+        await disconnect(ws);
+        return { ok: true, failed };
+      }
+      if (b.op !== 'draft' && b.op !== 'send') throw new Bad('Unknown Gmail action');
+      const mode: 'draft' | 'send' = b.op === 'send' ? 'send' : 'draft';
+      const sender = String(b.senderName ?? '').replace(/[\r\n]+/g, ' ').trim().slice(0, 80);
+      if (mode === 'send' && b.confirm !== true) throw new Bad('Confirm the send first');
+      if (mode === 'send' && !sender) throw new Bad('Enter your name first: it replaces [Your name] in the sign-off.');
+      const items = (Array.isArray(b.items) ? b.items : []).slice(0, 40) as { id: string; person: string }[];
+      if (!items.length) throw new Bad('Tick at least one person');
+      const n = [1, 2, 3].includes(Number(b.n)) ? Number(b.n) : 1;
+      const at = await accessFor(ws);
+      const results: { account: string; person: string; status: 'ok' | 'skipped' | 'failed'; note: string }[] = [];
+      for (const it of items) {
+        const acc = p.outreach?.accounts.find((x) => x.id === it.id);
+        const c = acc && contactsOf(acc).find((x) => String(x.person.name) === String(it.person));
+        const r = { account: acc?.name ?? '?', person: String(it.person), status: 'skipped' as 'ok' | 'skipped' | 'failed', note: '' };
+        results.push(r);
+        const email = c?.draft?.emails?.[n - 1];
+        const to = validEmail(c?.person.email) ? (c!.person.email as string) : null;
+        const done = (m: 'draft' | 'send') => acc!.log?.some((l) => l.person === r.person && l.n === n && l.mode === m && l.status === 'ok');
+        if (!acc || !c || !email?.body) r.note = 'No draft written yet';
+        else if (mode === 'send' && !to) r.note = 'No email address published';
+        else if (mode === 'send' && c.draft?.issues?.length) r.note = 'The draft breaks the length or phrase rules';
+        else if (mode === 'send' && !c.check) r.note = 'Grade the drafts first';
+        else if (mode === 'send' && c.check?.verdict === 'blocked') r.note = 'Blocked by the draft grader';
+        else if (done('send')) r.note = 'Already sent';
+        else if (mode === 'draft' && done('draft') && !b.again) r.note = 'Already in your Gmail drafts';
+        else {
+          try {
+            const raw = buildRaw({ to, subject: String(email.subject), body: String(email.body).replace('[Your name]', sender || '[Your name]') });
+            if (mode === 'send') await sendMessage(at, raw);
+            else await createDraft(at, raw);
+            r.status = 'ok';
+            r.note = mode === 'send' ? 'Sent' : to ? 'Draft created' : 'Draft created without a recipient';
+          } catch (e) {
+            r.status = 'failed';
+            r.note = e instanceof Error ? e.message.slice(0, 200) : 'Gmail failed';
+          }
+        }
+        if (acc) (acc.log ??= []).push({ at: new Date().toISOString(), person: r.person, n, mode, to: to ?? undefined, status: r.status, note: r.note });
+        if (mode === 'send') await new Promise((ok) => setTimeout(ok, 400)); // send slowly: bursts look like spam to mail providers
+      }
+      await saveProject(ws, p);
+      return { ok: true, failed, results };
     }
 
     case 'note': {

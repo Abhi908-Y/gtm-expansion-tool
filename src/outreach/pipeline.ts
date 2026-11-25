@@ -14,10 +14,12 @@ export type Account = {
   industry?: Json;
   company?: Json;
   people?: Json;
+  phones?: { phone: string; url: string }[]; // the company's own published numbers
   outreach?: Json;
   verify?: { removed: string[]; rows: number; stale: number; at: string };
   messages?: Json;
   doNotUse: string[];
+  log?: { at: string; person: string; n: number; mode: 'draft' | 'send'; to?: string; status: 'ok' | 'skipped' | 'failed'; note?: string }[]; // what was done in Gmail
 };
 export type Outreach = { icp?: Json; accounts: Account[] };
 export const STEPS = ['industry', 'company', 'people', 'verify', 'draft', 'check'] as const;
@@ -75,6 +77,7 @@ export async function researchStep(p: Project, a: Account, step: Step) {
   } else if (step === 'people') {
     need(a.company, 'Run the company step first.');
     a.people = await runPeople(base, a.name, a.company!);
+    a.phones = a.people.scraped_phones ?? [];
     a.outreach = a.messages = a.verify = undefined;
   } else if (step === 'verify') {
     need(a.company && a.people, 'Run the company and people steps first.');

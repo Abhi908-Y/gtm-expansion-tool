@@ -29,6 +29,11 @@ export default function CountriesView({ st, post, run, busy, ro }: TabProps) {
   };
   const screen = (force = false) => run(force ? 'Refreshing public data' : 'Pulling public data', () => post('screen', force ? { force: true } : {}));
   const shown = only === 'all' ? regions : regions.filter((r) => r.name === only);
+  const [sel, setSel] = useState<Set<string>>(new Set());
+  const [bulk, setBulk] = useState<(typeof READINESS)[number]>('Ready now');
+  const scored = regions.flatMap((r) => r.countries.filter((c) => !c.out).map((c) => c.iso3));
+  const flip = (ids: string[], on: boolean) => setSel((s) => { const x = new Set(s); ids.forEach((i) => (on ? x.add(i) : x.delete(i))); return x; });
+  const apply = (ids: string[], readiness: string) => run('Saving readiness', async () => { await post('country', { isos: ids, readiness }); setSel(new Set()); });
 
   return (
     <>
@@ -53,6 +58,16 @@ export default function CountriesView({ st, post, run, busy, ro }: TabProps) {
 
       {have && (
         <>
+          {!ro && (
+            <div className="row" style={{ padding: '10px 12px', background: 'var(--panel)', border: '1px solid var(--line)', borderRadius: 8 }}>
+              <label className="row small" style={{ gap: 6 }}><input type="checkbox" checked={sel.size > 0 && sel.size === scored.length} onChange={(e) => flip(scored, e.target.checked)} /> <b>Select all</b> ({scored.length})</label>
+              <span className="muted small">{sel.size} selected</span>
+              <span style={{ flex: 1 }} />
+              <button className="btn sm" disabled={!!busy} onClick={() => apply(scored, 'Ready now')}>Ready for all</button>
+              <select value={bulk} onChange={(e) => setBulk(e.target.value as typeof bulk)} aria-label="Readiness to apply">{READINESS.map((x) => <option key={x}>{x}</option>)}</select>
+              <button className="btn sm primary" disabled={!sel.size || !!busy} onClick={() => apply([...sel], bulk)}>Apply to {sel.size} selected</button>
+            </div>
+          )}
           <div className="filters" role="group" aria-label="Filter by region">
             {['all', ...regions.map((r) => r.name)].map((n) => (
               <button key={n} className={`chip ${only === n ? 'on' : ''}`} onClick={() => setOnly(n)}>{n === 'all' ? 'All regions' : n}</button>
@@ -76,6 +91,7 @@ export default function CountriesView({ st, post, run, busy, ro }: TabProps) {
                   <table style={{ minWidth: 1080 }}>
                     <thead>
                       <tr>
+                        {!ro && <th style={{ width: 28 }}><input type="checkbox" aria-label={`Select all in ${r.name}`} checked={rows.length > 0 && rows.every((c) => sel.has(c.iso3))} onChange={(e) => flip(rows.map((c) => c.iso3), e.target.checked)} /></th>}
                         <th>Country</th><th>Score</th><th>Verdict</th><th>Readiness</th>
                         <th className="num">Demand</th><th className="num">AI use</th><th className="num">English</th><th className="num">Time</th>
                         <th className="num" title="Analyst judgement">Rules*</th><th className="num" title="Analyst judgement">Competition*</th><th className="num" title={deskPartner ? 'Analyst judgement' : 'Eurostat ICT workforce'}>Partners{deskPartner ? '*' : ''}</th>
@@ -84,6 +100,7 @@ export default function CountriesView({ st, post, run, busy, ro }: TabProps) {
                     <tbody>
                       {rows.map((c) => (
                         <tr key={c.iso3}>
+                          {!ro && <td><input type="checkbox" aria-label={`Select ${c.name}`} checked={sel.has(c.iso3)} onChange={(e) => flip([c.iso3], e.target.checked)} /></td>}
                           <td>
                             <div className="cname">{c.name}</div>
                             <div className="faint small">{c.priority}{!ro && <> · <button className="link quiet" onClick={() => { const reason = window.prompt(`Why is ${c.name} out? For example: no legal route, payments blocked, nothing usable to sell.`); if (reason?.trim()) edit(c.iso3, { humanGate: { fail: true, reason } }); }}>mark out</button></>}</div>
@@ -108,6 +125,7 @@ export default function CountriesView({ st, post, run, busy, ro }: TabProps) {
                         <li key={c.iso3}>
                           <b>{c.name}</b> <span className="muted">{c.gates.filter((g) => g.status === 'fail').map((g) => `${g.id}: ${g.reason}`).join('; ')}</span>{' '}
                           {!ro && p.countries[c.iso3]?.humanGate && <button className="link" onClick={() => edit(c.iso3, { humanGate: null })}>reinstate</button>}
+                          {!ro && !p.countries[c.iso3]?.humanGate && c.gates.some((g) => g.id === 'G-04' && g.status === 'fail') && <button className="link" onClick={() => { const reason = window.prompt('Why can you operate in ' + c.name + '? One line; it is stored with the decision.'); if (reason?.trim()) edit(c.iso3, { humanGate: { fail: false, reason } }); }}>reinstate with a reason</button>}
                         </li>
                       ))}
                     </ul>

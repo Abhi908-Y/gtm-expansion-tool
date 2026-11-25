@@ -20,7 +20,19 @@ Plan which countries a company should enter first. Give it a company, its websit
 | Ask AI | A chat that answers from the plan's own data and from notes you add (facts the research cannot find). Optionally searches the web for an answer and says so. |
 | Voice | A mic button on the free-text fields uses the browser's speech recognition (Chrome, Edge, Safari). |
 
-Not built yet: Apollo contacts and a Gmail drafts connection.
+| Outreach desk | One table of every person at every target account: tick people (or select all), then create Gmail drafts, send (behind a confirmation, and only drafts that passed the checks), copy LinkedIn notes, open a single email in your mail app, or download the contact sheet as CSV (company, then people in decision order, with email, LinkedIn, phone and all drafts). |
+| Bulk readiness | Tick countries, or use "Ready for all", to set readiness in one go. |
+
+Not built yet: Apollo contacts (personal phone numbers need it).
+
+### Gmail setup (once, by the site owner)
+
+1. In Google Cloud, create a project, enable the **Gmail API**, and configure the OAuth consent screen (External; add yourself as a test user).
+2. Create an **OAuth client ID** of type *Web application* with these redirect URIs: `http://localhost:3000/api/google/callback` and `https://YOUR-SITE/api/google/callback`.
+3. Put `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` and `APP_SECRET` (any long random string) in `.env` and in Vercel.
+4. Open a plan, go to Outreach and press **Connect Gmail**.
+
+The only permission requested is `gmail.compose` (create drafts and send); the site cannot read mail. While the Google app is in testing, only listed test users can connect; letting anyone connect needs Google's app verification.
 
 The finished Vobiz.ai example opens from the home page and costs nothing to view.
 

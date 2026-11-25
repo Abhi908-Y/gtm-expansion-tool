@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { contactRows } from '@/outreach/export';
 import { funnel, KPIS, toCsv, weeklyPlan, type Assumptions } from '@/strategy/strategy';
+import { downloadCsv } from '../download';
 import { verdictTone, type TabProps } from '../shared';
 import { Empty, Kpi, Pill } from './ui';
 
@@ -70,9 +72,7 @@ export default function StrategyView({ st, post, run, busy, ro }: TabProps) {
   const slug = p.company.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
   const exportCountries = () => download(`${slug}-countries.csv`, toCsv([['Region', 'Country', 'Score', 'Verdict', 'Readiness', 'Global competitors present', 'Local competitors present'], ...markets.map((m) => [m.region, m.name, m.total.toFixed(1), m.verdict, m.readiness, near(m.iso3)?.global.join('; '), near(m.iso3)?.local.join('; ')])]));
-  const exportAccounts = () =>
-    download(`${slug}-accounts.csv`, toCsv([['Account', 'Region', 'Source', 'Website', 'Fit', 'Reason to write now', 'Contact', 'Title', 'Email', 'LinkedIn'],
-      ...st.outreach.accounts.flatMap((acc) => { const people: J[] = acc.people?.people ?? []; const base = [acc.name, acc.region, acc.source, acc.website, acc.company?.fit_assessment, acc.company?.trigger]; return people.length ? people.map((x) => [...base, x.name, x.title, x.email, x.linkedin_url]) : [[...base, '', '', '', '']]; })]));
+  const exportAccounts = () => downloadCsv(`${slug}-outreach.csv`, contactRows(st.outreach.accounts));
   const exportKpis = () => download(`${slug}-90-day-kpis-${scope}.csv`, toCsv([['Week', 'Phase', ...KPIS.map((k) => k.label)], ...weeks.map((w) => [w.week, w.phase, ...KPIS.map((k) => w[k.key])])]));
 
   return (
@@ -81,7 +81,7 @@ export default function StrategyView({ st, post, run, busy, ro }: TabProps) {
         <div><h1>Strategy</h1><p className="muted">Region order, target markets, a playbook per region, and a 13-week plan to first customers.</p></div>
         <div className="row">
           <button className="btn" onClick={exportCountries}>Countries CSV</button>
-          <button className="btn" onClick={exportAccounts} disabled={!st.outreach.accounts.length}>Accounts CSV</button>
+          <button className="btn" onClick={exportAccounts} disabled={!st.outreach.accounts.length}>Outreach contacts CSV</button>
           <button className="btn" onClick={exportKpis}>Weekly KPIs CSV</button>
           <button className="btn primary" onClick={() => window.print()}>Print or save as PDF</button>
         </div>

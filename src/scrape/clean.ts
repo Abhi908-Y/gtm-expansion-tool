@@ -118,3 +118,16 @@ export function extractEmails(html: string): string[] {
   }
   return [...found];
 }
+
+/** Phone numbers a page publishes: tel: links and international numbers written with a leading +. Digits only, 8 to 15 of them. */
+export function extractPhones(html: string): string[] {
+  const found = new Set<string>();
+  const add = (raw: string) => {
+    const plus = raw.trim().startsWith('+') ? '+' : '';
+    const digits = raw.replace(/\D/g, '');
+    if (digits.length >= 8 && digits.length <= 15 && !/^(\d)\1+$/.test(digits)) found.add(plus + digits);
+  };
+  for (const m of html.matchAll(/href\s*=\s*["']tel:([^"']+)["']/gi)) add(decodeURIComponent(m[1]));
+  for (const m of decodeEntities(html.replace(/<[^>]+>/g, ' ')).matchAll(/\+\d{1,3}[\s().-]*\d(?:[\s().-]*\d){6,13}/g)) add(m[0]);
+  return [...found].slice(0, 5);
+}

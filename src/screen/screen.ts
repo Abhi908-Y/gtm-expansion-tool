@@ -22,6 +22,7 @@ export type CountryCfg = {
 export type Lists = {
   ofac_comprehensive: { countries: string[]; as_of: string; url: string };
   fatf_call_for_action: { countries: string[]; as_of: string; url: string };
+  broad_sanctions?: { countries: string[]; as_of: string; url: string };
 };
 export type CountryData = {
   name: string;
@@ -40,9 +41,11 @@ export function evaluateGates(iso3: string, lists: Lists, cfg: CountryCfg): { ou
   const g1 = lists.ofac_comprehensive.countries.includes(iso3);
   const g2 = lists.fatf_call_for_action.countries.includes(iso3);
   const h = cfg.humanGate;
+  const g4 = !!lists.broad_sanctions?.countries.includes(iso3) && h?.fail !== false; // reinstated by the user with a reason
   const gates: Gate[] = [
     { id: 'G-01', name: 'Comprehensive sanctions', status: g1 ? 'fail' : 'pass', reason: g1 ? `Under a comprehensive US embargo (OFAC, as of ${lists.ofac_comprehensive.as_of})` : 'Not on the OFAC comprehensive list', url: lists.ofac_comprehensive.url },
     { id: 'G-02', name: 'FATF call-for-action list', status: g2 ? 'fail' : 'pass', reason: g2 ? `On the FATF call-for-action list (as of ${lists.fatf_call_for_action.as_of})` : 'Not on the FATF call-for-action list', url: lists.fatf_call_for_action.url },
+    { id: 'G-04', name: 'Broad US, EU or UK sanctions', status: g4 ? 'fail' : 'pass', reason: g4 ? 'Under broad US, EU and UK sanctions covering most banking, energy and technology trade. Reinstate with a reason if you have a legal route.' : 'Not on the broad-sanctions list', url: lists.broad_sanctions?.url },
     { id: 'G-03', name: 'Legal route, payment route, any service (human call)', status: h ? (h.fail ? 'fail' : 'pass') : 'unreviewed', reason: h ? h.reason : 'Not reviewed yet' },
   ];
   return { out: gates.some((x) => x.status === 'fail'), gates };

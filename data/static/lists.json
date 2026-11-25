@@ -1,14 +1,31 @@
 {
   "ofac_comprehensive": {
-    "countries": ["CUB", "IRN", "PRK"],
+    "countries": [
+      "CUB",
+      "IRN",
+      "PRK"
+    ],
     "as_of": "2026-10-26",
     "url": "https://ofac.treasury.gov/faqs/10",
     "note": "Whole-country embargoes only. Crimea, Donetsk and Luhansk are regions, not countries. Russia, Belarus, Myanmar and Yemen are list-based programs, so they are NOT here."
   },
   "fatf_call_for_action": {
-    "countries": ["IRN", "MMR", "PRK"],
+    "countries": [
+      "IRN",
+      "MMR",
+      "PRK"
+    ],
     "as_of": "2026-10-30",
     "url": "https://www.fatf-gafi.org/en/publications/High-risk-and-other-monitored-jurisdictions/call-for-action-october-2026.html",
     "note": "Iran and Myanmar confirmed from search snippets of the October 2026 statement. North Korea is listed in the June 2026 statement and not confirmed for October. Re-check on the FATF site."
+  },
+  "broad_sanctions": {
+    "countries": [
+      "RUS",
+      "BLR"
+    ],
+    "as_of": "2026-11-25",
+    "url": "https://ofac.treasury.gov/sanctions-programs-and-country-information",
+    "note": "Not whole-country embargoes, but US, EU and UK sanctions cover most banking, energy and technology trade. Treated as out by default; reinstate with a reason if you have a legal route."
   }
 }
