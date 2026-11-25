@@ -1,8 +1,10 @@
 // Everything a visitor can do to a plan. The API routes are thin wrappers around this.
 import { analyse, cleanDomain } from './compete/compete';
 import { Bad } from './errors';
-import { geminiChat, geminiConfigured, geminiJson, geminiSearchJson } from './research/gemini';
-import { chatContext, chatSystem } from './chat/context';
+import { geminiConfigured, geminiJson, geminiSearchJson } from './research/gemini';
+import { chatTurn, validateProposals } from './chat/agent';
+import { loadMeta } from './data/sources';
+import { PRESETS, TZ } from './data/regions';
 import { accessFor, buildRaw, createDraft, disconnect, gmailStatus, sendMessage, validEmail } from './google';
 import { contactsOf } from './outreach/export';
 import { runProfile } from './research/runProfile';
@@ -225,8 +227,61 @@ export async function act(ws: string, id: string, action: string, b: any) {
         .filter((m: any) => (m?.role === 'user' || m?.role === 'model') && typeof m.text === 'string')
         .slice(-12)
         .map((m: any) => ({ role: m.role as 'user' | 'model', text: m.text.slice(0, 4000) }));
-      const r = await geminiChat(chatSystem(chatContext(p), !!b.web, String(b.screen ?? '').slice(0, 30)), hist, message, !!b.web);
-      return { ok: true, failed, reply: r.text, sources: b.web ? r.sources.slice(0, 6) : [] };
+      const t = await chatTurn(p, message, hist, !!b.web, String(b.screen ?? '').slice(0, 30));
+      return { ok: true, failed, reply: t.answer, evidence: t.evidence, proposals: t.proposals, dropped: t.dropped, warnings: t.warnings, sources: t.sources };
+    }
+
+    case 'regions': {
+      const have = new Set(p.regions.flatMap((r) => r.countries));
+      const put = (name: string, base: { ai: 'microsoft' | 'eurostat'; partner: 'eurostat' | 'desk' }, iso: string[]) => {
+        const fresh = iso.filter((c) => !have.has(c));
+        if (!fresh.length) throw new Bad('Those countries are already in the plan');
+        let r = p.regions.find((x) => x.name === name);
+        if (!r) p.regions.push((r = { name, ai: base.ai, partner: base.partner, countries: [] }));
+        for (const c of fresh) {
+          r.countries.push(c);
+          p.countries[c] = { ...(p.countries[c] ?? {}), ...(TZ[c] ? { tz: TZ[c] } : {}) };
+        }
+      };
+      if (b.op === 'add_preset') {
+        const pre = PRESETS.find((x) => x.id === b.id);
+        if (!pre) throw new Bad('Unknown region');
+        if (p.regions.some((r) => r.name === pre.name)) throw new Bad(`${pre.name} is already in the plan`);
+        put(pre.name, pre, pre.countries);
+      } else if (b.op === 'add_countries') {
+        const meta = await loadMeta();
+        const iso = (Array.isArray(b.iso3s) ? b.iso3s : []).filter((c: unknown): c is string => typeof c === 'string' && meta.has(c)).slice(0, 20);
+        if (!iso.length) throw new Bad('No valid countries to add');
+        put('Other countries', { ai: 'microsoft', partner: 'desk' }, iso);
+      } else throw new Bad('Unknown regions action');
+      await runScreen(p, false); // score the new countries from cached public data
+      break;
+    }
+
+    case 'apply': {
+      // Re-check the proposal from scratch: the browser can send anything.
+      const v = await validateProposals([b.raw], p);
+      const pr = v.ok[0];
+      if (!pr) throw new Bad(v.dropped[0] ?? 'That change is no longer valid.');
+      const a = pr.args;
+      const sub = (action: string, body: object) => act(ws, id, action, body);
+      switch (pr.type) {
+        case 'add_countries': await sub('regions', { op: 'add_countries', iso3s: a.iso3s }); break;
+        case 'add_region': await sub('regions', { op: 'add_preset', id: a.id }); break;
+        case 'add_competitor':
+          await sub('competitor', { op: 'add', name: a.name, domain: a.domain });
+          if (a.analyse) await sub('competitor', { op: 'analyse', domains: [a.domain] }).catch((e) => failed.push(`${a.name} was added but could not be analysed: ${e.message}`));
+          break;
+        case 'remove_competitors': for (const d of a.domains) await sub('competitor', { op: 'remove', domain: d }); break;
+        case 'add_account': await sub('account', { op: 'add', name: a.name, website: a.website, source: 'manual' }); break;
+        case 'remove_accounts': for (const aid of a.ids) await sub('account', { op: 'remove', id: aid }); break;
+        case 'set_readiness': await sub('country', { isos: a.iso3s, readiness: a.readiness }); break;
+        case 'mark_out': await sub('country', { iso3: a.iso3, humanGate: { fail: true, reason: a.reason } }); break;
+        case 'set_assumptions': await sub('strategy', { op: 'assumptions', assumptions: a.assumptions }); break;
+        case 'add_note': await sub('note', { op: 'add', text: a.text }); break;
+        default: throw new Bad('That action runs in the browser, not on the server.');
+      }
+      return { ok: true, failed, done: pr.label };
     }
 
     case 'gmail': {

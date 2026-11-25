@@ -28,7 +28,7 @@ export function chatContext(p: Project): string {
   const comp = competeView(p);
   if (comp.rows.length) {
     L.push('\n## Competitors (type, role, reach from evidence on their own pages)');
-    for (const r of comp.rows) L.push(`- ${r.name}: ${r.type ?? 'not analysed'}, ${r.role ?? ''}, ${r.reach}. Customers named: ${r.customers.slice(0, 5).map((c) => c.name).join(', ') || 'none'}`);
+    for (const r of comp.rows) L.push(`- ${r.name} (${r.domain}): ${r.type ?? 'not analysed'}, ${r.role ?? ''}, ${r.reach}. Customers named: ${r.customers.slice(0, 5).map((c) => c.name).join(', ') || 'none'}`);
   }
 
   const icp = p.outreach?.icp;
@@ -69,14 +69,3 @@ export function chatContext(p: Project): string {
   if (p.notes?.length) L.push('\n## Notes added by the user (treat as facts from the user)', ...p.notes.map((n) => `- ${clip(n.text, 600)}`));
   return L.join('\n').slice(0, 45000);
 }
-
-export const chatSystem = (context: string, web: boolean, screen = '') =>
-  `You are the analyst built into a market-entry planning tool. The user is looking at a plan; its data is below. Answer from that data and the user's notes.${screen ? `\nThe user is currently on the "${screen}" tab. Words like "this", "here" or "these" refer to what that tab shows.` : ''}
-- Be concrete and short. Name the country, competitor or account you mean, and say which tab it is on (Company, Countries, Competitors, Outreach, Strategy).
-- If the plan does not contain something, say so plainly and say which step would produce it. Never invent figures, names, laws or sources.
-- Scores are out of 100 and built from public data; analyst scores and readiness are the user's own inputs.
-- Facts marked "assertion" are not verified. Legal rules are research, not legal advice.
-${web ? '- You may search the web for facts the plan lacks. Say when an answer comes from the web and not from the plan.' : '- Web search is off for this answer. If the user needs outside facts, tell them to tick "Search the web".'}
-
---- PLAN DATA ---
-${context}`;

@@ -59,7 +59,7 @@ export type Ctx = {
 };
 
 // Names a page might use instead of the World Bank's. Three-letter-or-shorter aliases are matched case-sensitively ("UK", not "uk").
-const ALIASES: Record<string, string[]> = {
+export const ALIASES: Record<string, string[]> = {
   VNM: ['Vietnam'], TUR: ['Turkey', 'Türkiye'], RUS: ['Russia'], ARE: ['UAE', 'Emirates'], GBR: ['United Kingdom', 'UK', 'Britain'], USA: ['United States', 'USA', 'U.S.'],
   KOR: ['South Korea'], IRN: ['Iran'], LAO: ['Laos'], CZE: ['Czech Republic', 'Czechia'], MMR: ['Myanmar', 'Burma'], HKG: ['Hong Kong'], TLS: ['Timor-Leste', 'East Timor'],
   CIV: ["Côte d'Ivoire", 'Ivory Coast'], EGY: ['Egypt'], YEM: ['Yemen'], BRN: ['Brunei'], SYR: ['Syria'], PSE: ['Palestine'], KGZ: ['Kyrgyzstan'], SVK: ['Slovakia'],

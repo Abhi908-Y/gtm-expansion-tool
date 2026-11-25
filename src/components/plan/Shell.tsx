@@ -133,7 +133,7 @@ export default function Shell({ id }: { id: string }) {
         {tab === 'outreach' && <OutreachView {...props} />}
         {tab === 'strategy' && <StrategyView {...props} />}
       </main>
-      <AskPanel st={st} post={post} run={run} busy={shownBusy} screen={LABEL[tab]} planId={id} />
+      <AskPanel st={st} post={post} run={run} busy={shownBusy} screen={LABEL[tab]} planId={id} startResearch={start} />
     </div>
   );
 }

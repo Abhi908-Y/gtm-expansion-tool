@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import sample from '../data/sample/vobiz.json';
-import { chatContext, chatSystem } from '../src/chat/context';
+import { chatContext } from '../src/chat/context';
 import { pickCandidates } from '../src/outreach/pipeline';
 import type { Project } from '../src/store';
 
@@ -21,10 +21,6 @@ describe('chatContext', () => {
     const withNote = { ...plan, notes: [{ id: 'n1', text: 'We already have two pilot customers in Singapore.', at: 'x' }] } as Project;
     expect(chatContext(plan)).toBe(chatContext(plan));
     expect(chatContext(withNote)).toMatch(/Notes added by the user[\s\S]*two pilot customers in Singapore/);
-  });
-  it('tells the model whether web search is on', () => {
-    expect(chatSystem('ctx', true)).toMatch(/may search the web/);
-    expect(chatSystem('ctx', false)).toMatch(/Web search is off/);
   });
 });
 
