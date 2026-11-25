@@ -1,8 +1,10 @@
 'use client';
 import { verdictTone, type TabProps } from '../shared';
+import AutopilotCard from './AutopilotCard';
+import { STAGES } from './autopilot';
 import { Bar, Kpi, Pill } from './ui';
 
-export default function Overview({ st, go }: TabProps) {
+export default function Overview({ st, go, auto, ro }: TabProps) {
   const p = st.project;
   const regions = st.computed.regions;
   const all = regions.flatMap((r) => r.countries.map((c) => ({ ...c, region: r.name })));
@@ -29,6 +31,8 @@ export default function Overview({ st, go }: TabProps) {
           <p className="muted">{p.context || `Expansion plan for ${p.company}.`}</p>
         </div>
       </div>
+
+      {!ro && <AutopilotCard auto={auto} ai={st.gemini} complete={STAGES.every((s) => !s.needed(st))} />}
 
       <div className="kpis">
         <Kpi label="Countries in play" value={scored.length || '–'} sub={p.ranAt ? `${out} ruled out by the gates` : 'Not screened yet'} />

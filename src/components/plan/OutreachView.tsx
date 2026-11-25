@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import type { Account } from '@/outreach/pipeline';
 import type { TabProps } from '../shared';
+import { Dictate } from '../Mic';
 import { Empty, Pill } from './ui';
 
 type J = Record<string, any>;
@@ -108,7 +109,7 @@ export default function OutreachView({ st, post, run, busy, ro }: TabProps) {
         <p className="muted small" style={{ marginBottom: 12 }}>Companies to research. Add from the shortlist above, from competitors’ customers below, or by hand.</p>
         {!ro && (
           <form className="row" style={{ marginBottom: 12 }} onSubmit={(e) => { e.preventDefault(); addAcc({ name }); setName(''); }}>
-            <input placeholder="Company name" aria-label="Account name" value={name} onChange={(e) => setName(e.target.value)} required style={{ width: 240 }} />
+            <Dictate placeholder="Company name" aria-label="Account name" value={name} onChange={setName} required style={{ width: 260 }} />
             <button className="btn" disabled={!!busy}>Add account</button>
           </form>
         )}

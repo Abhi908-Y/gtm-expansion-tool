@@ -99,3 +99,9 @@ export async function buildIcp(p: Project) {
   const o = (p.outreach ??= { accounts: [] });
   o.icp = await runIcp(baseFor(p));
 }
+
+/** The first `n` ICP shortlist companies that are not accounts yet. */
+export function pickCandidates(icp: Json | undefined, accounts: Account[], n: number) {
+  const have = new Set(accounts.map((a) => a.name.toLowerCase()));
+  return ((icp?.candidates ?? []) as Json[]).filter((c) => c?.name && !have.has(String(c.name).toLowerCase())).slice(0, n);
+}

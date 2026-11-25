@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { TYPE_LABEL, TYPE_TONE, type TabProps } from '../shared';
+import { Dictate } from '../Mic';
 import { Empty, Kpi, Pill } from './ui';
 
 const reachTone = (r: string) => (r === 'Global' ? 'accent' : r.startsWith('Local') ? 'info' : '');
@@ -112,7 +113,7 @@ export default function CompetitorsView({ st, post, run, busy, ro }: TabProps) {
         <section className="card">
           <h2 style={{ marginBottom: 10 }}>Add a competitor</h2>
           <form className="row" onSubmit={(e) => { e.preventDefault(); run('Adding', async () => { await op('add', domain, { name }); setName(''); setDomain(''); }); }}>
-            <input placeholder="Name" aria-label="Competitor name" value={name} onChange={(e) => setName(e.target.value)} required style={{ width: 180 }} />
+            <Dictate placeholder="Name" aria-label="Competitor name" value={name} onChange={setName} required style={{ width: 200 }} />
             <input placeholder="website.com" aria-label="Competitor website" value={domain} onChange={(e) => setDomain(e.target.value)} required style={{ width: 200 }} />
             <button className="btn" disabled={!!busy}>Add</button>
           </form>

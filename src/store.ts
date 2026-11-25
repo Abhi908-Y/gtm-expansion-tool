@@ -31,6 +31,8 @@ export type Project = {
   competitors?: Competitor[];
   profile?: ProfileDoc;
   outreach?: Outreach;
+  notes?: { id: string; text: string; at: string }[];
+  chat?: { role: 'user' | 'model'; text: string; at: string; sources?: { title: string; url: string }[] }[];
   strategy?: { assumptions: Assumptions; playbooks: Record<string, Json & { builtAt: string }> };
 };
 

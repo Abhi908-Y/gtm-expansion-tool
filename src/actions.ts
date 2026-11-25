@@ -1,15 +1,27 @@
 // Everything a visitor can do to a plan. The API routes are thin wrappers around this.
 import { analyse, cleanDomain } from './compete/compete';
 import { Bad } from './errors';
-import { geminiConfigured, geminiJson, geminiSearchJson } from './research/gemini';
+import { geminiChat, geminiConfigured, geminiJson, geminiSearchJson } from './research/gemini';
+import { chatContext, chatSystem } from './chat/context';
 import { runProfile } from './research/runProfile';
 import { READINESS } from './screen/screen';
 import { scrapeSite } from './scrape/site';
 import { randomBytes } from 'node:crypto';
-import { baseFor, buildIcp, researchStep, STEPS, suggestedAccounts, type Step } from './outreach/pipeline';
+import { baseFor, buildIcp, pickCandidates, researchStep, STEPS, suggestedAccounts, type Step } from './outreach/pipeline';
 import { runPlaybook } from './strategy/playbook';
 import { DEFAULTS, funnel, regionFacts, validateAssumptions } from './strategy/strategy';
 import { competeView, compute, countryNames, loadProject, runScreen, saveProject, type Project } from './store';
+
+/**
+ * Run several slow jobs at once inside ONE request, so their results are saved together (separate requests that each
+ * load and save the whole plan would overwrite each other). One failure does not lose the others.
+ */
+async function settle<T>(items: T[], label: (t: T) => string, fn: (t: T) => Promise<void>): Promise<string[]> {
+  const rs = await Promise.allSettled(items.map(fn));
+  const failed = rs.flatMap((r, i) => (r.status === 'rejected' ? [`${label(items[i])}: ${r.reason instanceof Error ? r.reason.message : r.reason}`] : []));
+  if (items.length && failed.length === items.length) throw new Bad(failed[0] + (failed.length > 1 ? ` (and ${failed.length - 1} more)` : ''), 502);
+  return failed;
+}
 
 const needGemini = () => {
   const why = geminiConfigured();
@@ -31,14 +43,17 @@ export function view(p: Project) {
       playbooks: p.strategy?.playbooks ?? {},
       facts: regionFacts(computed.regions, compete.perCountry, p.baseTz, (c) => p.countries[c]?.tz),
     },
+    notes: p.notes ?? [],
+    chat: p.chat ?? [],
     gemini: !geminiConfigured(),
   };
 }
 
 export async function act(ws: string, id: string, action: string, b: any) {
   const p = await loadProject(ws, id);
-  if (p.isSample && action !== 'screen') throw new Bad('This is the read-only Vobiz example. Start your own plan to change things.', 403);
+  if (p.isSample && !['screen', 'chat', 'note'].includes(action)) throw new Bad('This is the read-only Vobiz example. Start your own plan to change things.', 403);
   const list = (p.competitors ??= []);
+  let failed: string[] = [];
 
   switch (action) {
     case 'screen':
@@ -92,22 +107,40 @@ export async function act(ws: string, id: string, action: string, b: any) {
         list.push({ name, domain, status: 'accepted' });
         break;
       }
+      if (b.op === 'accept_all') {
+        let n = list.filter((c) => c.status === 'accepted').length;
+        for (const c of list) if (c.status === 'suggested' && n < Math.min(Number(b.max) || 10, 20)) (c.status = 'accepted'), n++;
+        break;
+      }
+      if (b.op === 'analyse') {
+        needGemini();
+        const ctx = {
+          company: p.company,
+          countries: Object.entries(countryNames(p)).map(([iso3, name]) => ({ iso3, name })),
+          ask: geminiJson,
+          scrape: async (d: string) => {
+            const site = await scrapeSite(d, { maxSubpages: 6, deep: true });
+            return { pages: site.pages.map((x) => ({ url: x.url, text: x.text, full: x.full })), failures: site.failures.map((f) => `${f.code}: ${f.url} (${f.detail})`) };
+          },
+        };
+        const todo: string[] = [];
+        for (const d of Array.isArray(b.domains) ? b.domains : [b.domain]) {
+          const c = cleanDomain(String(d));
+          if (c && todo.length < 4) todo.push(c);
+        }
+        if (!todo.length) throw new Bad('Unknown competitor');
+        failed = await settle(todo, (d) => d, async (d) => {
+          const i = list.findIndex((c) => c.domain === d);
+          if (i < 0) throw new Bad('Unknown competitor');
+          list[i] = await analyse(list[i], ctx);
+        });
+        break;
+      }
       const i = list.findIndex((c) => c.domain === domain);
       if (i < 0) throw new Bad('Unknown competitor');
       if (b.op === 'remove') list.splice(i, 1);
       else if (b.op === 'accept') list[i].status = 'accepted';
-      else if (b.op === 'analyse') {
-        needGemini();
-        list[i] = await analyse(list[i], {
-          company: p.company,
-          countries: Object.entries(countryNames(p)).map(([iso3, name]) => ({ iso3, name })),
-          ask: geminiJson,
-          scrape: async (d) => {
-            const site = await scrapeSite(d, { maxSubpages: 6, deep: true });
-            return { pages: site.pages.map((x) => ({ url: x.url, text: x.text, full: x.full })), failures: site.failures.map((f) => `${f.code}: ${f.url} (${f.detail})`) };
-          },
-        });
-      } else throw new Bad('Unknown competitor action');
+      else throw new Bad('Unknown competitor action');
       break;
     }
 
@@ -132,6 +165,9 @@ export async function act(ws: string, id: string, action: string, b: any) {
           region: b.region ? String(b.region).slice(0, 80) : undefined,
           doNotUse: [],
         });
+      } else if (b.op === 'add_top') {
+        for (const c of pickCandidates(o.icp, o.accounts, Math.min(Number(b.n) || 3, 5)))
+          o.accounts.push({ id: randomBytes(3).toString('hex'), name: String(c.name).slice(0, 100), source: 'icp', website: cleanDomain(String(c.website ?? '')) ?? undefined, region: c.region ? String(c.region).slice(0, 80) : undefined, note: c.why_fit ? String(c.why_fit).slice(0, 300) : undefined, doNotUse: [] });
       } else if (b.op === 'remove') o.accounts = o.accounts.filter((x) => x.id !== b.id);
       else throw new Bad('Unknown account action');
       break;
@@ -139,10 +175,11 @@ export async function act(ws: string, id: string, action: string, b: any) {
 
     case 'research': {
       needGemini();
-      const acc = p.outreach?.accounts.find((x) => x.id === b.id);
-      if (!acc) throw new Bad('Unknown account');
       if (!STEPS.includes(b.step)) throw new Bad('Unknown step');
-      await researchStep(p, acc, b.step as Step);
+      const ids: string[] = (Array.isArray(b.ids) ? b.ids : [b.id]).slice(0, 5);
+      const accs = (p.outreach?.accounts ?? []).filter((x) => ids.includes(x.id));
+      if (!accs.length) throw new Bad('Unknown account');
+      failed = await settle(accs, (a) => a.name, (a) => researchStep(p, a, b.step as Step));
       break;
     }
 
@@ -154,11 +191,39 @@ export async function act(ws: string, id: string, action: string, b: any) {
         s.assumptions = a;
       } else if (b.op === 'playbook') {
         needGemini();
-        const v = view(p).strategy.facts.find((x) => x.name === b.region);
-        if (!v) throw new Bad('Unknown region');
         if (!p.ranAt) throw new Bad('Screen the countries first: the playbook follows the entry order.');
-        s.playbooks[v.name] = { ...(await runPlaybook(baseFor(p), v, p.outreach?.icp, funnel(s.assumptions))), builtAt: new Date().toISOString() };
+        const all = view(p).strategy.facts;
+        const wanted: string[] = Array.isArray(b.regions) ? b.regions : [b.region];
+        const todo = all.filter((x) => wanted.includes(x.name) && x.byVerdict.length).slice(0, 4);
+        if (!todo.length) throw new Bad('Unknown region');
+        failed = await settle(todo, (x) => x.name, async (v) => {
+          s.playbooks[v.name] = { ...(await runPlaybook(baseFor(p), v, p.outreach?.icp, funnel(s.assumptions))), builtAt: new Date().toISOString() };
+        });
       } else throw new Bad('Unknown strategy action');
+      break;
+    }
+
+    case 'chat': {
+      needGemini();
+      const message = String(b.message ?? '').trim().slice(0, 4000);
+      if (!message) throw new Bad('Type a question first');
+      const hist = (p.chat ??= []);
+      const r = await geminiChat(chatSystem(chatContext(p), !!b.web), hist.slice(-12), message, !!b.web);
+      const at = new Date().toISOString();
+      hist.push({ role: 'user', text: message, at }, { role: 'model', text: r.text, at, sources: b.web ? r.sources.slice(0, 6) : undefined });
+      p.chat = hist.slice(-40);
+      break;
+    }
+
+    case 'note': {
+      const notes = (p.notes ??= []);
+      if (b.op === 'add') {
+        const text = String(b.text ?? '').trim().slice(0, 2000);
+        if (!text) throw new Bad('Write the note first');
+        if (notes.length >= 30) throw new Bad('A plan holds up to 30 notes');
+        notes.push({ id: randomBytes(3).toString('hex'), text, at: new Date().toISOString() });
+      } else if (b.op === 'remove') p.notes = notes.filter((n) => n.id !== b.id);
+      else throw new Bad('Unknown note action');
       break;
     }
 
@@ -182,5 +247,5 @@ export async function act(ws: string, id: string, action: string, b: any) {
       throw new Bad('Unknown action', 404);
   }
   await saveProject(ws, p);
-  return { ok: true };
+  return { ok: true, failed };
 }

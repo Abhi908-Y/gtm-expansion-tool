@@ -117,3 +117,22 @@ export async function geminiSearchText(prompt: string): Promise<{ text: string; 
   const sources = (r.candidates?.[0]?.groundingMetadata?.groundingChunks ?? []).flatMap((c) => (c.web?.uri ? [{ title: c.web.title ?? '', url: c.web.uri }] : []));
   return { text: textOf(r), sources };
 }
+
+/** One chat turn with the plan as system context. Search is optional: on for "what is new", off for questions about the plan itself. */
+export async function geminiChat(system: string, history: { role: 'user' | 'model'; text: string }[], message: string, web: boolean) {
+  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(process.env.GEMINI_MODEL!)}:generateContent`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY! },
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: system }] },
+      contents: [...history.map((m) => ({ role: m.role, parts: [{ text: m.text }] })), { role: 'user', parts: [{ text: message }] }],
+      generationConfig: { temperature: 0.3, maxOutputTokens: 4096 },
+      ...(web ? { tools: [{ google_search: {} }] } : {}),
+    }),
+    signal: AbortSignal.timeout(120000),
+  });
+  if (!res.ok) throw new Error(`Gemini returned HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  const r = (await res.json()) as Reply;
+  const sources = (r.candidates?.[0]?.groundingMetadata?.groundingChunks ?? []).flatMap((c) => (c.web?.uri ? [{ title: c.web.title ?? '', url: c.web.uri }] : []));
+  return { text: textOf(r), sources };
+}

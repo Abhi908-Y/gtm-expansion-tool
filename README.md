@@ -16,6 +16,10 @@ Plan which countries a company should enter first. Give it a company, its websit
 
 | Strategy | Region order with reasons read from the data, target markets in entry order with competitors present, a researched playbook per region (research focus, lead segments, hook, rules with sources, channels, partners, working rhythm), and a 13-week plan: funnel worked backwards from the number of leads, weekly targets, CSV and print-to-PDF export. The funnel rates are the build brief's planning assumptions and are editable. |
 
+| Research everything | One button (and automatic for a new plan) runs the whole pipeline: screening, company profile, competitor discovery and analysis, ICP, three target accounts with drafts, and a playbook per region, with live progress. Slow jobs run in parallel inside one request so saves never overwrite each other. The browser tab has to stay open; run it again to fill anything that is missing. |
+| Ask AI | A chat that answers from the plan's own data and from notes you add (facts the research cannot find). Optionally searches the web for an answer and says so. |
+| Voice | A mic button on the free-text fields uses the browser's speech recognition (Chrome, Edge, Safari). |
+
 Not built yet: Apollo contacts and a Gmail drafts connection.
 
 The finished Vobiz.ai example opens from the home page and costs nothing to view.

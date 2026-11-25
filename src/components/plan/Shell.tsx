@@ -1,7 +1,9 @@
 'use client';
 import Link from 'next/link';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { call, type Run, type State, type Tab } from '../shared';
+import AskView from './AskView';
+import { runAutopilot, type Phase } from './autopilot';
 import CompanyView from './CompanyView';
 import CompetitorsView from './CompetitorsView';
 import CountriesView from './CountriesView';
@@ -9,8 +11,8 @@ import Overview from './Overview';
 import OutreachView from './OutreachView';
 import StrategyView from './StrategyView';
 
-const TABS: Tab[] = ['overview', 'company', 'countries', 'competitors', 'outreach', 'strategy'];
-const LABEL: Record<Tab, string> = { overview: 'Overview', company: 'Company', countries: 'Countries', competitors: 'Competitors', outreach: 'Outreach', strategy: 'Strategy' };
+const TABS: Tab[] = ['overview', 'company', 'countries', 'competitors', 'outreach', 'strategy', 'ask'];
+const LABEL: Record<Tab, string> = { overview: 'Overview', company: 'Company', countries: 'Countries', competitors: 'Competitors', outreach: 'Outreach', strategy: 'Strategy', ask: 'Ask AI' };
 const SOON = ['Apollo contacts', 'Gmail drafts'];
 
 export default function Shell({ id }: { id: string }) {
@@ -18,6 +20,10 @@ export default function Shell({ id }: { id: string }) {
   const [tab, setTab] = useState<Tab>('overview');
   const [busy, setBusy] = useState('');
   const [err, setErr] = useState('');
+  const [phases, setPhases] = useState<Phase[]>([]);
+  const [running, setRunning] = useState(false);
+  const stop = useRef(false);
+  const autoStarted = useRef(false);
 
   const load = useCallback(async () => setSt(await call(`/api/plans/${id}`)), [id]);
   useEffect(() => {
@@ -30,6 +36,29 @@ export default function Shell({ id }: { id: string }) {
     window.addEventListener('hashchange', fromHash);
     return () => window.removeEventListener('hashchange', fromHash);
   }, [load]);
+
+  const start = useCallback(async () => {
+    if (running || !st) return;
+    stop.current = false;
+    setRunning(true);
+    setErr('');
+    try {
+      await runAutopilot(id, st.gemini, setPhases, load, () => stop.current);
+    } finally {
+      setRunning(false);
+      await load().catch(() => {});
+    }
+  }, [id, running, st, load]);
+
+  // A plan that was just created opens with ?auto=1: begin the research straight away.
+  useEffect(() => {
+    if (!st || autoStarted.current || st.project.isSample) return;
+    if (new URLSearchParams(window.location.search).get('auto') === '1') {
+      autoStarted.current = true;
+      history.replaceState(null, '', `${window.location.pathname}#overview`);
+      start();
+    }
+  }, [st, start]);
 
   const go = (t: Tab) => {
     setTab(t);
@@ -67,8 +96,11 @@ export default function Shell({ id }: { id: string }) {
     competitors: comps.length && comps.every((r) => r.analysed) ? 'done' : 'ready',
     outreach: st.outreach.accounts.some((a) => a.outreach) ? 'done' : 'ready',
     strategy: Object.keys(st.strategy.playbooks).length ? 'done' : 'ready',
+    ask: '',
   };
-  const props = { st, post, run, busy, ro, go };
+  const shownBusy = running ? 'Researching in the background' : busy;
+  const auto = { phases, running, start, stop: () => (stop.current = true) };
+  const props = { st, post, run, busy: shownBusy, ro, go, auto };
 
   return (
     <div className="shell">
@@ -90,10 +122,10 @@ export default function Shell({ id }: { id: string }) {
             <button key={s} disabled><span className="st" />{s}<span className="tag">Soon</span></button>
           ))}
         </nav>
-        {busy && <span className="busy">{busy}…</span>}
+        {shownBusy && <span className="busy">{shownBusy}…</span>}
       </aside>
       <main className="work">
-        {ro && <div className="note warn">You are looking at the finished Vobiz example. <Link href="/#start">Start your own plan</Link> to run the steps yourself.</div>}
+        {ro && <div className="note warn">You are looking at the finished Vobiz example. <Link href="/#start">Start your own plan</Link> to run the steps yourself. You can still ask the assistant about it.</div>}
         {err && <div className="note bad" role="alert">{err}</div>}
         {tab === 'overview' && <Overview {...props} />}
         {tab === 'company' && <CompanyView {...props} />}
@@ -101,6 +133,7 @@ export default function Shell({ id }: { id: string }) {
         {tab === 'competitors' && <CompetitorsView {...props} />}
         {tab === 'outreach' && <OutreachView {...props} />}
         {tab === 'strategy' && <StrategyView {...props} />}
+        {tab === 'ask' && <AskView {...props} />}
       </main>
     </div>
   );

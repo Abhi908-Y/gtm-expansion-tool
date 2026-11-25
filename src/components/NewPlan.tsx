@@ -2,6 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { PRESETS } from '@/data/regions';
+import { Dictate } from './Mic';
 
 async function send(body: object): Promise<{ id: string }> {
   const res = await fetch('/api/plans', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
@@ -18,7 +19,8 @@ function useGo() {
     setBusy(true);
     setErr('');
     try {
-      router.push(`/p/${(await send(body)).id}`);
+      const auto = (body as { op?: string }).op === 'create' ? '?auto=1' : '';
+      router.push(`/p/${(await send(body)).id}${auto}`);
     } catch (e) {
       setErr((e as Error).message);
       setBusy(false);
@@ -40,8 +42,12 @@ export function SampleButton() {
 export default function NewPlan() {
   const { busy, err, go } = useGo();
   const [tz, setTz] = useState('Asia/Kolkata');
+  const [company, setCompany] = useState('');
+  const [context, setContext] = useState('');
   const [picked, setPicked] = useState<string[]>(['sea', 'me', 'eu']);
-  useEffect(() => setTz(Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Kolkata'), []);
+  useEffect(() => {
+    setTz(Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Kolkata');
+  }, []);
   const n = PRESETS.filter((r) => picked.includes(r.id)).reduce((t, r) => t + r.countries.length, 0);
 
   return (
@@ -49,14 +55,14 @@ export default function NewPlan() {
       onSubmit={(e) => {
         e.preventDefault();
         const f = new FormData(e.currentTarget);
-        go({ op: 'create', company: f.get('company'), website: f.get('website'), context: f.get('context'), baseTz: tz, regions: picked, extraCountries: f.get('extra') });
+        go({ op: 'create', company, website: f.get('website'), context, baseTz: tz, regions: picked, extraCountries: f.get('extra') });
       }}
     >
       <div className="grid2" style={{ gap: 12 }}>
-        <div className="field"><label htmlFor="company">Company</label><input id="company" name="company" required maxLength={100} placeholder="Acme Voice" autoComplete="organization" /></div>
+        <div className="field"><label htmlFor="company">Company</label><Dictate id="company" required maxLength={100} placeholder="Acme Voice" autoComplete="organization" value={company} onChange={setCompany} /></div>
         <div className="field"><label htmlFor="website">Website</label><input id="website" name="website" required placeholder="acme.com" inputMode="url" /></div>
       </div>
-      <div className="field"><label htmlFor="context">What they sell, and to whom <span className="faint">(optional)</span></label><textarea id="context" name="context" maxLength={1500} placeholder="Telephony APIs for voice AI agents. Mostly AI builders, some enterprises." /></div>
+      <div className="field"><label htmlFor="context">What they sell, and to whom <span className="faint">(optional)</span></label><Dictate multiline id="context" maxLength={1500} placeholder="Telephony APIs for voice AI agents. Mostly AI builders, some enterprises." value={context} onChange={setContext} /></div>
       <fieldset className="field" style={{ border: 0, padding: 0 }}>
         <legend className="legend" style={{ marginBottom: 6 }}>Regions to consider · {n} countries</legend>
         <div className="chips">

@@ -43,7 +43,9 @@ export default function StrategyView({ st, post, run, busy, ro }: TabProps) {
   const [reg, setReg] = useState<string>(facts[0]?.name ?? '');
   const [scope, setScope] = useState<'region' | 'all'>('region');
   const [a, setA] = useState<Record<string, number>>({ leads: S.assumptions.leads, ...Object.fromEntries(RATES.map((r) => [r.key, pct(S.assumptions[r.key])])) });
-  useEffect(() => setA({ leads: S.assumptions.leads, ...Object.fromEntries(RATES.map((r) => [r.key, pct(S.assumptions[r.key])])) }), [S.assumptions]);
+  useEffect(() => {
+    setA({ leads: S.assumptions.leads, ...Object.fromEntries(RATES.map((r) => [r.key, pct(S.assumptions[r.key])])) });
+  }, [S.assumptions]);
 
   if (!p.ranAt || facts.length === 0)
     return (

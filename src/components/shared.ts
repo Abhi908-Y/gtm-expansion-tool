@@ -2,8 +2,9 @@ import type { view } from '@/actions';
 
 export type State = ReturnType<typeof view>;
 export type Run = (label: string, fn: () => Promise<unknown>) => Promise<void>;
-export type Tab = 'overview' | 'company' | 'countries' | 'competitors' | 'outreach' | 'strategy';
-export type TabProps = { st: State; post: (action: string, body?: object) => Promise<any>; run: Run; busy: string; ro: boolean; go: (t: Tab) => void };
+export type Tab = 'overview' | 'company' | 'countries' | 'competitors' | 'outreach' | 'strategy' | 'ask';
+export type Auto = { phases: import('./plan/autopilot').Phase[]; running: boolean; start: () => void; stop: () => void };
+export type TabProps = { auto: Auto; st: State; post: (action: string, body?: object) => Promise<any>; run: Run; busy: string; ro: boolean; go: (t: Tab) => void };
 
 const VERDICT_TONE: Record<string, string> = { Beachhead: 'good', 'Second wave': 'info', 'Fix coverage first': 'bad', 'Check coverage': 'warn', Watch: '', Deprioritise: '' };
 export const verdictTone = (v?: string) => VERDICT_TONE[v ?? ''] ?? '';
