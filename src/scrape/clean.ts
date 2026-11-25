@@ -103,3 +103,18 @@ export function cleanText(input: string, isMarkdown = false, full = false): stri
   }
   return text;
 }
+
+const ROLE_LOCALS = new Set(['info', 'hello', 'hi', 'support', 'help', 'press', 'media', 'noreply', 'no-reply', 'donotreply', 'contact', 'sales', 'admin', 'careers', 'jobs', 'hr', 'team', 'office', 'mail', 'enquiries', 'inquiries', 'marketing', 'legal', 'privacy', 'abuse', 'webmaster', 'postmaster', 'security', 'billing', 'partners', 'partnerships', 'feedback', 'service', 'customerservice']);
+
+/** Email addresses published in a page, personal-looking ones only (role addresses such as info@ are dropped). */
+export function extractEmails(html: string): string[] {
+  const found = new Set<string>();
+  for (const m of decodeEntities(html).matchAll(/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}/g)) {
+    const e = m[0].toLowerCase().replace(/^[._%+-]+|[.]+$/g, '');
+    const local = e.split('@')[0];
+    if (/\.(png|jpe?g|gif|svg|webp|css|js)$/.test(e) || ROLE_LOCALS.has(local) || /^(example|test|your|name|user)/.test(local)) continue;
+    found.add(e);
+    if (found.size >= 20) break;
+  }
+  return [...found];
+}

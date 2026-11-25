@@ -6,10 +6,11 @@ import CompanyView from './CompanyView';
 import CompetitorsView from './CompetitorsView';
 import CountriesView from './CountriesView';
 import Overview from './Overview';
+import OutreachView from './OutreachView';
 
-const TABS: Tab[] = ['overview', 'company', 'countries', 'competitors'];
-const LABEL: Record<Tab, string> = { overview: 'Overview', company: 'Company', countries: 'Countries', competitors: 'Competitors' };
-const SOON = ['Target accounts', 'Contacts', 'Outreach drafts', 'Strategy and 90 days'];
+const TABS: Tab[] = ['overview', 'company', 'countries', 'competitors', 'outreach'];
+const LABEL: Record<Tab, string> = { overview: 'Overview', company: 'Company', countries: 'Countries', competitors: 'Competitors', outreach: 'Outreach' };
+const SOON = ['Strategy and 90 days'];
 
 export default function Shell({ id }: { id: string }) {
   const [st, setSt] = useState<State | null>(null);
@@ -63,6 +64,7 @@ export default function Shell({ id }: { id: string }) {
     company: p.profile ? 'done' : 'ready',
     countries: p.ranAt ? 'done' : 'ready',
     competitors: comps.length && comps.every((r) => r.analysed) ? 'done' : 'ready',
+    outreach: st.outreach.accounts.some((a) => a.outreach) ? 'done' : 'ready',
   };
   const props = { st, post, run, busy, ro, go };
 
@@ -95,6 +97,7 @@ export default function Shell({ id }: { id: string }) {
         {tab === 'company' && <CompanyView {...props} />}
         {tab === 'countries' && <CountriesView {...props} />}
         {tab === 'competitors' && <CompetitorsView {...props} />}
+        {tab === 'outreach' && <OutreachView {...props} />}
       </main>
     </div>
   );

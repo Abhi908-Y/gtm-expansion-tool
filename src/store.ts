@@ -8,6 +8,7 @@ import { PRESETS, TZ, validTz } from './data/regions';
 import { getPlan, putPlan } from './db';
 import { Bad } from './errors';
 import type { ProfileDoc } from './research/runProfile';
+import type { Outreach } from './outreach/pipeline';
 import { compareGolden, scoreRegion, type CountryCfg, type CountryData, type Lists, type RegionCfg, type Rubric } from './screen/screen';
 
 export type Project = {
@@ -27,6 +28,7 @@ export type Project = {
   warnings?: string[];
   competitors?: Competitor[];
   profile?: ProfileDoc;
+  outreach?: Outreach;
 };
 
 const rid = () => randomBytes(3).toString('hex');

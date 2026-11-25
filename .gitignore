@@ -8,3 +8,6 @@ data/projects
 data/plans
 tsconfig.tsbuildinfo
 next-env.d.ts
+
+.vercel
+.env*

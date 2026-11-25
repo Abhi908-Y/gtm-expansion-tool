@@ -5,6 +5,8 @@ import { geminiConfigured, geminiJson, geminiSearchJson } from './research/gemin
 import { runProfile } from './research/runProfile';
 import { READINESS } from './screen/screen';
 import { scrapeSite } from './scrape/site';
+import { randomBytes } from 'node:crypto';
+import { buildIcp, researchStep, STEPS, suggestedAccounts, type Step } from './outreach/pipeline';
 import { competeView, compute, countryNames, loadProject, runScreen, saveProject, type Project } from './store';
 
 const needGemini = () => {
@@ -18,6 +20,8 @@ export function view(p: Project) {
     computed: compute(p),
     compete: competeView(p),
     suggested: (p.competitors ?? []).filter((c) => c.status === 'suggested'),
+    outreach: p.outreach ?? { accounts: [] },
+    suggestedAccounts: suggestedAccounts(p),
     gemini: !geminiConfigured(),
   };
 }
@@ -95,6 +99,41 @@ export async function act(ws: string, id: string, action: string, b: any) {
           },
         });
       } else throw new Bad('Unknown competitor action');
+      break;
+    }
+
+    case 'icp':
+      needGemini();
+      await buildIcp(p);
+      break;
+
+    case 'account': {
+      const o = (p.outreach ??= { accounts: [] });
+      if (b.op === 'add') {
+        const name = String(b.name ?? '').trim().slice(0, 100);
+        if (!name) throw new Bad('Enter the company name');
+        if (o.accounts.some((x) => x.name.toLowerCase() === name.toLowerCase())) throw new Bad(name + ' is already an account');
+        if (o.accounts.length >= 60) throw new Bad('A plan holds up to 60 accounts');
+        o.accounts.push({
+          id: randomBytes(3).toString('hex'),
+          name,
+          source: ['icp', 'competitor_customer'].includes(b.source) ? b.source : 'manual',
+          note: b.note ? String(b.note).slice(0, 300) : undefined,
+          website: cleanDomain(String(b.website ?? '')) ?? undefined,
+          region: b.region ? String(b.region).slice(0, 80) : undefined,
+          doNotUse: [],
+        });
+      } else if (b.op === 'remove') o.accounts = o.accounts.filter((x) => x.id !== b.id);
+      else throw new Bad('Unknown account action');
+      break;
+    }
+
+    case 'research': {
+      needGemini();
+      const acc = p.outreach?.accounts.find((x) => x.id === b.id);
+      if (!acc) throw new Bad('Unknown account');
+      if (!STEPS.includes(b.step)) throw new Bad('Unknown step');
+      await researchStep(p, acc, b.step as Step);
       break;
     }
 

@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { cleanText, extractLinks, extractTitle, wordCount, type Link } from './clean';
+import { cleanText, extractEmails, extractLinks, extractTitle, wordCount, type Link } from './clean';
 import { checkRobots, USER_AGENT } from './robots';
 import { safeFetch } from './safeFetch';
 
@@ -22,6 +22,7 @@ export type Page = {
   full: string; // every line of the page, kept as evidence (country lists, tables); not for prompts
   words: number;
   links: Link[];
+  emails: string[]; // personal-looking addresses published on the page
   via: 'plain' | 'reader' | 'cache';
   fetchedAt: string;
 };
@@ -52,7 +53,7 @@ async function get(url: string, host: string) {
   return { status: res.status, type, body };
 }
 
-const cachePath = (url: string) => `${CACHE_DIR}/v2-${createHash('sha1').update(url).digest('hex')}.json`;
+const cachePath = (url: string) => `${CACHE_DIR}/v3-${createHash('sha1').update(url).digest('hex')}.json`;
 
 export async function fetchPage(rawUrl: string, opts: Opts = {}): Promise<Result> {
   const useCache = opts.cache ?? true;
@@ -87,7 +88,7 @@ export async function fetchPage(rawUrl: string, opts: Opts = {}): Promise<Result
     else if (!/html|text\/plain/i.test(r.type)) return { ok: false, code: 'not_html', url, detail: `content-type ${r.type || 'unknown'}` };
     else {
       const text = cleanText(r.body);
-      const page: Page = { url, title: extractTitle(r.body), text, full: cleanText(r.body, false, true), words: wordCount(text), links: extractLinks(r.body, url), via: 'plain', fetchedAt: new Date().toISOString() };
+      const page: Page = { url, title: extractTitle(r.body), text, full: cleanText(r.body, false, true), words: wordCount(text), links: extractLinks(r.body, url), emails: extractEmails(r.body), via: 'plain', fetchedAt: new Date().toISOString() };
       if (page.words >= THIN_WORDS) return await keep(page, useCache);
       thin = page;
       error = `only ${page.words} readable words`;
@@ -104,7 +105,7 @@ export async function fetchPage(rawUrl: string, opts: Opts = {}): Promise<Result
         const text = cleanText(r.body, true);
         const fullText = cleanText(r.body, true, true);
         if (wordCount(text) >= 40)
-          return await keep({ url, title: thin?.title ?? null, text, full: fullText, words: wordCount(text), links: thin?.links ?? [], via: 'reader', fetchedAt: new Date().toISOString() }, useCache);
+          return await keep({ url, title: thin?.title ?? null, text, full: fullText, words: wordCount(text), links: thin?.links ?? [], emails: extractEmails(r.body), via: 'reader', fetchedAt: new Date().toISOString() }, useCache);
       }
     } catch {
       /* fall through */

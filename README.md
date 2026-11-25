@@ -12,7 +12,9 @@ Plan which countries a company should enter first. Give it a company, its websit
 | Country screening and scoring | Hard gates (comprehensive sanctions, FATF call-for-action list, your own legal and payment calls), then five weighted criteria: market size (IMF), AI use (Microsoft AI Diffusion, Eurostat), competition, ease of selling (EF English index, time difference, B2B rules) and partner base. Missing figures use the regional median and are flagged. |
 | Competitor map | Classifies competitors as platform, telco, AI platform or wholesaler, with a quoted source for the type and for each country where they operate. Global or local is decided by code from that evidence. |
 
-Not built yet: target accounts, contacts (Apollo), outreach drafts, region playbooks and the 90-day plan.
+| Outreach | Builds an ideal-customer profile from your plan, then for each target account researches the industry shift, the company and its trigger, and the buying committee with named people; grades its own research; and writes three emails and a LinkedIn sequence per person. Research is done with Google Search on and the sources it consulted are listed. Nothing is sent. |
+
+Not built yet: Apollo contacts, a Gmail drafts connection, region playbooks and the 90-day plan.
 
 The finished Vobiz.ai example opens from the home page and costs nothing to view.
 
@@ -34,6 +36,19 @@ Command-line helpers: `npm run scrape -- vobiz.ai` reads a site, `npm run resear
 1. Create a Neon project and copy its connection string into `DATABASE_URL`.
 2. Import the repository into Vercel and add `GEMINI_API_KEY`, `GEMINI_MODEL` and `DATABASE_URL`.
 3. The `plans` table is created on first use.
+
+## How the outreach step decides what to trust
+
+The model researches and writes; code decides what stands.
+
+- A step that consulted no web sources cannot carry the label "verified".
+- Emails are kept only if the company published them on its own pages (read through the robots-respecting scraper). LinkedIn links are kept only if they are real profile URLs.
+- A separate grading pass removes research items that name no real source, and the drafting step never sees them.
+- Email length, subject length, the 300-character LinkedIn limit and banned phrases are counted in code.
+- Drafts may state only the product facts found, with quotes, on the company's own site.
+- Draft quality is scored from the graded sentences, not from the grader's own totals.
+
+The staging (ICP, industry, company, people, drafts, grading) follows the open-source [ares-brain](https://github.com/ashish1497/ares-brain) outreach agent, used with its owner's permission. Prompts and checks were rewritten for this tool.
 
 ## How it is built
 

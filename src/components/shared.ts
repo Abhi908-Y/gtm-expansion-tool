@@ -2,7 +2,7 @@ import type { view } from '@/actions';
 
 export type State = ReturnType<typeof view>;
 export type Run = (label: string, fn: () => Promise<unknown>) => Promise<void>;
-export type Tab = 'overview' | 'company' | 'countries' | 'competitors';
+export type Tab = 'overview' | 'company' | 'countries' | 'competitors' | 'outreach';
 export type TabProps = { st: State; post: (action: string, body?: object) => Promise<any>; run: Run; busy: string; ro: boolean; go: (t: Tab) => void };
 
 const VERDICT_TONE: Record<string, string> = { Beachhead: 'good', 'Second wave': 'info', 'Fix coverage first': 'bad', 'Check coverage': 'warn', Watch: '', Deprioritise: '' };
