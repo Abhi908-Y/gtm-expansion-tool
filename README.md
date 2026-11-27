@@ -25,12 +25,23 @@ Plan which countries a company should enter first. Give it a company, its websit
 
 Not built yet: Apollo contacts (personal phone numbers need it).
 
+### The Vobiz workspace (`/vobiz`, pinned on the home page)
+
+The project's manual research, page by page in the same order as the project artifact, with the tool's own research under the matching pages ("Tool research"). Customer prospecting splits every region into **voice AI companies and channel partners** and **industries and enterprises**, each grouped by partner type or sector. The **Outreach CRM** tracks people through a day-by-day sequence:
+
+- **Import** Apollo CSV exports in the browser (a contacts export, plus the partner list for each company's type). People are stored in your own workspace, never in the repository.
+- **Today** lists the steps that are due. Email goes through Gmail (send now, save as drafts, or send yourself a test). LinkedIn steps open a queue where you copy each message and press "I sent it" (LinkedIn does not allow tools to send for you). WhatsApp opens a pre-typed chat you send yourself.
+- A reply, a meeting or a "no" stops the sequence. Every action is logged, and **Download tracker (Excel)** exports people and activity.
+- Safeguards: verified emails only by default, one email per person per step, a daily cap of 400, an explicit confirmation before any send, and a reminder that the default copy names Sarvam and Bolna and quotes a calls-a-day figure that Vobiz has not yet cleared.
+
+Regenerate the page data from the artifact with `node scripts/extract-vobiz-hub.mjs <saved artifact.html>`; `scripts/research-vobiz-accounts.ts` adds accounts the tool found and verified itself.
+
 ### Gmail setup (once, by the site owner)
 
 1. In Google Cloud, create a project, enable the **Gmail API**, and configure the OAuth consent screen (External; add yourself as a test user).
 2. Create an **OAuth client ID** of type *Web application* with these redirect URIs: `http://localhost:3000/api/google/callback` and `https://YOUR-SITE/api/google/callback`.
 3. Put `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` and `APP_SECRET` (any long random string) in `.env` and in Vercel.
-4. Open a plan, go to Outreach and press **Connect Gmail**.
+4. Open a plan (Outreach) or the Vobiz workspace (Customer prospecting, Templates and Gmail) and press **Connect Gmail**.
 
 The only permission requested is `gmail.compose` (create drafts and send); the site cannot read mail. While the Google app is in testing, only listed test users can connect; letting anyone connect needs Google's app verification.
 

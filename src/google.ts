@@ -62,9 +62,10 @@ const EMAIL = /^[^\s@<>",;]+@[^\s@<>",;]+\.[^\s@<>",;]+$/;
 export const validEmail = (s: unknown): s is string => typeof s === 'string' && EMAIL.test(s);
 
 /** A plain-text RFC 2822 message, base64url as the Gmail API wants it. The subject is encoded, so it cannot inject headers. */
-export function buildRaw({ to, subject, body }: { to?: string | null; subject: string; body: string }): string {
+export function buildRaw({ to, cc, subject, body }: { to?: string | null; cc?: string | null; subject: string; body: string }): string {
   if (to && !validEmail(to)) throw new Bad('That is not a valid email address');
-  const head = [to ? `To: ${to}` : '', `Subject: =?UTF-8?B?${Buffer.from(subject.replace(/[\r\n]+/g, ' '), 'utf8').toString('base64')}?=`, 'MIME-Version: 1.0', 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: base64'].filter(Boolean).join('\r\n');
+  if (cc && !validEmail(cc)) throw new Bad('That is not a valid CC address');
+  const head = [to ? `To: ${to}` : '', cc ? `Cc: ${cc}` : '', `Subject: =?UTF-8?B?${Buffer.from(subject.replace(/[\r\n]+/g, ' '), 'utf8').toString('base64')}?=`, 'MIME-Version: 1.0', 'Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: base64'].filter(Boolean).join('\r\n');
   const b64 = Buffer.from(body.replace(/\r?\n/g, '\r\n'), 'utf8').toString('base64').replace(/(.{76})/g, '$1\r\n');
   return Buffer.from(`${head}\r\n\r\n${b64}`, 'utf8').toString('base64url');
 }
@@ -78,3 +79,8 @@ async function gmail(at: string, path: string, body?: object) {
 export const profileEmail = async (at: string) => (await gmail(at, 'profile')).emailAddress as string;
 export const createDraft = async (at: string, raw: string) => (await gmail(at, 'drafts', { message: { raw } })).id as string;
 export const sendMessage = async (at: string, raw: string) => (await gmail(at, 'messages/send', { raw })).id as string;
+/** Send, and keep the thread id so the message can be opened in Gmail later. */
+export const sendRaw = async (at: string, raw: string) => {
+  const d = await gmail(at, 'messages/send', { raw });
+  return { id: d.id as string, thread: d.threadId as string };
+};

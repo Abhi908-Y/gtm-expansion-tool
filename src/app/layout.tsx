@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="topbar">
           <div className="in">
             <Link href="/" className="brand"><span className="mark" aria-hidden="true" />GTM Expansion</Link>
-            <Link href="/#start" className="btn sm">New plan</Link>
+            <div className="row" style={{ gap: 8 }}><Link href="/vobiz" className="btn sm ghost">Vobiz AI</Link><Link href="/#start" className="btn sm">New plan</Link></div>
           </div>
         </header>
         {children}

@@ -7,7 +7,7 @@ export async function GET(req: Request) {
   const q = new URL(req.url).searchParams;
   const [nonce, plan] = (q.get('state') ?? '').split('.');
   const jar = await cookies();
-  const back = (flag: string) => Response.redirect(`${origin}/p/${/^[a-z0-9-]{3,60}$/i.test(plan ?? '') ? plan : ''}${flag}#outreach`, 302);
+  const back = (flag: string) => Response.redirect(plan === 'vobiz-hub' ? `${origin}/vobiz${flag}#customers` : `${origin}/p/${/^[a-z0-9-]{3,60}$/i.test(plan ?? '') ? plan : ''}${flag}#outreach`, 302);
   if (!nonce || nonce !== jar.get('gtm_oauth')?.value) return back('?gmail=error');
   jar.delete({ name: 'gtm_oauth', path: '/api/google' });
   const code = q.get('code');

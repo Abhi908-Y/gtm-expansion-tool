@@ -1,0 +1,283 @@
+{
+ "generatedAt": "2026-11-27T10:30:30.495Z",
+ "counts": {
+  "Middle East / partner / Voice AI agent builder": 3,
+  "Middle East / partner / AI agency / CX integrator": 5,
+  "Middle East / partner / Call centre / BPO": 3,
+  "Middle East / enterprise / Real estate": 1
+ },
+ "notes": [
+  "Middle East / enterprise / Automotive: nothing verifiable found",
+  "Southeast Asia / enterprise / BFSI: nothing verifiable found",
+  "Southeast Asia / enterprise / Real estate: nothing verifiable found",
+  "Southeast Asia / enterprise / Automotive: nothing verifiable found",
+  "Southeast Asia / enterprise / Logistics: nothing verifiable found",
+  "Southeast Asia / enterprise / Healthcare: nothing verifiable found",
+  "Southeast Asia / enterprise / E-commerce, retail and food: nothing verifiable found",
+  "Southeast Asia / enterprise / Telecom: nothing verifiable found",
+  "Southeast Asia / enterprise / Government and public sector: nothing verifiable found",
+  "Southeast Asia / enterprise / Travel and leisure: nothing verifiable found",
+  "Southeast Asia / enterprise / Utilities, industrial and other: nothing verifiable found",
+  "Europe / partner: nothing verifiable found"
+ ],
+ "accounts": [
+  {
+   "company": "Just Real Estate",
+   "country": "Qatar",
+   "website": "https://jre.com.qa/",
+   "sector": "Real estate",
+   "what": "Just Real Estate is a real estate services and marketing company in Qatar.",
+   "signal": "Operates a bilingual (English & Arabic) call center for client engagement and lead tracking.",
+   "sourceUrl": "https://jre.com.qa/our-services/marketing/",
+   "quote": "Bilingual call center (English & Arabic) ensuring full client engagement and lead tracking.",
+   "region": "Middle East",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Blue Lynx Qatar",
+   "country": "Qatar",
+   "website": "https://bluelynx.qa/",
+   "sector": "AI agency / CX integrator",
+   "what": "Deploys call center solutions such as XCALLY to help organizations manage high call volumes efficiently.",
+   "signal": "Implementing call center software built to handle high call volumes requires reliable SIP trunks and voice APIs to carry call traffic.",
+   "sourceUrl": "https://bluelynx.qa/call-center-solutions-in-qatar/",
+   "quote": "Blue Lynx's XCALLY is primarily for the call center companies who want to boost their efficiency in handling numerous calls.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Five Nodes AI",
+   "country": "Qatar",
+   "website": "https://fivenodes.ai/",
+   "sector": "AI agency / CX integrator",
+   "what": "Designs and integrates bilingual voice agents and workflow automation for enterprise businesses in Qatar.",
+   "signal": "Needs voice APIs and SIP trunking to integrate bilingual AI voice agents into enterprise workflows.",
+   "sourceUrl": "https://fivenodes.ai/",
+   "quote": "We build AI chatbots, voice agents, and AI automation that plug directly into the tools businesses in Qatar already use — CRMs, WhatsApp Business, ERPs, calendars, and more.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Nexus IO",
+   "country": "Qatar",
+   "website": "https://nexusio.co/",
+   "sector": "AI agency / CX integrator",
+   "what": "Builds and operates AI voice, WhatsApp, and Instagram agents that integrate directly with business phone lines.",
+   "signal": "Requires SIP trunks, voice APIs, and phone numbers to integrate their AI voice agents directly with business phone lines.",
+   "sourceUrl": "https://nexusio.co/about",
+   "quote": "AI voice, WhatsApp and Instagram agents for businesses in Qatar.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Ozapp",
+   "country": "Qatar",
+   "website": "https://ozapp.io/",
+   "sector": "AI agency / CX integrator",
+   "what": "Builds, configures, and integrates 24/7 bilingual AI voice agents for service SMBs, clinics, and hotels.",
+   "signal": "Requires phone numbers and SIP trunking to connect 24/7 AI voice agents to client phone systems.",
+   "sourceUrl": "https://ozapp.io/agency-qatar/ai-voice-agent-qatar",
+   "quote": "AI-first agency in Belgium: AI agents, chatbots, voice agents, websites and digital marketing.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Techtar LLC",
+   "country": "Qatar",
+   "website": "https://techtar.io/",
+   "sector": "AI agency / CX integrator",
+   "what": "Builds and deploys custom AI voice agents for inbound phone handling, lead conversion, and automated scheduling.",
+   "signal": "Needs voice APIs, SIP connectivity, and phone numbers to enable inbound phone handling for their voice agents.",
+   "sourceUrl": "https://techtar.io/about",
+   "quote": "Techtar is an AI agency for SMEs, headquartered in Doha and working with clients worldwide.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Human Capital Group WLL",
+   "country": "Qatar",
+   "website": "https://hcg.com.qa/",
+   "sector": "Call centre / BPO",
+   "what": "Provides virtual office and call center solutions for businesses expanding into Qatar.",
+   "signal": "Supplying virtual office and call center solutions requires reliable telephone connectivity, local inbound numbers, and SIP trunking integration.",
+   "sourceUrl": "https://hcg.com.qa/call-centre-virtual-office/",
+   "quote": "We are stepping into virtual office and call center solutions for customers who want to expand their business into Qatar.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "malomatia",
+   "country": "Qatar",
+   "website": "https://malomatia.com/",
+   "sector": "Call centre / BPO",
+   "what": "Delivers AI-enabled contact center solutions, intelligent BPO operations, and customer experience integrations.",
+   "signal": "Requires scalable contact center telephony infrastructure, SIP trunks, and enterprise phone numbers to back their BPO operations.",
+   "sourceUrl": "https://malomatia.com/services/contact-center/",
+   "quote": "malomatia's Contact Center combines global best practices with regional expertise to help governments and enterprises build, operate, and optimize high-performance customer engagement operations.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Starlink Qatar",
+   "country": "Qatar",
+   "website": "https://starlinkworld.com/",
+   "sector": "Call centre / BPO",
+   "what": "Provides outsourced managed services specializing in IT, maintenance, and contact center management.",
+   "signal": "Managing large-scale outsourced contact centers necessitates carrier-grade voice services, including SIP trunks and phone numbers.",
+   "sourceUrl": "https://starlinkworld.com/starlink-qatar-appoints-a-ceo-to-lead-company-into-next-phase-of-growth/",
+   "quote": "Over the years, it has expanded into one of the largest outsourced managed services providers, specializing in IT, installations, maintenance, and contact center management.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Qunzia LLC",
+   "country": "Qatar",
+   "website": "https://qunzia.com/",
+   "sector": "Voice AI agent builder",
+   "what": "Builds autonomous 24/7 AI voice receptionists and conversational interfaces that answer phone inquiries.",
+   "signal": "Needs phone numbers, SIP trunks, and voice infrastructure to power autonomous AI voice receptionists.",
+   "sourceUrl": "https://qunzia.com/about",
+   "quote": "Qunzia LLC is registered in the Qatar Financial Centre (QFC), Doha, Qatar.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Saden AI Solutions L.L.C.",
+   "country": "Qatar",
+   "website": "https://saden.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Builds an autonomous AI receptionist platform tailored for local service businesses across the MENA region.",
+   "signal": "Requires phone numbers, voice APIs, and SIP trunks to power its autonomous AI receptionist platform.",
+   "sourceUrl": "https://saden.ai/about",
+   "quote": "Saden is an AI voice agent for small and medium businesses across the Middle East and North Africa.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Voiger",
+   "country": "Qatar",
+   "website": "https://voiger.io/",
+   "sector": "Voice AI agent builder",
+   "what": "Provides a cloud contact center and localized voice AI platform for running bilingual voice bots.",
+   "signal": "Needs telephony integrations, SIP trunks, and phone numbers to connect its cloud contact center and voice bots with local telecom carriers.",
+   "sourceUrl": "https://voiger.io/qatar/ai-voice-bot",
+   "quote": "Voiger helps forward-thinking companies across global and MENA markets optimize their customer conversations through enterprise calling and scalable contact center infrastructure.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  }
+ ],
+ "dropped": [
+  {
+   "company": "Biloop Technologies",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Django Software and Network Solutions",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "NextGen Digital",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Miran Solutions Qatar",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Infotech Qatar",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Spectrum Solution W.L.L.",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Gulf Business Machines Qatar W.L.L. (GBM Qatar)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Bevatel",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "ECCO Gulf W.L.L.",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "BPO+ (Business Process Outsourcing Plus WLL)",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Al Asmakh Real Estate Development Company",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "United Development Company (UDC)",
+   "reason": "website not fetchable (robots_unreachable: www.udcqatar.com unreachable: The operation was aborted due to timeout)"
+  },
+  {
+   "company": "Al Waseef Asset Management W.L.L. (Waseef)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Ezdan Real Estate Company",
+   "reason": "source page not fetchable (fetch_failed: HTTP 500)"
+  },
+  {
+   "company": "Barwa Real Estate Group",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Steps Real Estate",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Find Great Realty W.L.L. (FGREALTY)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Al Abdulghani Motors",
+   "reason": "source page not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Alfardan Automobiles Co. L.L.C.",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Saleh Al Hamad Al Mana Co.",
+   "reason": "source page not fetchable (fetch_failed: fetch failed)"
+  },
+  {
+   "company": "Jaidah Automotive",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Skyline Automotive W.L.L.",
+   "reason": "website not fetchable (robots_unreachable: hyundai.com.qa unreachable: getaddrinfo ENOTFOUND hyundai.com.qa)"
+  },
+  {
+   "company": "Doha Marketing Services Company W.L.L. (DOMASCO)",
+   "reason": "website not fetchable (robots_unreachable: www.honda.qa unreachable: getaddrinfo ENOTFOUND www.honda.qa)"
+  },
+  {
+   "company": "Strong Rent A Car",
+   "reason": "website not fetchable (robots_unreachable: strongrentacar.com unreachable: getaddrinfo ENOTFOUND strongrentacar.com)"
+  },
+  {
+   "company": "Qatar Automobile Company W.L.L.",
+   "reason": "website not fetchable (robots_unreachable: www.mitsubishi-motors.qa unreachable: getaddrinfo ENOTFOUND www.mitsubishi-motors.qa)"
+  }
+ ]
+}

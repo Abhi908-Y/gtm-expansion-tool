@@ -1,0 +1,277 @@
+{
+ "Kata.ai": {
+  "type": "Voice AI agent builder",
+  "tier": "A",
+  "country": "Indonesia"
+ },
+ "Barantum": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Indonesia"
+ },
+ "Callindo": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Indonesia"
+ },
+ "Jagel": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Indonesia"
+ },
+ "KPSG": {
+  "type": "Conversational AI adding voice",
+  "tier": "B",
+  "country": "Indonesia"
+ },
+ "Mekari Qontak": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Indonesia"
+ },
+ "Qiscus": {
+  "type": "Conversational AI adding voice",
+  "tier": "B",
+  "country": "Indonesia"
+ },
+ "Solutif": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Indonesia"
+ },
+ "eCentrix Solutions": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Indonesia"
+ },
+ "AI Rudder": {
+  "type": "Voice AI agent builder",
+  "tier": "A",
+  "country": "Malaysia"
+ },
+ "Accordia Global": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Malaysia"
+ },
+ "Nubitel": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Malaysia"
+ },
+ "Radiant Communication": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Malaysia"
+ },
+ "Red Contact": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Malaysia"
+ },
+ "Revolab": {
+  "type": "AI agency / CX integrator",
+  "tier": "B",
+  "country": "Malaysia"
+ },
+ "Telecontinent": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Malaysia"
+ },
+ "UTS Marketing Solutions": {
+  "type": "Dialer / telemarketing software",
+  "tier": "B",
+  "country": "Malaysia"
+ },
+ "AdvisoryApps": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Malaysia"
+ },
+ "Always New Thinking Sdn Bhd - ANT24": {
+  "type": "Unverified (Apollo pick)",
+  "tier": "Verify",
+  "country": "Malaysia"
+ },
+ "AntsBees - AI Training and Solutions Integrator": {
+  "type": "Unverified (Apollo pick)",
+  "tier": "Verify",
+  "country": "Malaysia"
+ },
+ "Altria Call Center": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Philippines"
+ },
+ "Asia Premier One Source": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Philippines"
+ },
+ "ISSI Corp": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Philippines"
+ },
+ "Peak Outsourcing": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Philippines"
+ },
+ "Select VoiceCom": {
+  "type": "Call centre / BPO",
+  "tier": "B",
+  "country": "Philippines"
+ },
+ "TeleDial": {
+  "type": "Dialer / telemarketing software",
+  "tier": "B",
+  "country": "Philippines"
+ },
+ "Citius Solutions": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Philippines"
+ },
+ "Level3AI": {
+  "type": "Voice AI agent builder",
+  "tier": "A",
+  "country": "Singapore"
+ },
+ "Sobot": {
+  "type": "Conversational AI adding voice",
+  "tier": "A",
+  "country": "Singapore"
+ },
+ "Uniphore": {
+  "type": "Voice AI agent builder",
+  "tier": "A",
+  "country": "Singapore"
+ },
+ "WIZ.AI": {
+  "type": "Voice AI agent builder",
+  "tier": "A",
+  "country": "Singapore"
+ },
+ "Hipster Inc": {
+  "type": "Conversational AI adding voice",
+  "tier": "B",
+  "country": "Singapore"
+ },
+ "Innovax Systems": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Singapore"
+ },
+ "Tecnomic Systems": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Singapore"
+ },
+ "Tetherfi": {
+  "type": "Conversational AI adding voice",
+  "tier": "B",
+  "country": "Singapore"
+ },
+ "Wonderful": {
+  "type": "Voice AI agent builder",
+  "tier": "B",
+  "country": "Singapore"
+ },
+ "AdvanzIT Technologies": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Singapore"
+ },
+ "AgileAlgo": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Singapore"
+ },
+ "Axiom IT Solutions Pte Ltd": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Singapore"
+ },
+ "Evolve Innovative Solutions": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Singapore"
+ },
+ "Helius.AI": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Singapore"
+ },
+ "OTG Lab Pte Ltd": {
+  "type": "Unverified (Apollo pick)",
+  "tier": "Verify",
+  "country": "Singapore"
+ },
+ "SGITAL - AI Workflows": {
+  "type": "Unverified (Apollo pick)",
+  "tier": "Verify",
+  "country": "Singapore"
+ },
+ "VisionGroup": {
+  "type": "CRM / engagement with calling",
+  "tier": "Verify",
+  "country": "Singapore"
+ },
+ "Amity Solutions (Amity Voice)": {
+  "type": "Voice AI agent builder",
+  "tier": "A",
+  "country": "Thailand"
+ },
+ "ClouDee": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Thailand"
+ },
+ "Sertis": {
+  "type": "AI agency / CX integrator",
+  "tier": "B",
+  "country": "Thailand"
+ },
+ "CREATELCOM CO., LTD.": {
+  "type": "CRM / engagement with calling",
+  "tier": "Verify",
+  "country": "Thailand"
+ },
+ "AntBuddy": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Vietnam"
+ },
+ "Gcalls": {
+  "type": "Call-centre / CCaaS software",
+  "tier": "B",
+  "country": "Vietnam"
+ },
+ "UCALL": {
+  "type": "Voice AI agent builder",
+  "tier": "B",
+  "country": "Vietnam"
+ },
+ "Vbee AI": {
+  "type": "Voice AI agent builder",
+  "tier": "B",
+  "country": "Vietnam"
+ },
+ "AVEO": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Vietnam"
+ },
+ "Inter-K JSC": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Vietnam"
+ },
+ "Pionero JSC": {
+  "type": "AI agency / CX integrator",
+  "tier": "Verify",
+  "country": "Vietnam"
+ }
+}

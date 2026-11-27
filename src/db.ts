@@ -90,3 +90,32 @@ export async function deleteSecret(ws: string, name: string) {
   }
   await writeFile(secretFile(ws, name), '').catch(() => {});
 }
+
+// ---------- per-workspace documents (the Vobiz outreach CRM) ----------
+let readyDocs: Promise<unknown> | null = null;
+const ensureDocs = () => (readyDocs ??= sql!`CREATE TABLE IF NOT EXISTS docs (workspace text NOT NULL, key text NOT NULL, doc jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY (workspace, key))`);
+// .dat, not .json: the plan list reads every .json file in the folder as a plan
+const docFile = (ws: string, key: string) => `${dir(ws)}/.doc-${safe(key)}.dat`;
+
+export async function getDoc<T>(ws: string, key: string): Promise<T | null> {
+  if (sql) {
+    await ensureDocs();
+    const r = (await sql`SELECT doc FROM docs WHERE workspace = ${ws} AND key = ${key}`) as { doc: T }[];
+    return r[0]?.doc ?? null;
+  }
+  try {
+    return JSON.parse(await readFile(docFile(ws, key), 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+export async function putDoc(ws: string, key: string, doc: unknown) {
+  if (sql) {
+    await ensureDocs();
+    await sql`INSERT INTO docs (workspace, key, doc) VALUES (${ws}, ${key}, ${JSON.stringify(doc)}::jsonb) ON CONFLICT (workspace, key) DO UPDATE SET doc = EXCLUDED.doc, updated_at = now()`;
+    return;
+  }
+  await mkdir(dir(ws), { recursive: true });
+  await writeFile(docFile(ws, key), JSON.stringify(doc));
+}

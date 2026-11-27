@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import NewPlan, { SampleButton } from '@/components/NewPlan';
+import NewPlan from '@/components/NewPlan';
 import { listPlans } from '@/db';
 import { peekWorkspace } from '@/web';
 
@@ -34,19 +34,16 @@ export default async function Home() {
           </ol>
         </div>
         <div className="stack">
+          <section className="card" style={{ borderColor: 'var(--accent)' }}>
+            <div className="card-head" style={{ marginBottom: 8 }}><span className="pill accent">Pinned</span></div>
+            <h2>Vobiz AI International Expansion Strategy</h2>
+            <p className="muted small" style={{ margin: '6px 0 14px' }}>The live Vobiz workspace: manual research and the tool’s own, side by side, for Southeast Asia, the Middle East and Europe. Target accounts are split into voice AI partners and industries, with a trackable email, LinkedIn and WhatsApp outreach plan.</p>
+            <Link href="/vobiz" className="btn primary">Open the Vobiz workspace</Link>
+          </section>
           <section className="card" id="start">
             <h2>Start a plan</h2>
             <p className="muted small" style={{ marginBottom: 14 }}>Takes a minute to set up. Nothing is shared: plans are saved to this browser.</p>
             <NewPlan />
-          </section>
-          <section className="card">
-            <div className="card-head" style={{ marginBottom: 8 }}>
-              <div>
-                <h2>See a finished plan</h2>
-                <p className="muted small">Vobiz.ai, an Indian telephony company for voice AI, across Southeast Asia, the Middle East and Europe.</p>
-              </div>
-              <SampleButton />
-            </div>
           </section>
           {plans.length > 0 && (
             <section className="card">
