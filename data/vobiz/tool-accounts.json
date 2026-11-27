@@ -1,26 +1,539 @@
 {
- "generatedAt": "2026-11-27T10:30:30.495Z",
+ "generatedAt": "2026-11-27T12:04:46.437Z",
  "counts": {
-  "Middle East / partner / Voice AI agent builder": 3,
-  "Middle East / partner / AI agency / CX integrator": 5,
-  "Middle East / partner / Call centre / BPO": 3,
-  "Middle East / enterprise / Real estate": 1
+  "Middle East / partner / Voice AI agent builder": 21,
+  "Middle East / partner / Call-centre / CCaaS software": 9,
+  "Middle East / partner / AI agency / CX integrator": 6,
+  "Middle East / partner / Call centre / BPO": 7,
+  "Middle East / partner / Dialer / telemarketing software": 2,
+  "Europe / partner / AI agency / CX integrator": 4,
+  "Europe / partner / Voice AI agent builder": 11,
+  "Europe / partner / Call-centre / CCaaS software": 11,
+  "Europe / partner / Conversational AI adding voice": 2,
+  "Europe / partner / Call centre / BPO": 2,
+  "Europe / partner / Dialer / telemarketing software": 2,
+  "Southeast Asia / enterprise / Utilities, industrial and other": 2,
+  "Southeast Asia / enterprise / Travel and leisure": 3,
+  "Southeast Asia / enterprise / BFSI": 2,
+  "Southeast Asia / enterprise / Real estate": 6,
+  "Southeast Asia / enterprise / Healthcare": 6,
+  "Southeast Asia / enterprise / Telecom": 2,
+  "Middle East / enterprise / Real estate": 2,
+  "Middle East / enterprise / Automotive": 5
  },
  "notes": [
-  "Middle East / enterprise / Automotive: nothing verifiable found",
-  "Southeast Asia / enterprise / BFSI: nothing verifiable found",
-  "Southeast Asia / enterprise / Real estate: nothing verifiable found",
+  "partner/United Kingdom/voice-ai: research returned no candidates",
+  "partner/United Kingdom/ccaas: research returned no candidates",
+  "partner/Netherlands/ccaas: research returned no candidates",
+  "partner/Germany/voice-ai: research returned no candidates",
+  "enterprise/Singapore/healthcare: research returned no candidates",
+  "enterprise/Singapore/telecom: research returned no candidates",
+  "enterprise/Indonesia/utilities: research returned no candidates",
+  "enterprise/Indonesia/retail: research returned no candidates",
+  "enterprise/Indonesia/insurance: research returned no candidates",
+  "enterprise/Philippines/telecom: research returned no candidates",
+  "enterprise/Vietnam/utilities: research returned no candidates",
+  "enterprise/Turkey/real-estate: research returned no candidates",
   "Southeast Asia / enterprise / Automotive: nothing verifiable found",
   "Southeast Asia / enterprise / Logistics: nothing verifiable found",
-  "Southeast Asia / enterprise / Healthcare: nothing verifiable found",
   "Southeast Asia / enterprise / E-commerce, retail and food: nothing verifiable found",
-  "Southeast Asia / enterprise / Telecom: nothing verifiable found",
-  "Southeast Asia / enterprise / Government and public sector: nothing verifiable found",
-  "Southeast Asia / enterprise / Travel and leisure: nothing verifiable found",
-  "Southeast Asia / enterprise / Utilities, industrial and other: nothing verifiable found",
-  "Europe / partner: nothing verifiable found"
+  "Southeast Asia / enterprise / Government and public sector: nothing verifiable found"
  ],
  "accounts": [
+  {
+   "company": "Atlantic Soluciones",
+   "country": "Spain",
+   "website": "https://atlanticsoluciones.com/",
+   "sector": "AI agency / CX integrator",
+   "what": "Integrates AI solutions and offers a virtual receptionist brand (Avii) that manages inbound calls, inquiries, filtering, and appointments 24/7.",
+   "signal": "Deploys 24/7 virtual receptionist AI agents to answer calls, creating a need for voice connectivity and phone numbers.",
+   "sourceUrl": "https://atlanticsoluciones.com/",
+   "quote": "Desarrollos con IA a medida y agentes de voz que atienden a tus clientes 24/7.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "BrightContact B.V.",
+   "country": "Netherlands",
+   "website": "https://brightcontact.nl/",
+   "sector": "AI agency / CX integrator",
+   "what": "BrightContact B.V. offers customer experience solutions including voicebots and agentic scheduling tools.",
+   "signal": "They deploy voicebots that schedule and trigger phone callbacks for customer service.",
+   "sourceUrl": "https://brightcontact.nl/oplossingen/agentic-scheduling-capacity/",
+   "quote": "Voicebots en chatbots die het gesprek afmaken, met een warme overdracht naar een medewerker als dat nodig is.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "iComServ Europe AB",
+   "country": "Sweden",
+   "website": "https://icomserv.com/",
+   "sector": "AI agency / CX integrator",
+   "what": "iComServ Europe delivers omnichannel contact center solutions and intelligent enquiry routing.",
+   "signal": "A CX integrator deploying omnichannel contact center systems needs SIP trunks and voice routing APIs to connect customer channels.",
+   "sourceUrl": "https://icomserv.com/solutions/contact-centre/",
+   "quote": "An omnichannel contact centre brings all channels together, routes each enquiry to the person best placed to handle it and gives supervisors real-time figures.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Mediacooks B.V.",
+   "country": "Netherlands",
+   "website": "https://mediacooks.nl/",
+   "sector": "AI agency / CX integrator",
+   "what": "Mediacooks B.V. is an AI agency that builds AI voice agents and voice-controlled assistants for customer communication.",
+   "signal": "They create voice agents that conduct conversations with customers via telephone.",
+   "sourceUrl": "https://mediacooks.nl/ai-agency/ai-voice-agents/",
+   "quote": "Bij Mediacooks bouwen we voice agents die natuurlijk klinken, je merkstem overbrengen en je bereikbaarheid vergroten.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Responda Group AB",
+   "country": "Sweden",
+   "website": "https://www.respondagroup.se/",
+   "sector": "Call centre / BPO",
+   "what": "Responda Group provides AI-driven customer experience services combining human agents and AI.",
+   "signal": "A BPO combining human and AI voice capabilities needs flexible voice APIs and SIP trunking to manage voice interactions.",
+   "sourceUrl": "https://www.respondagroup.se/kontakt/",
+   "quote": "Responda Group är en ledande nordisk aktör inom AI-driven kundupplevelse, där AI och människor arbetar tillsammans.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Servinform",
+   "country": "Spain",
+   "website": "https://www.servinform.es/",
+   "sector": "Call centre / BPO",
+   "what": "Servinform provides customer service BPO services supported by agents and technological infrastructure.",
+   "signal": "A customer service provider operating agent teams requires robust telephony infrastructure and voice channels to process incoming customer calls.",
+   "sourceUrl": "https://www.servinform.es/en/services-and-solutions/",
+   "quote": "Customer service. Professional agents backed by a strong infrastructure and the latest technology Excellence in customer service is our hallmark.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Aircall",
+   "country": "France",
+   "website": "https://aircall.io/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Aircall provides a call platform that brings AI, tools, and teams together for customer conversations.",
+   "signal": "As a CCaaS platform built for calls, it requires robust SIP trunks, voice APIs, and phone numbers to carry voice traffic.",
+   "sourceUrl": "https://aircall.io/about-us/",
+   "quote": "Aircall brings AI, your tools and your team together on the platform built for calls, so every conversation counts.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Axialys",
+   "country": "France",
+   "website": "https://www.axialys.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Axialys is a cloud telephony and contact center software publisher of the Voice Pilot solution.",
+   "signal": "Its Voice Pilot AI callbot integrates with IVR systems to transform them into conversational voice channels.",
+   "sourceUrl": "https://www.axialys.com/voice-pilot/",
+   "quote": "Prix Logiciel Call Center Axialys Tarifs du logiciel call center, support client et SAV",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Batvoice",
+   "country": "France",
+   "website": "https://www.batvoice.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Batvoice provides automated quality monitoring and speech AI voice analytics software for contact centers.",
+   "signal": "Its technology transcribes call audio and analyzes customer service conversations across phone interactions.",
+   "sourceUrl": "https://www.batvoice.com/",
+   "quote": "Batvoice écoute, note et analyse chaque conversation de votre service client avec une IA développée en France.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Brightcall AB (Brightcall.ai)",
+   "country": "Sweden",
+   "website": "https://www.brightcall.ai/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Brightcall.ai is a Sweden-based CCaaS software vendor.",
+   "signal": "A CCaaS software vendor benefits from telephony partnerships providing voice connectivity and phone numbers for its cloud platform.",
+   "sourceUrl": "https://www.brightcall.ai/company/our-story/",
+   "quote": "It combines Call automation, Conversational AI Agents, Contact Center Software, Auto Dialer, CRM integrations AI Call intelligence and more in one single platform.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Eloquant",
+   "country": "France",
+   "website": "https://www.eloquant.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Eloquant is a CCaaS provider offering a platform with embedded conversational AI features.",
+   "signal": "It enables contact centers to deploy native callbots that handle customer inquiries and call routing.",
+   "sourceUrl": "https://www.eloquant.com/en/solutions/chatbot-et-callbot/",
+   "quote": "Eloquant’s omnichannel contact centre solution enables you to deliver a memorable customer experience, contributing to customer satisfaction and loyalty.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Fonvirtual",
+   "country": "Spain",
+   "website": "https://fonvirtual.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Fonvirtual delivers virtual agents that handle customer support via voice calls and instant messaging.",
+   "signal": "Virtual agents carrying out voice calls require underlying telephony services such as voice APIs and phone numbers.",
+   "sourceUrl": "https://fonvirtual.com/en/",
+   "quote": "Virtual agents from Fonvirtual provide continuous support by efficiently handling common inquiries and repetitive tasks through instant messaging or voice calls.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Kiamo (Conecteo SAS)",
+   "country": "France",
+   "website": "https://kiamo.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Kiamo develops omnichannel software designed to optimize contact center customer relations.",
+   "signal": "An omnichannel contact center software vendor relies on telephony providers for underlying SIP trunks and voice connectivity.",
+   "sourceUrl": "https://kiamo.com/en/contact-centers-solution/",
+   "quote": "Solution de gestion des interactions clients pour les entreprises ou organisations qui souhaitent optimiser l’efficacité de leurs centres de contacts.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Odigo",
+   "country": "France",
+   "website": "https://www.odigo.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Odigo is a contact center software vendor operating across Europe.",
+   "signal": "As a benchmark CCaaS provider, securing carrier-grade voice APIs, phone numbers, and SIP trunks is essential for call delivery.",
+   "sourceUrl": "https://www.odigo.com/why-choose-odigo/",
+   "quote": "Discover the Odigo CCaaS Essential offer",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Ringover",
+   "country": "France",
+   "website": "https://www.ringover.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Ringover provides contact center software with features designed to improve productivity.",
+   "signal": "Contact center productivity tools need seamless telephony integration via voice APIs, phone numbers, and SIP trunks.",
+   "sourceUrl": "https://www.ringover.com/contact-center",
+   "quote": "With its intuitive interface and features designed to improve your productivity, it is the perfect ally for your contact center.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Sikom Software GmbH",
+   "country": "Germany",
+   "website": "https://sikom.cx/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Sikom Software provides AgentOne® Cloud, a cloud-based contact center solution.",
+   "signal": "A cloud-based contact center software platform needs SIP trunking and voice APIs to scale and handle phone operations.",
+   "sourceUrl": "https://sikom.cx/en/software-solutions/agentone-cloud/",
+   "quote": "Als deutscher Hersteller von Premium Contact Center Software entwickeln wir innovative Lösungen für beste Kundenkommunikation.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "VIER GmbH",
+   "country": "Germany",
+   "website": "https://www.vier.ai/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "VIER provides VIER engage, an omnichannel contact center solution managing all contact channels in one interface.",
+   "signal": "Operating an omnichannel contact center solution handling all contact channels requires reliable telephony integration and SIP trunks.",
+   "sourceUrl": "https://www.vier.ai/en/products/vier-engage/",
+   "quote": "VIER engage is a contact center software for inbound and outbound telephony as well as text-based contact and offers every contact center the right solution for seamless customer communication.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Dydu",
+   "country": "France",
+   "website": "https://www.dydu.ai/",
+   "sector": "Conversational AI adding voice",
+   "what": "Dydu provides a no-code conversational AI platform offering integrated voicebots and callbots.",
+   "signal": "Its callbots handle automated customer service interactions over telephone channels 24/7.",
+   "sourceUrl": "https://www.dydu.ai/",
+   "quote": "Depuis 2009, Dydu propose une plateforme no code intuitive à destination des professionnels pour concevoir en toute autonomie des agents conversationnels intelligents : chatbot, voicebot, callbot .",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Monoceros Labs",
+   "country": "Spain",
+   "website": "https://monoceroslabs.com/",
+   "sector": "Conversational AI adding voice",
+   "what": "Creates synthetic voices, AI assistants, and conversational agents across voice and text for enterprise clients, media, and universities.",
+   "signal": "Develops conversational voice agents that require telephony backends to deliver voice capabilities over standard phone networks.",
+   "sourceUrl": "https://monoceroslabs.com/",
+   "quote": "Creamos voces sintéticas, asistentes y agentes de IA que conversan por voz y texto, para medios, empresas y universidades.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "CM Software Callmaker AB",
+   "country": "Sweden",
+   "website": "https://www.callmaker.se/",
+   "sector": "Dialer / telemarketing software",
+   "what": "CM Software Callmaker offers predictive and preview outbound dialer software for sales teams.",
+   "signal": "A provider of predictive dialers that make parallel automated calls needs high-volume SIP trunking, outbound voice APIs, and phone numbers.",
+   "sourceUrl": "https://www.callmaker.se/en/outbound-dialer-predictive-and-preview/",
+   "quote": "Dialer, meeting booking, inbound and contact centre as a cloud service – with a focus on simplicity and powerful automation.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Neotel 2000",
+   "country": "Spain",
+   "website": "https://www.neotel2000.com/",
+   "sector": "Dialer / telemarketing software",
+   "what": "Neotel 2000 provides call center software supporting progressive, predictive, preview, and power dialing campaigns.",
+   "signal": "Outbound telemarketing dialers running automated dialing campaigns require telephony providers for high-volume outbound calling and phone numbers.",
+   "sourceUrl": "https://www.neotel2000.com/auto-dialer-call-center/",
+   "quote": "Centralita virtual con IA Llamadas, WhatsApp, CRM, tickets, agentes IA y call center en un solo panel.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Alisys",
+   "country": "Spain",
+   "website": "https://www.alisys.net/",
+   "sector": "Voice AI agent builder",
+   "what": "Alisys develops Cloud Contact Center and Cloud CX solutions.",
+   "signal": "Cloud contact center platforms need SIP trunks and voice connectivity to support voice operations and customer interactions.",
+   "sourceUrl": "https://www.alisys.net/es/sobre-nosotros",
+   "quote": "Contact Center omnicanal soberano con IA integrada, diseñado para operar bajo máxima exigencia regulatoria y de disponibilidad.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Calldesk",
+   "country": "France",
+   "website": "https://www.calldesk.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Calldesk provides a platform for designing, building, and deploying conversational AI voice agents tailored for contact centers.",
+   "signal": "Its callbots automate routine phone calls, pre-qualify callers, and handle appointment scheduling.",
+   "sourceUrl": "https://www.calldesk.ai/",
+   "quote": "Calldesk designs and deploys AI voice agents that reduce costs, scale with your needs, and deliver measurable ROI from day one.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Camacode",
+   "country": "Spain",
+   "website": "https://camacode.es/",
+   "sector": "Voice AI agent builder",
+   "what": "Develops AI voice agents that answer business phones, conduct conversations in multiple languages, and follow company processes.",
+   "signal": "Answers incoming business phone calls via AI, relying on SIP trunks and phone number provisioning.",
+   "sourceUrl": "https://camacode.es/",
+   "quote": "Agentes IA, agentes de voz IA y automatizaciones con IA para empresas.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Parloa GmbH",
+   "country": "Germany",
+   "website": "https://www.parloa.com/",
+   "sector": "Voice AI agent builder",
+   "what": "Parloa offers an AI Agent Management Platform to build, test, and scale customer conversations.",
+   "signal": "As a voice AI agent platform managing customer conversations, they require voice APIs and telephony connectivity for AI interactions.",
+   "sourceUrl": "https://www.parloa.com/platform",
+   "quote": "Parloa's AI Agent Management Platform is where these interactions are built, tested, and scaled, to turn customer conversations into lasting loyalty.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Sainer",
+   "country": "Netherlands",
+   "website": "https://sainer.nl/",
+   "sector": "Voice AI agent builder",
+   "what": "Sainer builds automated AI phone receptionists for small and medium-sized businesses.",
+   "signal": "Their product functions directly as an automated phone operator answering business calls.",
+   "sourceUrl": "https://sainer.nl/",
+   "quote": "Sainer beantwoordt klantgesprekken, behandelt vragen, verbindt door naar medewerkers, maakt afspraken en beheert supporttickets.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Talkamatic AB",
+   "country": "Sweden",
+   "website": "https://talkamatic.se/",
+   "sector": "Voice AI agent builder",
+   "what": "Talkamatic AB develops Talkamatic Studio for building AI voice agents.",
+   "signal": "A telephony provider can supply SIP trunks, phone numbers, and voice APIs for AI voice agents built on Talkamatic Studio.",
+   "sourceUrl": "https://talkamatic.se/",
+   "quote": "Unlock the power of AI Voice Agents you can Trust with Talkamatic Studio.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "TALKR.ai",
+   "country": "France",
+   "website": "https://www.talkr.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "TALKR.ai is a no-code conversational and voice AI platform enabling enterprises to create voicebots and callbots.",
+   "signal": "Its agents manage incoming telephone calls, qualify leads, and automate customer support scenarios.",
+   "sourceUrl": "https://www.talkr.ai/",
+   "quote": "Callbot, chatbot, SMS/RCS - déployez des agents IA vocaux et textuels qui comprennent, agissent et se coordonnent 24h/24, sur tous vos canaux, sans compétence technique.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Telvia",
+   "country": "Spain",
+   "website": "https://telvia.io/",
+   "sector": "Voice AI agent builder",
+   "what": "Provides AI capabilities that handle inbound and outbound calls integrated into company systems.",
+   "signal": "Directly makes and receives phone calls, requiring SIP trunks, voice APIs, and telecommunication infrastructure.",
+   "sourceUrl": "https://telvia.io/",
+   "quote": "La IA que atiende y hace tus llamadas, dentro de tus sistemas.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Vivoka",
+   "country": "France",
+   "website": "https://vivoka.com/",
+   "sector": "Voice AI agent builder",
+   "what": "Vivoka develops a dedicated Voice AI development platform for offline and edge-compatible voice assistants and custom voice agents.",
+   "signal": "It enables software vendors and integrators to add voice interfaces to applications and enterprise workflows.",
+   "sourceUrl": "https://vivoka.com/",
+   "quote": "Vivoka's Voice AI platform empowers solution providers, specialist software vendors, and integrators to add intuitive, hands-free voice interfaces to their devices, applications, and workflows.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Voice Provider Sweden AB",
+   "country": "Sweden",
+   "website": "https://www.voiceprovider.com/",
+   "sector": "Voice AI agent builder",
+   "what": "Voice Provider Sweden AB provides AI-powered voicebots that understand, answer, and act in real time.",
+   "signal": "A telephony provider can supply SIP trunks, voice APIs, or phone numbers to connect their real-time AI voicebots to telephone networks.",
+   "sourceUrl": "https://www.voiceprovider.com/",
+   "quote": "En kraftfull och flexibel lösning med intuitivt gränssnitt — bygg och driftsätt egna voicebots, eller låt oss sköta bygget.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Zaion",
+   "country": "France",
+   "website": "https://zaion.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Zaion is a French conversational AI provider specializing in customer service automation and building AI-driven callbots and voicebots.",
+   "signal": "Its platform handles high-volume inbound phone calls and automates routine workflows for call centers.",
+   "sourceUrl": "https://zaion.ai/en/callbot/",
+   "quote": "Thanks to the technologies we've developed, our solutions eliminate repetitive tasks for advisors, leaving them to concentrate on high value-added tasks.",
+   "region": "Europe",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Al Abdulghani Motors",
+   "country": "Qatar",
+   "website": "https://www.toyotaqatar.com/",
+   "sector": "Automotive",
+   "what": "Automotive company operating customer service communications in Qatar.",
+   "signal": "Operates a customer service call center where phone communications are recorded for quality assurance.",
+   "sourceUrl": "https://www.toyotaqatar.com/privacy-policy",
+   "quote": "When any customer should contact AAM customer service call center (the \"Call Center \"), any communications are to be recorded for quality assurance purposes.",
+   "region": "Middle East",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Champion Motors Ltd.",
+   "country": "Israel",
+   "website": "https://www.championmotors.co.il/",
+   "sector": "Automotive",
+   "what": "An Israeli automotive importer and vehicle distributor.",
+   "signal": "They run a 24/7 help and digital service center for sales and customer service inquiries.",
+   "sourceUrl": "https://www.championmotors.co.il/contact-us/",
+   "quote": "054-323-1912 מוקד עזרה ושירות דיגיטלי 24/7 בנושאי מכירות, שירות לקוחות ובדידות.",
+   "region": "Middle East",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Garenta Ulaşım Çözümleri A.Ş.",
+   "country": "Turkey",
+   "website": "https://www.garenta.com.tr/",
+   "sector": "Automotive",
+   "what": "Vehicle rental and leasing solutions company in Turkey.",
+   "signal": "Operates a dedicated Call Center (Çağrı Merkezi) operating daily from 08:00 to 00:00.",
+   "sourceUrl": "https://www.garenta.com.tr/kurumsal-arac-kiralama",
+   "quote": "Pazartesi - Pazar 08.00-00.00 arasında hizmet veren Çağrı Merkezi yapısı ile kesintisiz destek hizmeti",
+   "region": "Middle East",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Jaidah Automotive",
+   "country": "Qatar",
+   "website": "https://www.chevroletqatar.com/",
+   "sector": "Automotive",
+   "what": "Automotive company offering Chevrolet customer support in Qatar.",
+   "signal": "Runs a dedicated phone customer care line (8000100) for questions and feedback.",
+   "sourceUrl": "https://www.chevroletqatar.com/complete-care/contact-us/",
+   "quote": "Call us Toll-Free on 8000-100 to book a service",
+   "region": "Middle East",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Skyline Automotive W.L.L.",
+   "country": "Qatar",
+   "website": "https://hyundai.com.qa/",
+   "sector": "Automotive",
+   "what": "Automotive company in Qatar.",
+   "signal": "Runs a 24/7 Customer Experience Team to support customers.",
+   "sourceUrl": "https://u17.hyundai.com.qa/",
+   "quote": "Our Customer Experience Team is available 24/7 throughout the FIFA U-17 World Cup Qatar 2025™ to support you in any situation.",
+   "region": "Middle East",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Anglo-Saxon Real Estate (אנגלו-סכסון)",
+   "country": "Israel",
+   "website": "https://www.anglo-saxon.co.il/",
+   "sector": "Real estate",
+   "what": "Anglo-Saxon is a real estate agency with a network of local branches.",
+   "signal": "Operates a centralized call center (*9019) to handle incoming customer inquiries.",
+   "sourceUrl": "https://www.anglo-saxon.co.il/%D7%A6%D7%95%D7%A8-%D7%A9%D7%A7%D7%A9%D7%A8",
+   "quote": "**מוקד ארצי***9019נחבר אתכם לסניף הקרוב.",
+   "region": "Middle East",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
   {
    "company": "Just Real Estate",
    "country": "Qatar",
@@ -32,6 +545,19 @@
    "quote": "Bilingual call center (English & Arabic) ensuring full client engagement and lead tracking.",
    "region": "Middle East",
    "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "AlasilaCX",
+   "country": "Saudi Arabia",
+   "website": "https://alasilacx.sa/",
+   "sector": "AI agency / CX integrator",
+   "what": "Drives the planning, design, and delivery of customer experience management solutions in the Saudi market.",
+   "signal": "As a CX integrator delivering customer experience solutions, providing underlying voice APIs, phone numbers, and SIP trunks enables voice-based CX capabilities.",
+   "sourceUrl": "https://alasilacx.sa/",
+   "quote": "AlasilaCX Performance Management Solution automates the process of monitoring, measuring and evaluating the overall performance of the customer engagement center in real-time.",
+   "region": "Middle East",
+   "kind": "partner",
    "checkedAt": "2026-11-27"
   },
   {
@@ -61,6 +587,19 @@
    "checkedAt": "2026-11-27"
   },
   {
+   "company": "Inwizards Software Technology",
+   "country": "Saudi Arabia",
+   "website": "https://www.inwizards.com/",
+   "sector": "AI agency / CX integrator",
+   "what": "Inwizards Software Technology is an AI software agency developing production-grade voice agents and business automation.",
+   "signal": "It builds custom production-grade AI voice calling agents that integrate with enterprise ERP and CRM systems.",
+   "sourceUrl": "https://www.inwizards.com/ai-agent-development-saudi-arabia.html",
+   "quote": "Human-like inbound and outbound calling agents with sub-second latency and CRM logging.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
    "company": "Nexus IO",
    "country": "Qatar",
    "website": "https://nexusio.co/",
@@ -74,27 +613,40 @@
    "checkedAt": "2026-11-27"
   },
   {
-   "company": "Ozapp",
-   "country": "Qatar",
-   "website": "https://ozapp.io/",
+   "company": "Shark Matrix",
+   "country": "United Arab Emirates",
+   "website": "https://sharkmatrix.com/",
    "sector": "AI agency / CX integrator",
-   "what": "Builds, configures, and integrates 24/7 bilingual AI voice agents for service SMBs, clinics, and hotels.",
-   "signal": "Requires phone numbers and SIP trunking to connect 24/7 AI voice agents to client phone systems.",
-   "sourceUrl": "https://ozapp.io/agency-qatar/ai-voice-agent-qatar",
-   "quote": "AI-first agency in Belgium: AI agents, chatbots, voice agents, websites and digital marketing.",
+   "what": "Shark Matrix develops custom AI voice assistants to automate business interactions and customer service.",
+   "signal": "Building tailor-made voice AI solutions for business applications requires voice APIs and telecom integrations.",
+   "sourceUrl": "https://sharkmatrix.com/voice-ai-assistant-development",
+   "quote": "Whether you need a website, mobile application, digital marketing strategy, AI chatbot, voice agent, or workflow automation platform, our team is ready to help.",
    "region": "Middle East",
    "kind": "partner",
    "checkedAt": "2026-11-27"
   },
   {
-   "company": "Techtar LLC",
-   "country": "Qatar",
-   "website": "https://techtar.io/",
-   "sector": "AI agency / CX integrator",
-   "what": "Builds and deploys custom AI voice agents for inbound phone handling, lead conversion, and automated scheduling.",
-   "signal": "Needs voice APIs, SIP connectivity, and phone numbers to enable inbound phone handling for their voice agents.",
-   "sourceUrl": "https://techtar.io/about",
-   "quote": "Techtar is an AI agency for SMEs, headquartered in Doha and working with clients worldwide.",
+   "company": "Contact Point",
+   "country": "Saudi Arabia",
+   "website": "https://cp.sa/",
+   "sector": "Call centre / BPO",
+   "what": "Operates a customer experience contact center headquartered in Jeddah to serve clients' customers.",
+   "signal": "A contact center and BPO service provider relies on telephony infrastructure including SIP trunks and phone numbers for high-volume calling.",
+   "sourceUrl": "https://cp.sa/",
+   "quote": "CONTACT POINT is a leading contact centers in Saudi Arabia, from its state-of-the-art customer experience center headquartered in Jeddah, with the aim to be the top provider of quality in the call center industry, that will ensure our clients, that their clients are served in the most professional way",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Extensya",
+   "country": "Saudi Arabia",
+   "website": "https://www.extensya.com/",
+   "sector": "Call centre / BPO",
+   "what": "Operates 9 call centers across Saudi Arabia, Jordan, Iraq, and India with sales offices in the UAE and China.",
+   "signal": "Operating call centers across multiple countries requires extensive telephony services such as SIP trunks, phone numbers, and voice infrastructure.",
+   "sourceUrl": "https://www.extensya.com/",
+   "quote": "Today, Extensya operates 9 call centers in Saudi Arabia, Jordan, Iraq, and India, with official sales offices in the UAE and China.",
    "region": "Middle East",
    "kind": "partner",
    "checkedAt": "2026-11-27"
@@ -126,6 +678,19 @@
    "checkedAt": "2026-11-27"
   },
   {
+   "company": "Spectrum Solution W.L.L.",
+   "country": "Qatar",
+   "website": "https://spectrum.qa/",
+   "sector": "Call centre / BPO",
+   "what": "Delivers BPO, staff augmentation, contact centre, voice communications, cloud, and AI-driven solutions.",
+   "signal": "Providing contact centre operations and voice communications services creates a direct need for SIP trunks, voice APIs, and phone numbers.",
+   "sourceUrl": "https://spectrum.qa/contact-us/",
+   "quote": "Contact The Best BPO & IT Company in Qatar - Spectrum Solution",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
    "company": "Starlink Qatar",
    "country": "Qatar",
    "website": "https://starlinkworld.com/",
@@ -139,14 +704,352 @@
    "checkedAt": "2026-11-27"
   },
   {
-   "company": "Qunzia LLC",
-   "country": "Qatar",
-   "website": "https://qunzia.com/",
+   "company": "Tafaseel BPO",
+   "country": "United Arab Emirates",
+   "website": "https://tafaseel.ae/",
+   "sector": "Call centre / BPO",
+   "what": "Tafaseel BPO delivers contact center outsourcing services to handle customer interactions across multiple channels.",
+   "signal": "Outsourced contact centers require SIP trunks and inbound/outbound phone numbers to handle client customer calls.",
+   "sourceUrl": "https://tafaseel.ae/contact-center-outsourcing/",
+   "quote": "Contact center outsourcing means partnering with a company like Tafaseel Group Holding to manage customer interactions across various channels.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "AloTech (AloTech İletişim Teknolojileri A.Ş.)",
+   "country": "Turkey",
+   "website": "https://alotech.com.tr/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Provides call center software featuring conversational AI and automated voice response systems.",
+   "signal": "Delivers call center AI and automatic voice response capabilities, requiring SIP trunking and voice infrastructure.",
+   "sourceUrl": "https://alotech.com.tr/cagri-merkezlerinde-yapay-zeka-otomatik-sesli-yanitlama-sistemleri/",
+   "quote": "Türkiye’nin En Büyük Çağrı Merkezi Bulutu ile Tanışın",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Bevatel",
+   "country": "Saudi Arabia",
+   "website": "https://bevatel.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Establishes advanced call centers equipped with global technologies to enhance customer service and productivity.",
+   "signal": "As a call center and CCaaS software provider, it requires voice infrastructure like SIP trunks, phone numbers, and voice APIs to power call center operations.",
+   "sourceUrl": "https://bevatel.com/",
+   "quote": "اكتشف مزايا بيفاتيل وحلول اتصالات الأعمال المتكاملة، من الكول سنتر السحابي وبزنس شات إلى واتساب للأعمال والرسائل النصية وحلول الذكاء الاصطناعي، لإدارة تواصل العملاء بكفاءة من منصة واحدة.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Etisalna (Klamna)",
+   "country": "Saudi Arabia",
+   "website": "https://etisalna.sa/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Etisalna is a business communications provider offering cloud call center solutions and the Klamna AI voice agent platform.",
+   "signal": "It delivers AI voice agents and cloud call center solutions operating directly on local phone numbers.",
+   "sourceUrl": "https://etisalna.sa/blog/ai-voice-agent-saudi-dialect/",
+   "quote": "نخدم الشركات بحلول الاتصال السحابي والواتساب والذكاء الاصطناعي عبر منصة كلمنا — وخوادمنا هنا في المملكة.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Glassix",
+   "country": "Israel",
+   "website": "https://www.glassix.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Operates an AI-native autonomous contact center platform resolving customer inquiries across channels.",
+   "signal": "Autonomous contact center platforms resolving inquiries need telephony infrastructure like voice APIs and phone numbers for automated voice channels.",
+   "sourceUrl": "https://www.glassix.com/",
+   "quote": "Glassix is an AI-native autonomous contact center where AI doesn't merely assist agents - it overcomes the limitations of human-led service, resolving customer inquiries end-to-end across every channel with consistency, intelligence, and scale humans simply can't match.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "NICE Ltd.",
+   "country": "Israel",
+   "website": "https://www.nice.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Provides contact center software (CXone) to manage AI and human agents under one connected operating model.",
+   "signal": "A CCaaS platform managing AI and human agents needs underlying SIP trunks and telephony infrastructure for routing calls.",
+   "sourceUrl": "https://www.nice.com/products/cxone",
+   "quote": "NiCE AI Agents autonomously resolve customer intent across voice and digital channels.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Sonitel",
+   "country": "Turkey",
+   "website": "https://sonitel.com.tr/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Offers virtual assistant solutions for call centers to instantly respond to customer requests and reduce agent workload.",
+   "signal": "Call center software incorporating virtual assistants for customer requests requires SIP trunks and phone numbers to handle incoming call streams.",
+   "sourceUrl": "https://sonitel.com.tr/sanal-asistan-yapay-zeka-cagri-merkezi/",
+   "quote": "Sonitel; Inbound, Outbound ya da Blended çağrı merkezleriniz için kusursuz çözümler sunar.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Squaretalk",
+   "country": "Israel",
+   "website": "https://squaretalk.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Provides contact center software featuring AI-powered dialing, answering machine detection, and campaign analytics.",
+   "signal": "AI-powered dialing platforms require robust outbound telephony infrastructure, SIP trunks, and call routing APIs.",
+   "sourceUrl": "https://squaretalk.com/",
+   "quote": "Boost agent productivity, raise answer rates, and minimize time with AI-powered dialing, answering machine detection, and in-depth campaign analytics.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Voicenter",
+   "country": "Israel",
+   "website": "https://www.voicenter.com/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "Develops cloud PBX, contact center, and conversational AI solutions.",
+   "signal": "Cloud PBX and contact center providers need underlying SIP trunking and phone numbers to power their VoIP services.",
+   "sourceUrl": "https://www.voicenter.com/",
+   "quote": "We offer an easy-to-use cloud telephony system that helps you control your virtual call center's performance.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "ZIWO",
+   "country": "United Arab Emirates",
+   "website": "https://www.ziwo.io/",
+   "sector": "Call-centre / CCaaS software",
+   "what": "ZIWO provides cloud contact center solutions in the MENA region.",
+   "signal": "As a cloud contact center solution, ZIWO requires SIP trunks, phone numbers, and voice APIs to carry call center traffic.",
+   "sourceUrl": "https://www.ziwo.io/",
+   "quote": "ZIWO is the leading Cloud Contact Center Solution in the MENA Region.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "CommPeak",
+   "country": "Israel",
+   "website": "https://www.commpeak.com/",
+   "sector": "Dialer / telemarketing software",
+   "what": "Provides predictive dialers with customizable rule engines for contact center campaign workflows.",
+   "signal": "Predictive dialer software requires high-volume SIP trunking and voice APIs to handle outbound telemarketing campaigns.",
+   "sourceUrl": "https://www.commpeak.com/predictive-dialer/",
+   "quote": "CommPeak's cutting-edge Predictive Dialer is engineered to revolutionize your outbound campaigns, maximizing live connections and optimizing agent talk time.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Digitel Softcom LLC",
+   "country": "United Arab Emirates",
+   "website": "https://digitelsoftcom.com/",
+   "sector": "Dialer / telemarketing software",
+   "what": "Digitel Softcom LLC offers outbound call center software featuring power, progressive, and agentless dialing.",
+   "signal": "Outbound call center software with power, progressive, and agentless dialing requires SIP trunks and phone numbers to initiate outgoing calls.",
+   "sourceUrl": "https://digitelsoftcom.com/outbound-call-center-software-auto-dialer-uae/",
+   "quote": "Digitel Softcom LLC offers a suite of business solutions including Call Center Solutions, IP PBX systems, Networking Services, and AI Automations.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "AGENTALK (Neural Wave Ltd.)",
+   "country": "Israel",
+   "website": "https://agentalk.io/",
    "sector": "Voice AI agent builder",
-   "what": "Builds autonomous 24/7 AI voice receptionists and conversational interfaces that answer phone inquiries.",
-   "signal": "Needs phone numbers, SIP trunks, and voice infrastructure to power autonomous AI voice receptionists.",
-   "sourceUrl": "https://qunzia.com/about",
-   "quote": "Qunzia LLC is registered in the Qatar Financial Centre (QFC), Doha, Qatar.",
+   "what": "AGENTALK provides a platform for building AI voice agents that answer business phones, make callback calls to leads, schedule meetings, and transfer calls to human staff.",
+   "signal": "Their AI voice agents directly answer phone calls and place outbound calls to leads, requiring SIP trunks, phone numbers, and voice APIs.",
+   "sourceUrl": "https://agentalk.io/about/",
+   "quote": "AGENTALK is an Israeli platform for building AI voice agents: an agent that answers your business phone, calls leads back, books meetings into the calendar and hands off to a person at the right moment.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "AI Calls",
+   "country": "Turkey",
+   "website": "https://aicalls.com.tr/",
+   "sector": "Voice AI agent builder",
+   "what": "Automates customer appointment scheduling, support, and sales calls through direct voice interaction.",
+   "signal": "Automates phone support and sales calls, depending on voice APIs, SIP connectivity, and phone numbers.",
+   "sourceUrl": "https://aicalls.com.tr/kucuk-isletmeler-icin-yapay-zeka-sesli-arama-asistani/",
+   "quote": "\"AI Calls, müşterilerle birebir iletişim kurarak randevu planlama, destek sağlama ve satış görüşmelerini tamamen otomatikleştirir.\"",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "aiola (aiola Ltd.)",
+   "country": "Israel",
+   "website": "https://aiola.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "aiola provides a voice AI platform specifically built for field work.",
+   "signal": "As a voice AI platform operating in the field, integrating SIP trunks and voice APIs enables seamless phone network connectivity.",
+   "sourceUrl": "https://aiola.ai/about/",
+   "quote": "aiola built the first voice AI platform purpose-built for the field.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Asistanım AI",
+   "country": "Turkey",
+   "website": "https://asistanim.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Builds voice AI agents that answer calls, assess sales opportunities, and speak in over 40 languages.",
+   "signal": "Uses voice AI agents to answer inbound calls globally, making SIP trunks and voice APIs essential.",
+   "sourceUrl": "https://asistanim.ai/",
+   "quote": "\"asistanim.ai sesli AI ajanları her aramayı karşılar, fırsatları otomatik değerlendirir ve 40+ dilde akıcı konuşur.\"",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "AsistPro AI",
+   "country": "Turkey",
+   "website": "https://asistpro.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Develops custom voice-, video-, and hologram-supported AI assistants for customer experience.",
+   "signal": "Deploys voice-supported AI assistants for businesses, needing telephony connectivity for handling calls.",
+   "sourceUrl": "https://asistpro.ai/",
+   "quote": "\"İşletmenize özel sesli, görüntülü ve hologram destekli yapay zeka asistanlarla müşteri deneyimini yeniden tanımlayın.\"",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Birbal AI",
+   "country": "United Arab Emirates",
+   "website": "https://birbalai.com/",
+   "sector": "Voice AI agent builder",
+   "what": "Birbal AI builds Nida, a 24/7 voice agent that understands Emirati Arabic, Modern Standard Arabic, and English to handle bookings and caller handoffs.",
+   "signal": "Providing a voice agent that picks up calls and transfers callers requires reliable telephony integration like SIP trunks and voice APIs.",
+   "sourceUrl": "https://birbalai.com/products/ai-voice-agent",
+   "quote": "Nida (نداء, \"the call\") is Birbal AI's voice agent. It picks up 24/7, understands callers in Emirati Arabic, Modern Standard Arabic and English, completes bookings and updates in your systems, and hands complex calls to your team with the full context.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Callby AI (Arkenova Teknoloji A.Ş.)",
+   "country": "Turkey",
+   "website": "https://www.callby.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Manages inbound and outbound customer communications through voice interactions and actionable AI customer representatives.",
+   "signal": "Handles inbound and outbound call communications, requiring voice APIs, phone numbers, and SIP trunks.",
+   "sourceUrl": "https://www.callby.ai/",
+   "quote": "Callby.ai, inbound ve outbound müşteri iletişimini doğal ses etkileşimleri ve aksiyon alabilen yapay zekâ müşteri temsilcileriyle yönetir.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "CBOT (CBOT Bilgi Teknolojileri A.Ş.)",
+   "country": "Turkey",
+   "website": "https://www.cbot.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Builds AI agents that understand customer requests across voice and digital channels.",
+   "signal": "Offers voice channel AI agents, requiring telephony infrastructure like SIP trunks and voice APIs to handle customer calls.",
+   "sourceUrl": "https://www.cbot.ai/",
+   "quote": "The speech technology behind CBOT's enterprise voice operations is now available to teams building their own AI agents.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Dello AI",
+   "country": "Saudi Arabia",
+   "website": "https://dello.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Dello AI is a voice AI platform developing Arabic and English voice agents for GCC markets.",
+   "signal": "Its voice agents handle customer support, appointment booking, and sales qualification calls with sub-second response times.",
+   "sourceUrl": "https://dello.ai/",
+   "quote": "Build Saudi and GCC-ready voice agents for support, healthcare, banking, hospitality, and sales.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Harmony.ai",
+   "country": "Israel",
+   "website": "https://www.harmony.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Builds AI voice agents that handle, answer, qualify, book, and resolve real phone calls.",
+   "signal": "AI agents handling real phone calls for businesses directly require inbound/outbound phone numbers, voice APIs, and SIP trunks.",
+   "sourceUrl": "https://www.harmony.ai/careers",
+   "quote": "Harmony.ai builds AI voice agents that handle real phone calls for businesses that live on the phone - answering, qualifying, booking, and resolving.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Mawj AI",
+   "country": "Saudi Arabia",
+   "website": "https://mawj.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Mawj AI is an AI solutions provider specializing in dialect-aware AI phone agents for customer service.",
+   "signal": "It builds always-on voice agents for phone-based customer care, appointment booking, and order tracking.",
+   "sourceUrl": "https://seedra.com/portfolio/mawj-ai/",
+   "quote": "Mawj is an AI solutions provider for customer service, specializing in the development and integration of AI-driven phone agents that seamlessly connect with existing systems.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Nabrah AI",
+   "country": "Saudi Arabia",
+   "website": "https://www.nabrah.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Nabrah AI provides a voice AI platform offering speech-to-text, text-to-speech, and autonomous voice agents tuned for Saudi Arabic.",
+   "signal": "Its autonomous voice agents conduct inbound and outbound calls with APIs and integrations for phone networks.",
+   "sourceUrl": "https://www.nabrah.ai/",
+   "quote": "Build AI agents that talk to customers and take action across calls, WhatsApp, and the web.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "NLPearl (Neural Wave LTD d/b/a NLPearl AI)",
+   "country": "Israel",
+   "website": "https://nlpearl.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "NLPearl develops AI-driven voice technology to automate processes and enhance customer experiences.",
+   "signal": "Their AI voice technology automates customer experience processes, which relies on telephony infrastructure like SIP trunks and voice APIs to connect to callers.",
+   "sourceUrl": "https://nlpearl.ai/about/",
+   "quote": "NLPearl | Automate Phone Calls & Voice Interactions with AI",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Onvego (Onvego Ltd.)",
+   "country": "Israel",
+   "website": "https://www.onvego.com/",
+   "sector": "Voice AI agent builder",
+   "what": "Onvego provides a Digital Contact Center (DCC) platform for building and scaling no-code AI agents.",
+   "signal": "Their Digital Contact Center platform powers AI agents, creating a direct fit for contact centre phone numbers, voice APIs, and SIP trunks.",
+   "sourceUrl": "https://www.onvego.com/",
+   "quote": "Onvego's Digital Contact Center (DCC) empowers operators to own, build, and scale AI agents without writing code.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Peleg.ai",
+   "country": "Israel",
+   "website": "https://peleg.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Peleg.ai develops AI voice agents that speak natural Israeli Hebrew.",
+   "signal": "Deploying Hebrew-speaking AI voice agents requires telephony providers for local Israeli phone numbers, SIP trunking, and voice APIs.",
+   "sourceUrl": "https://peleg.ai/",
+   "quote": "16 פתרונות Voice AI מוכנים להפעלה.",
    "region": "Middle East",
    "kind": "partner",
    "checkedAt": "2026-11-27"
@@ -165,31 +1068,468 @@
    "checkedAt": "2026-11-27"
   },
   {
-   "company": "Voiger",
-   "country": "Qatar",
-   "website": "https://voiger.io/",
+   "company": "Sesla AI (Sesla AI Technologies)",
+   "country": "Turkey",
+   "website": "https://sesla.ai/",
    "sector": "Voice AI agent builder",
-   "what": "Provides a cloud contact center and localized voice AI platform for running bilingual voice bots.",
-   "signal": "Needs telephony integrations, SIP trunks, and phone numbers to connect its cloud contact center and voice bots with local telecom carriers.",
-   "sourceUrl": "https://voiger.io/qatar/ai-voice-bot",
-   "quote": "Voiger helps forward-thinking companies across global and MENA markets optimize their customer conversations through enterprise calling and scalable contact center infrastructure.",
+   "what": "Provides a next-generation Turkish AI customer assistant operating on modern AI models.",
+   "signal": "Runs AI customer assistants for phone interactions, requiring phone numbers and voice API integrations.",
+   "sourceUrl": "https://sesla.ai/",
+   "quote": "\"Dünyanın en yeni nesil yapay zekâ modelleriyle çalışan, Türkiye'nin yeni nesil yapay zekâ müşteri asistanı.\"",
    "region": "Middle East",
    "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Teammates.ai",
+   "country": "United Arab Emirates",
+   "website": "https://teammates.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Teammates.ai automates inbound and outbound voice calls in over 54 languages and 19 Arabic dialects.",
+   "signal": "Automating live inbound and outbound call traffic requires low-latency voice APIs and global SIP connectivity.",
+   "sourceUrl": "https://teammates.ai/solutions/ai-voice-agent",
+   "quote": "Automate live inbound and outbound phone calls with natural low-latency voice across 54+ languages and 19 Arabic dialects.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Ultrabot (MLAIA Data Science Ltd.)",
+   "country": "Israel",
+   "website": "https://ultrabot.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "Ultrabot delivers streaming speech-to-text, tool-integrated models, and voice solutions.",
+   "signal": "Their streaming speech-to-text and voice tech requires low-latency voice APIs and SIP connectivity to stream calls real-time.",
+   "sourceUrl": "https://ultrabot.ai/",
+   "quote": "Ultrabot: AI chatbots & voice agents in Hebrew & English",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "VoisX",
+   "country": "United Arab Emirates",
+   "website": "https://voisx.ai/",
+   "sector": "Voice AI agent builder",
+   "what": "VoisX offers a multi-tenant platform with visual workflows and real-time voice capabilities to run customer phone lines.",
+   "signal": "Running client phone lines directly through their platform requires underlying telephony services, phone numbers, and voice APIs.",
+   "sourceUrl": "https://voisx.ai/platform",
+   "quote": "Real-time voice, a growing catalog of tool integrations, visual workflows and a multi-tenant architecture, so one platform can run your phone lines, your chat widget, and every client account underneath them.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "xAIa",
+   "country": "United Arab Emirates",
+   "website": "https://xaia.ae/",
+   "sector": "Voice AI agent builder",
+   "what": "xAIa provides enterprise-volume inbound and outbound AI voice agents.",
+   "signal": "Running enterprise-scale inbound and outbound voice agents requires high-capacity SIP trunking and voice infrastructure.",
+   "sourceUrl": "https://xaia.ae/products",
+   "quote": "xAIa's voice AI agents answer in the caller's own Arabic dialect, including Khaleeji, Saudi, Egyptian and Darija, and switch to English or another of 90+ languages mid-call when the caller does.",
+   "region": "Middle East",
+   "kind": "partner",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Security Bank Corporation",
+   "country": "Philippines",
+   "website": "https://www.securitybank.com/",
+   "sector": "BFSI",
+   "what": "Security Bank Corporation is a banking institution conducting outbound collections operations in the Philippines.",
+   "signal": "Their collections associates perform outbound communication efforts via bank devices, indicating a clear fit for telephony providers offering outbound voice APIs and call infrastructure.",
+   "sourceUrl": "https://www.securitybank.com/careers/job/collections-associate/",
+   "quote": "If you are reporting a lost or stolen card, please call immediately our Customer Hotline (+632) 8887-9188.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Standard Chartered Bank (Singapore) Limited",
+   "country": "Singapore",
+   "website": "https://www.sc.com/sg",
+   "sector": "BFSI",
+   "what": "Standard Chartered Bank (Singapore) Limited provides banking services.",
+   "signal": "Runs contact centre services, including after-hours support for urgent customer requests.",
+   "sourceUrl": "https://www.sc.com/sg/important-information/updated-after-hours-contact-centre-services/",
+   "quote": "We have made some updates to the Contact Centre's after-hours services to ensure that your urgent request can be better attended to.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Bệnh viện Đa khoa MEDLATEC (Tập đoàn MED-GROUP)",
+   "country": "Vietnam",
+   "website": "https://medlatec.vn/",
+   "sector": "Healthcare",
+   "what": "A general hospital under MED-GROUP offering medical services and health packages.",
+   "signal": "Employs call center agents to promote health service packages and customer programs over the phone, matching contact center voice capabilities.",
+   "sourceUrl": "https://tuyendung.medlatec.vn/detail-recruitment/tong-dai-vien-benh-vien-ha-noi-1701314545",
+   "quote": "BÁC SĨ TƯ VẤN TỔNG ĐÀI",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Bệnh viện Đa khoa Quốc tế Thu Cúc (Công ty Cổ phần Y khoa Thu Cúc)",
+   "country": "Vietnam",
+   "website": "https://benhvienthucuc.vn/",
+   "sector": "Healthcare",
+   "what": "An international general hospital providing healthcare services and customer guidance.",
+   "signal": "Operates a call center to consult and guide customers, creating a need for call center telephony and voice solutions.",
+   "sourceUrl": "https://tuyendung.benhvienthucuc.vn/truong-phong-tong-dai/",
+   "quote": "Thực hiện triển khai, kiểm tra, đôn đốc công việc tư vấn, hướng dẫn khách hàng qua tổng đài.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Insular Health Care, Inc. (iCare HMO)",
+   "country": "Philippines",
+   "website": "https://icare.com.ph/",
+   "sector": "Healthcare",
+   "what": "A health maintenance organization (HMO).",
+   "signal": "Runs a Call Center Department (CCD) with dedicated trunk lines for urgent customer concerns.",
+   "sourceUrl": "https://icare.com.ph/contact-us/",
+   "quote": "For urgent concerns, you may reach the Call Center Department (CCD) at: Call Center Trunk Line: (02) 77777 999.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Maxicare Healthcare Corporation",
+   "country": "Philippines",
+   "website": "https://www.maxicare.com.ph/",
+   "sector": "Healthcare",
+   "what": "A healthcare services provider.",
+   "signal": "Deploys support agents to deliver real-time user assistance.",
+   "sourceUrl": "https://www.maxicare.com.ph/support/",
+   "quote": "Need real-time assistance? Click the chat icon at the bottom right of the screen to chat with our agents.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "MediCard Philippines, Inc.",
+   "country": "Philippines",
+   "website": "https://www.medicardphils.com/",
+   "sector": "Healthcare",
+   "what": "A healthcare organization.",
+   "signal": "Operates a 24/7 Member Services Hotline Contact Center.",
+   "sourceUrl": "https://www.medicardphils.com/contact-us/",
+   "quote": "Contact Center: (02) 8841-8080 (24/7 Member Services Hotline).",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "RS Kasih Ibu Surakarta",
+   "country": "Indonesia",
+   "website": "https://rskasihibu.com/",
+   "sector": "Healthcare",
+   "what": "Hospital providing healthcare and outpatient services",
+   "signal": "Handles outpatient registration directly through a dedicated WhatsApp line",
+   "sourceUrl": "https://rskasihibu.com/pendaftaran-via-whatsapp/",
+   "quote": "Demi kemudahan proses pendaftaran Rawat Jalan, RS Kasih Ibu melayani pendaftaran rawat jalan via Whatsapp dengan nomor 0821-3366-4747 pada pukul 07.00 – 20.00 WIB.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "CapitaLand Group Pte. Ltd.",
+   "country": "Singapore",
+   "website": "https://www.capitaland.com/",
+   "sector": "Real estate",
+   "what": "A Singapore property developer and real estate company.",
+   "signal": "Maintains a customer service team available daily for customer inquiries.",
+   "sourceUrl": "https://www.capitaland.com/sg/en/shop/malls/discover/information-at-your-fingertips.html",
+   "quote": "Speak to our customer service team from 10am - 6pm daily, or click here to submit an enquiry online anytime and we will be in touch shortly.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Century Properties Group Inc.",
+   "country": "Philippines",
+   "website": "https://www.century-properties.com/",
+   "sector": "Real estate",
+   "what": "Real estate company in the Philippines",
+   "signal": "Maintains a customer relations phone line for buyer and client support.",
+   "sourceUrl": "https://azurenorth.com.ph/contact-us/",
+   "quote": "Customer Relations: (+63) 2 7-793-5549",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Công ty Cổ phần Phát triển Bất động sản Phát Đạt (Phat Dat Real Estate Development Corporation)",
+   "country": "Vietnam",
+   "website": "https://www.phatdat.com.vn/",
+   "sector": "Real estate",
+   "what": "Real estate development corporation in Vietnam.",
+   "signal": "Runs customer service operations serving as the contact hub for receiving customer inquiries and complaints.",
+   "sourceUrl": "https://www.phatdat.com.vn/tuyen-dung/chuyen-vien-dich-vu-khach-hang/",
+   "quote": "• Đầu mối tiếp nhận và tổng hợp tất cả các thắc mắc, khiếu nại của khách hàng liên quan đến hợp đồng, dự án, các chương trình hậu mãi, chăm sóc khách hàng và các thủ tục có liên quan.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "ERA Realty Network Pte Ltd",
+   "country": "Singapore",
+   "website": "https://www.era.com.sg/",
+   "sector": "Real estate",
+   "what": "A Singapore real-estate agency.",
+   "signal": "Operates a dedicated phone Customer Service hotline during weekday business hours.",
+   "sourceUrl": "https://www.era.com.sg/sell/",
+   "quote": "Calling our Customer Service hotline at +65 6226 2000 (Business hours: Monday through Friday, from 9:00AM to 6:00PM).",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Federal Land, Inc.",
+   "country": "Philippines",
+   "website": "https://federalland.ph/",
+   "sector": "Real estate",
+   "what": "Real estate company in the Philippines",
+   "signal": "Operates a dedicated customer service phone hotline.",
+   "sourceUrl": "https://federalland.ph/contact-us/",
+   "quote": "(632) 8-354-8888 [Customer Service Hotline]",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Filinvest Land, Inc.",
+   "country": "Philippines",
+   "website": "https://filinvestland.com/",
+   "sector": "Real estate",
+   "what": "Real estate company in the Philippines",
+   "signal": "Provides a domestic toll-free phone number for landline customer inquiries.",
+   "sourceUrl": "https://filinvestland.com/contact-us",
+   "quote": "Domestic Toll Free for PLDT/Smart landline. 1800-10-588-1688.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "JasTel Network Company Limited (JasTel)",
+   "country": "Thailand",
+   "website": "https://www.jastel.co.th/",
+   "sector": "Telecom",
+   "what": "JasTel Network provides telecommunications network services and customer support.",
+   "signal": "They operate a 24-hour phone customer service line.",
+   "sourceUrl": "https://www.jastel.co.th/jastel-contactus/",
+   "quote": "Customer Service (24 Hours) Phone : +66 2782 6500 Email : [email removed]",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Symphony Communication Public Company Limited",
+   "country": "Thailand",
+   "website": "https://www.symphony.net.th/",
+   "sector": "Telecom",
+   "what": "Symphony Communication provides telecommunication services and 24x7 Network Operation Monitoring.",
+   "signal": "They operate a dedicated HelpDesk team for 24x7 professional customer support.",
+   "sourceUrl": "https://www.symphony.net.th/en/",
+   "quote": "Our HelpDesk team provides customer service professional support with experience with 24x7 Network Operation Monitoring.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Bangkok Airways Public Company Limited",
+   "country": "Thailand",
+   "website": "https://www.bangkokair.com/",
+   "sector": "Travel and leisure",
+   "what": "Bangkok Airways is a Thailand-based airline offering domestic and flight services.",
+   "signal": "The company provides Call Center Check-in services for domestic flight passengers.",
+   "sourceUrl": "https://www.bangkokair.com/pages/view/call-center-check-in",
+   "quote": "For more information please contact [email removed] or call 1771.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Hong Thai Travel",
+   "country": "Singapore",
+   "website": "https://hongthai.com.sg/",
+   "sector": "Travel and leisure",
+   "what": "Travel agency offering travel services and customer support.",
+   "signal": "Uses phone-based communication channels like WhatsApp to connect with travel customers.",
+   "sourceUrl": "https://hongthai.com.sg/contact-us/",
+   "quote": "Save 8218 3231 as HongThai SG WhatsApp to your contacts list.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "Newport World Resorts (Travellers International Hotel Group, Inc.)",
+   "country": "Philippines",
+   "website": "https://www.newportworldresorts.com/",
+   "sector": "Travel and leisure",
+   "what": "Resort and hospitality operator.",
+   "signal": "Operates a dedicated Customer Care Hotline telephone number for guest communications.",
+   "sourceUrl": "https://www.newportworldresorts.com/contact-us",
+   "quote": "Customer Care Hotline Phone: +63 2 79088888",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "City Energy Pte. Ltd.",
+   "country": "Singapore",
+   "website": "https://www.cityenergy.com.sg/",
+   "sector": "Utilities, industrial and other",
+   "what": "Provides energy solutions for residential and commercial users.",
+   "signal": "Operates a hotline for general enquiries from residential and commercial customers.",
+   "sourceUrl": "https://www.cityenergy.com.sg/contact-us/",
+   "quote": "Contact the 24-hour Emergency Hotline now to report on gas leakage, supply interruption and low pressure:",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
+   "checkedAt": "2026-11-27"
+  },
+  {
+   "company": "SP Group (SP Services Ltd)",
+   "country": "Singapore",
+   "website": "https://www.spgroup.com.sg/",
+   "sector": "Utilities, industrial and other",
+   "what": "Provides energy utility and billing account services.",
+   "signal": "Operates a dedicated phone hotline for billing and utilities account enquiries.",
+   "sourceUrl": "https://www.spgroup.com.sg/contact-us",
+   "quote": "Billing / Utilities Account Enquiries. 1800 222 2333.",
+   "region": "Southeast Asia",
+   "kind": "enterprise",
    "checkedAt": "2026-11-27"
   }
  ],
  "dropped": [
   {
-   "company": "Biloop Technologies",
+   "company": "NextWeb OS",
+   "reason": "website not fetchable (robots_unreachable: nextwebos.com unreachable: getaddrinfo ENOTFOUND nextwebos.com)"
+  },
+  {
+   "company": "Mugen",
+   "reason": "claim check failed"
+  },
+  {
+   "company": "Voiger",
+   "reason": "claim check failed"
+  },
+  {
+   "company": "AskWisely.ai (Sixty Seven Digital FZCO)",
    "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Techling",
+   "reason": "source page not fetchable (fetch_failed: fetch failed)"
+  },
+  {
+   "company": "Evonicsoft",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Banao Technologies",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Maqsam",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Gear Up Technology",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Voxtron Middle East",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "SM Stratagem FZ-LLC",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Gennexa",
+   "reason": "quote does not support the claim: The quote mentions building enterprise AI, AI agents, chatbots, and automation, but does not explici"
+  },
+  {
+   "company": "Haloo Connect (Haloocom)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Sarj AI",
+   "reason": "quote does not support the claim: The quote does not explicitly state that the company provides voice AI agents, AI voice platforms, c"
+  },
+  {
+   "company": "TechBee LLC",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Konvergense",
+   "reason": "quote does not support the claim: The provided quote only mentions general AI automation solutions and does not specifically mention v"
+  },
+  {
+   "company": "ANC Business Solutions",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Al Shohab Al Aliyah",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Auxy",
+   "reason": "source page not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Elbetron Technologies Company",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "ZiaX AI",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "SolexPlus",
+   "reason": "website not fetchable (robots_unreachable: www.solexplus.com.sa unreachable: fetch failed)"
+  },
+  {
+   "company": "ETISAL International",
+   "reason": "website not fetchable (robots_unreachable: www.etisal-int.com unreachable: fetch failed)"
+  },
+  {
+   "company": "Smart Link",
+   "reason": "website not fetchable (fetch_failed: HTTP 418)"
+  },
+  {
+   "company": "TzamunAI",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Techtar LLC",
+   "reason": "quote does not support the claim: The quote mentions Techtar is an AI agency for SMEs headquartered in Doha, but does not explicitly m"
   },
   {
    "company": "Django Software and Network Solutions",
    "reason": "no verbatim supporting quote on the fetched source page"
   },
   {
+   "company": "Qunzia LLC",
+   "reason": "quote does not support the claim: The quote does not mention voice AI agents, AI voice platforms, contact-centre software, dialers, or"
+  },
+  {
    "company": "NextGen Digital",
    "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Ozapp",
+   "reason": "quote does not support the claim: The quote explicitly states the agency is in Belgium, which contradicts the claimed country of Qatar"
+  },
+  {
+   "company": "Biloop Technologies",
+   "reason": "quote does not support the claim: The quote mentions building, integrating, and operating modern AI systems generally, but does not ex"
   },
   {
    "company": "Miran Solutions Qatar",
@@ -200,56 +1540,1180 @@
    "reason": "no verbatim supporting quote on the fetched source page"
   },
   {
-   "company": "Spectrum Solution W.L.L.",
-   "reason": "no verbatim supporting quote on the fetched source page"
-  },
-  {
    "company": "Gulf Business Machines Qatar W.L.L. (GBM Qatar)",
    "reason": "company name not found on its fetched home page"
-  },
-  {
-   "company": "Bevatel",
-   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
-  },
-  {
-   "company": "ECCO Gulf W.L.L.",
-   "reason": "website not fetchable (fetch_failed: HTTP 403)"
   },
   {
    "company": "BPO+ (Business Process Outsourcing Plus WLL)",
    "reason": "website not fetchable (thin_content: only 0 readable words)"
   },
   {
-   "company": "Al Asmakh Real Estate Development Company",
+   "company": "ECCO Gulf W.L.L.",
+   "reason": "quote does not support the claim: The quote mentions customer engagement in general, but does not explicitly state that the company pr"
+  },
+  {
+   "company": "SESTEK (Sestek Ses ve İletişim Bilgisayar Teknolojileri A.Ş.)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "JasAI (JasVoice)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Türk Bilişim",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Jettel (Jettel İletişim Teknolojileri ve Yazılım Hiz. San. Tic. Ltd. Şti.)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "CCR Group (Call Center Resources Danışmanlık A.Ş.)",
+   "reason": "website not fetchable (robots_unreachable: ccr.com.tr unreachable: fetch failed)"
+  },
+  {
+   "company": "Tegsoft",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Prosis Digital Solutions",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Spechy",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Connectop",
+   "reason": "quote does not support the claim: The quote does not explicitly mention that Connectop provides voice AI agents, contact-centre softwa"
+  },
+  {
+   "company": "Second Nature (Second Nature Software Ltd.)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Hyro (Hyro AI Inc.)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Deepdub (Deepdub Ltd.)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Voiceitt (Technologies of Voice Interface Ltd.)",
+   "reason": "quote does not support the claim: The quote describes speech recognition technology for non-standard speech accessibility, which does "
+  },
+  {
+   "company": "AudioCodes Ltd.",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "De Hollandse Centrale B.V.",
    "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "StellarTech AI",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "DataDream",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Anywhere365",
+   "reason": "website not fetchable (robots_unreachable: anywhere365.io unreachable: fetch failed)"
+  },
+  {
+   "company": "Crux Digits B.V.",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Convocat",
+   "reason": "quote does not support the claim: The quote mentions working on conversational and generative AI, but does not specifically mention vo"
+  },
+  {
+   "company": "OBI4wan",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Cognigy GmbH",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Synthflow GmbH",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "cloud IT Services GmbH",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "CallOne GmbH",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "LoyJoy GmbH",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "FIEBIG GmbH",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Cognitfy",
+   "reason": "quote does not support the claim: The quote only defines what a voice agent is and does not state that the company provides voice AI a"
+  },
+  {
+   "company": "novomind AG",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "GuruSup",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "IACall",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "InfOne",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "AgenteUno",
+   "reason": "quote does not support the claim: The quote mentions AI agents generally, but does not explicitly mention voice AI agents, voice platf"
+  },
+  {
+   "company": "ICR Evolution",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "Inbenta",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "DialApplet",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Neuroblast",
+   "reason": "quote does not support the claim: The quote mentions general AI agents but does not specify voice AI agents, call-center software, or "
+  },
+  {
+   "company": "Spider AI",
+   "reason": "quote does not support the claim: The provided quote does not mention voice AI agents, voice platforms, call center software, or CX so"
+  },
+  {
+   "company": "Recordia",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "inConcert",
+   "reason": "website not fetchable (robots_unreachable: inconcertcc.com unreachable: The operation was aborted due to timeout)"
+  },
+  {
+   "company": "Megacall",
+   "reason": "quote does not support the claim: The website URL uses a .uk top-level domain, indicating the United Kingdom, which contradicts the cl"
+  },
+  {
+   "company": "Emergia",
+   "reason": "quote does not support the claim: The quote does not explicitly mention voice AI agents, AI voice platforms, contact-centre software, "
+  },
+  {
+   "company": "Artificial Solutions International AB (Teneo.ai)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Mimer Technologies AB",
+   "reason": "website not fetchable (robots_unreachable: mimer.tech unreachable: getaddrinfo ENOTFOUND mimer.tech)"
+  },
+  {
+   "company": "indigitall",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "2Mares",
+   "reason": "quote does not support the claim: The quote mentions GDPR data processing compliance but does not state that the company provides voic"
+  },
+  {
+   "company": "Alice Labs AB",
+   "reason": "source page not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Real Talk",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Furhat Robotics AB",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Talking to me AB",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Inovia AI AB",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Connectel AB",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Connectel AB",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Confirma Artvise AB",
+   "reason": "website not fetchable (robots_unreachable: www.artvise.se unreachable: too many redirects)"
+  },
+  {
+   "company": "Releasy Customer Management AB",
+   "reason": "website not fetchable (robots_unreachable: releasy.se unreachable: fetch failed)"
+  },
+  {
+   "company": "Transcom WorldWide AB",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Lime Technologies AB",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Groupe Allo-Media",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Upsales Software AB",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Diabolocom",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Synapse Développement",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Target First",
+   "reason": "source page not fetchable (fetch_failed: fetch failed)"
+  },
+  {
+   "company": "Vocalcom",
+   "reason": "quote does not support the claim: The quote discusses the general benefits of predictive technology in call centers but does not state"
+  },
+  {
+   "company": "AlloBrain (AlloReview SAS)",
+   "reason": "quote does not support the claim: The quote is a generic statement and does not state that the company provides voice AI agents, conta"
+  },
+  {
+   "company": "ViaDialog",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Armatis",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Scoot",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Mandai Wildlife Group",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Kavkom",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Singapore Airlines",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Marina Bay Sands",
+   "reason": "website not fetchable (robots_unreachable: www.marinabaysands.com unreachable: The operation was aborted due to timeout)"
+  },
+  {
+   "company": "Chan Brothers Travel",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "WTS Travel",
+   "reason": "quote does not support the claim: The quote mentions talking to a travel team online or at 8 outlets, but does not explicitly show a c"
+  },
+  {
+   "company": "Changi Airport Group",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "PUB, Singapore's National Water Agency",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Geneco (YTL PowerSeraya Pte. Limited)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Keppel Electric Pte Ltd",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "COURTS (Singapore) Pte Ltd",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "NTUC FairPrice Co-operative Limited",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Carousell Pte. Ltd.",
+   "reason": "sector \"E-commerce\" not allowed for this query"
+  },
+  {
+   "company": "Delivery Hero (Singapore) Pte. Ltd. (foodpanda)",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "Sheng Siong Supermarket Pte Ltd",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "GrabTaxi Pte. Ltd. (Grab)",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "Razer (Asia-Pacific) Pte. Ltd.",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "ABR Holdings Limited (Swensen's Singapore)",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "PacificLight Energy Pte Ltd",
+   "reason": "source page not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "United Overseas Bank Limited (UOB)",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Senoko Energy Supply Pte Ltd",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Oversea-Chinese Banking Corporation Limited (OCBC)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "HSBC Bank (Singapore) Limited",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "DBS Bank Ltd.",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Tuas Power Supply Pte. Ltd.",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "The Great Eastern Life Assurance Company Limited",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Income Insurance Limited",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Singapore Life Ltd. (Singlife)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Huttons Asia Pte Ltd",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Frasers Property Limited",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "City Developments Limited",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "PT Garuda Indonesia (Persero) Tbk",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "PT Citilink Indonesia",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "PT Global Tiket Network",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "PT TransNusa Aviation Mandiri",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PT Lion Mentari Airlines",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "GuocoLand Limited",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "PT Dwidaya World Wide",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PT Kereta Api Indonesia (Persero)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "PT Super Air Jet",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "PT Siloam International Hospitals Tbk (Siloam Hospitals)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PT Famon Awal Bros Sedaya Tbk (Primaya Hospital)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PropNex Realty Pte Ltd",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "PT Mitra Keluarga Karyasehat Tbk (Mitra Keluarga)",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "PT Medikaloka Hermina Tbk (Hermina Hospitals)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PT Mayapada Healthcare Tbk (Mayapada Hospital)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "OrangeTee & Tie Pte Ltd",
+   "reason": "source page not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "PT Telekomunikasi Selular (Telkomsel)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PT Sarana Meditama Metropolitan Tbk (EMC Healthcare)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PT XL Axiata Tbk (XL Axiata)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "National Hospital Surabaya",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "PT Indosat Tbk (Indosat Ooredoo Hutchison)",
+   "reason": "website not fetchable (robots_unreachable: www.ioh.co.id unreachable: The operation was aborted due to timeout)"
+  },
+  {
+   "company": "PT MyRepublic Indonesia (MyRepublic Indonesia)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "PT Supra Primatama Nusantara (Biznet Networks)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PT Link Net Tbk (Link Net)",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "PT Smartfren Telecom Tbk (Smartfren)",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "CENTURY 21 Indonesia",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "Ray White Indonesia",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "ERA Indonesia",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "PT Cyberindo Aditama (CBN)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "PT Metropolitan Land Tbk",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "PT Sinar Mas Land",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Paramount Land (PT Paramount Enterprise International)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "PT Alam Sutera Realty Tbk",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Philippine Airlines (Philippine Airlines, Inc.)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Sunlight Air (Sunlight Express Airways)",
+   "reason": "quote does not support the claim: The quote mentions delivering exceptional customer service, but does not explicitly evidence a conta"
+  },
+  {
+   "company": "Cebu Pacific Air (Cebu Air, Inc.)",
+   "reason": "website not fetchable (fetch_failed: HTTP 410)"
+  },
+  {
+   "company": "PT Intiland Development Tbk",
+   "reason": "website not fetchable (fetch_failed: The operation was aborted due to timeout)"
+  },
+  {
+   "company": "Okada Manila (Tiger Resort, Leisure and Entertainment, Inc.)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Southwest Tours (Southwest Tours (Boracay), Inc.)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "The Medical City",
+   "reason": "website not fetchable (robots_unreachable: www.themedicalcity.com unreachable: fetch failed)"
+  },
+  {
+   "company": "Solaire Resort (Bloomberry Resorts Corporation)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Chong Hua Hospital",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Asalus Corporation (Intellicare)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Rajah Travel Corporation",
+   "reason": "source page not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Manila Electric Company (Meralco)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Maynilad Water Services, Inc.",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Visayan Electric Company, Inc. (Visayan Electric)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Laguna AAA Water Corporation (Laguna Water)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "MORE Electric and Power Corporation",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Subic Water and Sewerage Co., Inc. (SUBICWATER)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Angeles Electric Corporation",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Cagayan Electric Power & Light Co., Inc. (CEPALCO)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Jollibee Foods Corporation",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "ZALORA Philippines",
+   "reason": "sector \"E-commerce\" not allowed for this query"
+  },
+  {
+   "company": "Shopee Philippines",
+   "reason": "sector \"E-commerce\" not allowed for this query"
+  },
+  {
+   "company": "Delivery Hero Philippines, Inc. (foodpanda Philippines)",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "Abenson Inc.",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Golden Arches Development Corporation (McDonald's Philippines)",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "Wilcon Depot Inc.",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "SM Store (SM Mart, Inc.)",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Philhealth Care, Inc. (PhilCare)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "BDO Unibank, Inc.",
+   "reason": "website not fetchable (robots_unreachable: www.bdo.com.ph unreachable: The operation was aborted due to timeout)"
+  },
+  {
+   "company": "Bank of the Philippine Islands (BPI)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Makati Medical Center",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Sun Life of Canada (Philippines), Inc.",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Metropolitan Bank & Trust Company (Metrobank)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Pru Life Insurance Corporation of U.K.",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Etiqa Life and General Assurance Philippines, Inc.",
+   "reason": "source page not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Rizal Commercial Banking Corporation (RCBC)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "DMCI Project Developers, Inc.",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Megaworld Corporation",
+   "reason": "source page not fetchable (fetch_failed: HTTP 410)"
+  },
+  {
+   "company": "Robinsons Land Corporation",
+   "reason": "quote does not support the claim: The quote only provides an email address and does not show that the company runs or is hiring for a "
+  },
+  {
+   "company": "Vietnam Airlines (Vietnam Airlines Joint Stock Company)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "Property Company of Friends, Inc.",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Bamboo Airways (Bamboo Airways Joint Stock Company)",
+   "reason": "website not fetchable (robots_unreachable: www.bambooairways.com unreachable: getaddrinfo ENOTFOUND www.bambooairways.com)"
+  },
+  {
+   "company": "Vietravel Airlines (Vietravel Airlines Corporation)",
+   "reason": "website not fetchable (robots_unreachable: www.vietravelairlines.com unreachable: fetch failed)"
+  },
+  {
+   "company": "Sta. Lucia Land, Inc.",
+   "reason": "quote does not support the claim: The quote only provides an email address for customer service and does not mention a calling, contac"
+  },
+  {
+   "company": "Saigontourist Travel (Saigontourist Transport and Travel Service Company Limited)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Vietjet Air (Vietjet Aviation Joint Stock Company)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "BestPrice Travel (BestPrice Travel Technology Joint Stock Company)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Vntrip (VNTRIP Technology Company Limited)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Vinpearl (Vinpearl Joint Stock Company)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Bệnh viện Đa khoa Tâm Anh",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Công ty Cổ phần Bệnh viện Đa khoa Quốc tế Vinmec",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Tập đoàn Y khoa Hoàn Mỹ",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Bệnh viện Đa khoa Quốc tế Bắc Hà",
+   "reason": "website not fetchable (robots_unreachable: benhvienbacha.vn unreachable: fetch failed)"
+  },
+  {
+   "company": "Công ty TNHH TI KI (Tiki)",
+   "reason": "sector \"E-commerce\" not allowed for this query"
+  },
+  {
+   "company": "Công ty Cổ phần Đầu tư Thế Giới Di Động (Thế Giới Di Động)",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Công ty Cổ phần Thương mại Bách Hóa Xanh (Bách Hóa Xanh)",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Công ty Cổ phần Con Cưng (Con Cưng)",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Công ty Cổ phần Hasaki Vietnam (Hasaki Beauty & Clinic)",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Công ty TNHH Shopee (Shopee Vietnam)",
+   "reason": "sector \"E-commerce\" not allowed for this query"
+  },
+  {
+   "company": "Công ty Cổ phần Bán lẻ Kỹ thuật số FPT (FPT Shop)",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Công ty Cổ phần Thương mại Dịch vụ Cổng Vàng (Golden Gate Restaurant Group)",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "Vietnam Prosperity Joint Stock Commercial Bank (VPBank)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "VPBank Finance Company Limited (FE CREDIT)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Home Credit Vietnam Finance Company Limited (Home Credit Vietnam)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "Prudential Vietnam Assurance Private Limited (Prudential Vietnam)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "Công ty TNHH Bệnh viện Hồng Ngọc",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Bệnh viện Đa khoa Hùng Vương",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Vietnam Technological and Commercial Joint Stock Bank (Techcombank)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "Manulife (Vietnam) Limited (Manulife Vietnam)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Dai-ichi Life Insurance Company (Vietnam) Limited (Dai-ichi Life Vietnam)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Vietnam Posts and Telecommunications Group (VNPT / VNPT VinaPhone)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "Tien Phong Commercial Joint Stock Bank (TPBank)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Vietnamobile Telecommunications Joint Stock Company (Vietnamobile)",
+   "reason": "already in accounts.json"
+  },
+  {
+   "company": "FPT Telecom Joint Stock Company (FPT Telecom)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "CMC Telecommunication Infrastructure Corporation (CMC Telecom)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Military Industry - Telecommunications Group (Viettel Group / Viettel Telecom)",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Saigon Post and Telecommunications Service Corporation (Saigon Postel Corp / SPT)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "MobiFone Corporation (MobiFone)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Công ty Cổ phần Vinhomes (Vinhomes Joint Stock Company)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Công ty Cổ phần Bất động sản Thế Kỷ (Cen Land)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Công ty Cổ phần Tập đoàn Đầu tư Địa ốc No Va (Novaland Group)",
+   "reason": "quote does not support the claim: The quote mentions receiving feedback through a customer care department ('Bộ phận chăm sóc khách hà"
+  },
+  {
+   "company": "Công ty Cổ phần Đầu tư Nam Long (Nam Long Group)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Saigontourist Cable Television Company Limited (SCTV)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 500)"
+  },
+  {
+   "company": "Công ty Cổ phần Tập đoàn Hưng Thịnh (Hung Thinh Corporation)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Công ty TNHH Phát triển Phú Mỹ Hưng (Phu My Hung Development Corporation)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Thai Vietjet Air Joint Stock Company Limited",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Công ty Cổ phần Dịch vụ Bất động sản Đất Xanh (Dat Xanh Services)",
+   "reason": "quote does not support the claim: The provided quote is a privacy consent disclaimer for data collection and does not show that the co"
+  },
+  {
+   "company": "Thai Lion Mentari Co., Ltd. (Thai Lion Air)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Thai Airways International Public Company Limited",
+   "reason": "source page not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Central Plaza Hotel Public Company Limited (Centara Hotels & Resorts)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Agoda Services Co., Ltd.",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Praram 9 Hospital",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Nok Airlines Public Company Limited (Nok Air)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Minor International Public Company Limited (Minor Hotels)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Phyathai Hospital",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Bangkok Hospital",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Samitivej Hospital",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "MedPark Hospital",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Provincial Electricity Authority (PEA)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Metropolitan Electricity Authority (MEA)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Metropolitan Waterworks Authority (MWA)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Provincial Waterworks Authority (PWA)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Electricity Generating Authority of Thailand (EGAT)",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "PTT Public Company Limited",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Ratch Group Public Company Limited",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "B.Grimm Power Public Company Limited",
+   "reason": "sector \"Utilities\" not allowed for this query"
+  },
+  {
+   "company": "Purple Ventures Co., Ltd. / Robinhood",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "LINE MAN Wongnai Co., Ltd.",
+   "reason": "sector \"E-commerce\" not allowed for this query"
+  },
+  {
+   "company": "Central Retail Corporation Public Company Limited",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Big C Supercenter Public Company Limited",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Ek-Chai Distribution System Co., Ltd. / Lotus's",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Home Product Center Public Company Limited / HomePro",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "The Mall Group Company Limited",
+   "reason": "sector \"retail\" not allowed for this query"
+  },
+  {
+   "company": "Delivery Hero (Thailand) Co., Ltd. / foodpanda",
+   "reason": "sector \"food\" not allowed for this query"
+  },
+  {
+   "company": "Bumrungrad International Hospital",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Ramkhamhaeng Hospital",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Vejthani Hospital",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Siam Commercial Bank Public Company Limited",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "KASIKORNBANK Public Company Limited",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "FWD Life Insurance Public Company Limited",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Allianz Ayudhya Public Company Limited",
+   "reason": "source page not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Muang Thai Life Assurance Public Company Limited",
+   "reason": "source page not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "TMBThanachart Bank Public Company Limited",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Roojai Company Limited",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Advanced Info Service Public Company Limited (AIS)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "United Information Highway Co., Ltd. (UIH)",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Interlink Telecom Public Company Limited (ITEL)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "National Telecom Public Company Limited (NT)",
+   "reason": "website not fetchable (robots_unreachable: www.ntplc.co.th unreachable: The operation was aborted due to timeout)"
+  },
+  {
+   "company": "Krungthai Bank Public Company Limited",
+   "reason": "source page not fetchable (robots_unreachable: www.frontierenterprise.com unreachable: getaddrinfo EAI_AGAIN www.frontierenterprise.com)"
+  },
+  {
+   "company": "Triple T Broadband Public Company Limited (3BB)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "CS Loxinfo Public Company Limited (CSL)",
+   "reason": "website not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "AP (Thailand) Public Company Limited",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Sansiri Public Company Limited",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Supalai Public Company Limited",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Origin Property Public Company Limited",
+   "reason": "source page not fetchable (thin_content: only 0 readable words)"
+  },
+  {
+   "company": "Land and Houses Public Company Limited",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Major Development Public Company Limited",
+   "reason": "website not fetchable (fetch_failed: too many redirects)"
+  },
+  {
+   "company": "Ananda Development Public Company Limited",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Y.H. Dimri Building and Development Ltd. (י.ח. דמרי)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Prashkovsky Investments and Construction Ltd. (פרשקובסקי)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Pruksa Real Estate Public Company Limited",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Boni HaTichon (בוני התיכון)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Tidhar Group (קבוצת תדהר)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Aura Israel (אאורה ישראל)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Union Motors Ltd. (Toyota Israel)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Colmobil Corp. (Colmobil Group)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Gindi Holdings (גינדי החזקות)",
+   "reason": "quote does not support the claim: The quote is a standard marketing opt-in consent disclaimer and does not show that the company opera"
+  },
+  {
+   "company": "Israel Canada (ישראל קנדה)",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Albar Fleet Services (Albar)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Universal Transportation Solutions Ltd. (Avis Israel)",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Eldan Transportation Ltd.",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Shlomo Group (Shlomo Sixt)",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
   },
   {
    "company": "United Development Company (UDC)",
    "reason": "website not fetchable (robots_unreachable: www.udcqatar.com unreachable: The operation was aborted due to timeout)"
   },
   {
+   "company": "Al Asmakh Real Estate Development Company",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
    "company": "Al Waseef Asset Management W.L.L. (Waseef)",
    "reason": "company name not found on its fetched home page"
   },
   {
-   "company": "Ezdan Real Estate Company",
-   "reason": "source page not fetchable (fetch_failed: HTTP 500)"
-  },
-  {
-   "company": "Barwa Real Estate Group",
-   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+   "company": "Kesher Rent A Car Ltd. (Hertz Israel)",
+   "reason": "company name not found on its fetched home page"
   },
   {
    "company": "Steps Real Estate",
    "reason": "no verbatim supporting quote on the fetched source page"
   },
   {
+   "company": "Barwa Real Estate Group",
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
    "company": "Find Great Realty W.L.L. (FGREALTY)",
    "reason": "no verbatim supporting quote on the fetched source page"
   },
   {
-   "company": "Al Abdulghani Motors",
-   "reason": "source page not fetchable (thin_content: only 0 readable words)"
+   "company": "Ezdan Real Estate Company",
+   "reason": "source page not fetchable (fetch_failed: HTTP 500)"
   },
   {
    "company": "Alfardan Automobiles Co. L.L.C.",
@@ -257,27 +2721,47 @@
   },
   {
    "company": "Saleh Al Hamad Al Mana Co.",
-   "reason": "source page not fetchable (fetch_failed: fetch failed)"
-  },
-  {
-   "company": "Jaidah Automotive",
-   "reason": "no verbatim supporting quote on the fetched source page"
-  },
-  {
-   "company": "Skyline Automotive W.L.L.",
-   "reason": "website not fetchable (robots_unreachable: hyundai.com.qa unreachable: getaddrinfo ENOTFOUND hyundai.com.qa)"
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
   },
   {
    "company": "Doha Marketing Services Company W.L.L. (DOMASCO)",
-   "reason": "website not fetchable (robots_unreachable: www.honda.qa unreachable: getaddrinfo ENOTFOUND www.honda.qa)"
+   "reason": "company name not found on its fetched home page"
   },
   {
    "company": "Strong Rent A Car",
-   "reason": "website not fetchable (robots_unreachable: strongrentacar.com unreachable: getaddrinfo ENOTFOUND strongrentacar.com)"
+   "reason": "source page not fetchable (fetch_failed: HTTP 404)"
+  },
+  {
+   "company": "Doğuş Otomotiv Servis ve Ticaret A.Ş.",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Tofaş Türk Otomobil Fabrikası A.Ş.",
+   "reason": "website not fetchable (robots_unreachable: www.tofas.com.tr/robots.txt returned HTTP 500)"
+  },
+  {
+   "company": "MAİS Motorlu Araçlar İmal ve Satış A.Ş. (Renault Türkiye)",
+   "reason": "company name not found on its fetched home page"
+  },
+  {
+   "company": "Otokoç Otomotiv Ticaret ve Sanayi A.Ş.",
+   "reason": "source page not fetchable (fetch_failed: HTTP 403)"
   },
   {
    "company": "Qatar Automobile Company W.L.L.",
-   "reason": "website not fetchable (robots_unreachable: www.mitsubishi-motors.qa unreachable: getaddrinfo ENOTFOUND www.mitsubishi-motors.qa)"
+   "reason": "source page not fetchable (fetch_failed: HTTP 500)"
+  },
+  {
+   "company": "Borusan Otomotiv Pazarlama ve Ticaret A.Ş.",
+   "reason": "no verbatim supporting quote on the fetched source page"
+  },
+  {
+   "company": "Ekim Turizm Ticaret ve Sanayi A.Ş. (Intercity Filo)",
+   "reason": "website not fetchable (fetch_failed: HTTP 403)"
+  },
+  {
+   "company": "Toyota Pazarlama ve Satış A.Ş. (Toyota Türkiye)",
+   "reason": "no verbatim supporting quote on the fetched source page"
   }
  ]
 }
